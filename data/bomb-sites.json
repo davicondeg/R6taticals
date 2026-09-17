@@ -1,0 +1,506 @@
+{
+  "banco": {
+    "sites": [
+      {
+        "id": "sala-do-ceo-lounge",
+        "name": "Sala do CEO / Lounge",
+        "floor": "2F",
+        "callout": "CEO/Lounge",
+        "image": "assets/images/bomb-sites/banco/site-1.jpg",
+        "imageRoom": "Sala do CEO / CEO Office",
+        "imageAlt": "Sala do CEO / CEO Office. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "area-aberta-cozinha",
+        "name": "Área Aberta / Cozinha",
+        "floor": "1F",
+        "callout": "Open Area/Kitchen",
+        "image": "assets/images/bomb-sites/banco/site-2.jpg",
+        "imageRoom": "Área Aberta / Open Area",
+        "imageAlt": "Área Aberta / Open Area. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "caixas-arquivos",
+        "name": "Caixas / Arquivos",
+        "floor": "1F",
+        "callout": "Tellers/Archives",
+        "image": "assets/images/bomb-sites/banco/site-3.jpg",
+        "imageRoom": "Arquivos / Archives",
+        "imageAlt": "Arquivos / Archives. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "armarios-vigilancia",
+        "name": "Armários / Vigilância",
+        "floor": "B",
+        "callout": "Lockers/CCTV",
+        "image": "assets/images/bomb-sites/banco/site-4.jpg",
+        "imageRoom": "Armários / Lockers",
+        "imageAlt": "Armários / Lockers. Captura do ambiente no jogo, de 2020."
+      }
+    ],
+    "imageSource": "https://www.r6trainer.com/callout-trainer/",
+    "imageCredit": "R6 Trainer — capturas de 2020"
+  },
+  "cafe": {
+    "sites": [
+      {
+        "id": "bar-lounge-de-coqueteis",
+        "name": "Bar / Lounge de Coquetéis",
+        "floor": "3F",
+        "callout": "Bar/Cocktail",
+        "image": "assets/images/bomb-sites/cafe/site-1.jpg",
+        "imageRoom": "Lounge de Coquetéis / Cocktail",
+        "imageAlt": "Lounge de Coquetéis / Cocktail. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "sala-de-leitura-sala-de-lareira",
+        "name": "Sala de Leitura / Sala de Lareira",
+        "floor": "2F",
+        "callout": "Reading/Dining",
+        "image": "assets/images/bomb-sites/cafe/site-2.jpg",
+        "imageRoom": "Sala de Leitura / Reading",
+        "imageAlt": "Sala de Leitura / Reading. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "sala-de-mineracao-sala-de-lareira",
+        "name": "Sala de Mineração / Sala de Lareira",
+        "floor": "2F",
+        "callout": "Mining/Dining",
+        "image": "assets/images/bomb-sites/cafe/site-3.jpg",
+        "imageRoom": "Sala de Mineração / Mining",
+        "imageAlt": "Sala de Mineração / Mining. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "cozinha-servico",
+        "name": "Cozinha / Serviço",
+        "floor": "1F",
+        "callout": "Service/Cooking",
+        "image": "assets/images/bomb-sites/cafe/site-4.jpg",
+        "imageRoom": "Cozinha / Cooking",
+        "imageAlt": "Cozinha / Cooking. Captura do ambiente no jogo, de 2020."
+      }
+    ],
+    "imageSource": "https://www.r6trainer.com/callout-trainer/",
+    "imageCredit": "R6 Trainer — capturas de 2020"
+  },
+  "cassino-calypso": {
+    "imageSource": "https://fpsjp.net/archives/549683",
+    "imageCredit": "EAA FPS — guia do mapa",
+    "sites": [
+      {
+        "id": "sala-de-charutos-bilhar",
+        "name": "Sala de Charutos / Bilhar",
+        "floor": "2F",
+        "callout": "Cigar Room/Pool",
+        "image": "assets/images/bomb-sites/cassino-calypso/eaa-2f.jpg",
+        "imageRoom": "Visão do 2F",
+        "imageAlt": "Planta do segundo andar do Cassino Calypso, andar do bombsite Sala de Charutos e Bilhar."
+      },
+      {
+        "id": "bar-apostas",
+        "name": "Bar / Apostas",
+        "floor": "1F",
+        "callout": "Bar/Betting",
+        "image": "assets/images/bomb-sites/cassino-calypso/eaa-1f.jpg",
+        "imageRoom": "Visão do 1F",
+        "imageAlt": "Planta do primeiro andar do Cassino Calypso, andar do bombsite Bar e Apostas."
+      },
+      {
+        "id": "blackjack-poquer",
+        "name": "Blackjack / Pôquer",
+        "floor": "1F",
+        "callout": "Blackjack/Poker",
+        "image": "assets/images/bomb-sites/cassino-calypso/eaa-1f.jpg",
+        "imageRoom": "Visão do 1F",
+        "imageAlt": "Planta do primeiro andar do Cassino Calypso, andar do bombsite Blackjack e Pôquer."
+      },
+      {
+        "id": "vigilancia-controle-do-cofre",
+        "name": "Vigilância / Controle do Cofre",
+        "floor": "B",
+        "callout": "CCTV/Vault Checkpoint",
+        "image": "assets/images/bomb-sites/cassino-calypso/eaa-basement.jpg",
+        "imageRoom": "Visão do subsolo",
+        "imageAlt": "Planta do subsolo do Cassino Calypso, andar do bombsite Vigilância e Controle do Cofre."
+      }
+    ]
+  },
+  "chale": {
+    "sites": [
+      {
+        "id": "quarto-principal-escritorio",
+        "name": "Quarto Principal / Escritório",
+        "floor": "2F",
+        "callout": "Master/Office",
+        "image": "assets/images/bomb-sites/chale/site-1.jpg",
+        "imageRoom": "Quarto Principal / Master Bedroom",
+        "imageAlt": "Quarto Principal / Master Bedroom. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "bar-sala-de-jogos",
+        "name": "Bar / Sala de Jogos",
+        "floor": "1F",
+        "callout": "Bar/Gaming",
+        "image": "assets/images/bomb-sites/chale/site-2.jpg",
+        "imageRoom": "Sala de Jogos / Gaming",
+        "imageAlt": "Sala de Jogos / Gaming. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "cozinha-sala-de-jantar",
+        "name": "Cozinha / Sala de Jantar",
+        "floor": "1F",
+        "callout": "Kitchen/Dining",
+        "image": "assets/images/bomb-sites/chale/site-3.jpg",
+        "imageRoom": "Sala de Jantar / Dining",
+        "imageAlt": "Sala de Jantar / Dining. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "adega-garagem-de-snowmobile",
+        "name": "Adega / Garagem de Snowmobile",
+        "floor": "B",
+        "callout": "Wine Cellar/Snowmobile",
+        "image": "assets/images/bomb-sites/chale/site-4.jpg",
+        "imageRoom": "Adega / Wine Cellar",
+        "imageAlt": "Adega / Wine Cellar. Captura do ambiente no jogo, de 2020."
+      }
+    ],
+    "imageSource": "https://www.r6trainer.com/callout-trainer/",
+    "imageCredit": "R6 Trainer — capturas de 2020"
+  },
+  "clubhouse": {
+    "imageSource": "https://www.r6trainer.com/callout-trainer/",
+    "imageCredit": "R6 Trainer — capturas de 2020",
+    "sites": [
+      {
+        "id": "academia-quarto",
+        "image": "assets/images/bomb-sites/clubhouse/bedroom.jpg",
+        "imageRoom": "Quarto / Bedroom",
+        "imageAlt": "Quarto do Clubhouse, com cama ao fundo, poltronas e papel de parede verde. Captura de 2020.",
+        "name": "Academia / Quarto",
+        "floor": "2F",
+        "callout": "Master/Gym"
+      },
+      {
+        "id": "sala-vigilancia-sala-cofre",
+        "image": "assets/images/bomb-sites/clubhouse/cash-room.jpg",
+        "imageRoom": "Sala do Cofre / Cash",
+        "imageAlt": "Sala do Cofre do Clubhouse, com pilhas de dinheiro nas mesas e passagem para CCTV. Captura de 2020.",
+        "name": "Sala de Vigilância / Sala do Cofre",
+        "floor": "2F",
+        "callout": "Cash/CCTV"
+      },
+      {
+        "id": "bar-sala-reunioes",
+        "image": "assets/images/bomb-sites/clubhouse/bar.jpg",
+        "imageRoom": "Bar",
+        "imageAlt": "Bar do Clubhouse, com balcão de madeira, garrafas e iluminação vermelha. Captura de 2020.",
+        "name": "Bar / Sala de Reuniões",
+        "floor": "1F",
+        "callout": "Bar/Stage"
+      },
+      {
+        "id": "capela-sala-armas",
+        "image": "assets/images/bomb-sites/clubhouse/church.jpg",
+        "imageRoom": "Capela / Church",
+        "imageAlt": "Capela no subsolo do Clubhouse, com mesa comprida, cadeiras e geladeira de bebidas. Captura de 2020.",
+        "name": "Capela / Sala de Armas",
+        "floor": "B",
+        "callout": "Church/Arsenal"
+      }
+    ]
+  },
+  "consulado": {
+    "imageSource": "https://fpsjp.net/archives/451465",
+    "imageCredit": "EAA FPS — guia do mapa",
+    "sites": [
+      {
+        "id": "escritorio-do-consul-sala-de-reunioes",
+        "name": "Escritório do Cônsul / Sala de Reuniões",
+        "floor": "2F",
+        "callout": "Consul Office/Meeting",
+        "image": "assets/images/bomb-sites/consulado/eaa-site-1.jpg",
+        "imageRoom": "Visão do bombsite — 2F",
+        "imageAlt": "Vista superior do bombsite Escritório do Cônsul e Sala de Reuniões no segundo andar do Consulado."
+      },
+      {
+        "id": "exposicao-piano",
+        "name": "Exposição / Piano",
+        "floor": "1F",
+        "callout": "Exposition/Piano",
+        "image": "assets/images/bomb-sites/consulado/eaa-site-2.jpg",
+        "imageRoom": "Visão do bombsite — 1F",
+        "imageAlt": "Vista superior do bombsite Exposição e Piano no primeiro andar do Consulado."
+      },
+      {
+        "id": "caixas-servidores",
+        "name": "Caixas / Servidores",
+        "floor": "1F / B",
+        "callout": "Tellers/Servers",
+        "image": "assets/images/bomb-sites/consulado/eaa-site-3.jpg",
+        "imageRoom": "Servidores / Servers",
+        "imageAlt": "Captura da sala de Servidores, parte do bombsite Caixas e Servidores do Consulado."
+      },
+      {
+        "id": "garagem-cafeteria",
+        "name": "Garagem / Cafeteria",
+        "floor": "B",
+        "callout": "Garage/Cafeteria",
+        "image": "assets/images/bomb-sites/consulado/eaa-site-4.jpg",
+        "imageRoom": "Garagem",
+        "imageAlt": "Captura da Garagem, parte do bombsite Garagem e Cafeteria do Consulado."
+      }
+    ]
+  },
+  "fronteira": {
+    "imageSource": "https://fpsjp.net/archives/384252",
+    "imageCredit": "EAA FPS — Fronteira pós-rework",
+    "sites": [
+      {
+        "id": "arsenal-arquivos",
+        "name": "Arsenal / Arquivos",
+        "floor": "2F",
+        "callout": "Armory Lockers/Archives",
+        "image": "assets/images/bomb-sites/fronteira/eaa-site-1.jpg",
+        "imageRoom": "Arsenal / Armory",
+        "imageAlt": "Captura do Arsenal no segundo andar da Fronteira após o rework."
+      },
+      {
+        "id": "alfandega-suprimentos",
+        "name": "Alfândega / Suprimentos",
+        "floor": "1F",
+        "callout": "Customs Inspection/Supply Room",
+        "image": "assets/images/bomb-sites/fronteira/site-4.jpg",
+        "imageRoom": "Alfândega / Customs",
+        "imageAlt": "Bombsite Alfândega e Suprimentos da Fronteira após o rework, com os marcadores das duas bombas."
+      },
+      {
+        "id": "ventilacao-oficina",
+        "name": "Ventilação / Oficina",
+        "floor": "1F",
+        "callout": "Ventilation/Workshop",
+        "image": "assets/images/bomb-sites/fronteira/eaa-site-2.jpg",
+        "imageRoom": "Oficina / Workshop",
+        "imageAlt": "Captura da Oficina, parte do bombsite Ventilação e Oficina da Fronteira após o rework."
+      },
+      {
+        "id": "caixas-banheiro",
+        "name": "Caixas / Banheiro",
+        "floor": "1F",
+        "callout": "Bathroom/Tellers",
+        "image": "assets/images/bomb-sites/fronteira/eaa-site-3.jpg",
+        "imageRoom": "Caixas / Tellers",
+        "imageAlt": "Captura da região de Caixas e Banheiro no primeiro andar da Fronteira após o rework."
+      }
+    ]
+  },
+  "kanal": {
+    "sites": [
+      {
+        "id": "servidores-radar",
+        "name": "Servidores / Radar",
+        "floor": "2F",
+        "callout": "Server/Radar",
+        "image": "assets/images/bomb-sites/kanal/site-1.jpg",
+        "imageRoom": "Servidores / Server",
+        "imageAlt": "Servidores / Server. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "seguranca-sala-de-mapas",
+        "name": "Segurança / Sala de Mapas",
+        "floor": "1F",
+        "callout": "Security/Map",
+        "image": "assets/images/bomb-sites/kanal/site-2.jpg",
+        "imageRoom": "Sala de Mapas / Map Room",
+        "imageAlt": "Sala de Mapas / Map Room. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "guarda-costeira-lounge",
+        "name": "Guarda Costeira / Lounge",
+        "floor": "1F",
+        "callout": "Coast Guard/Lounge",
+        "image": "assets/images/bomb-sites/kanal/site-3.jpg",
+        "imageRoom": "Guarda Costeira / Coast Guard",
+        "imageAlt": "Guarda Costeira / Coast Guard. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "caiaques-suprimentos",
+        "name": "Caiaques / Suprimentos",
+        "floor": "B",
+        "callout": "Kayaks/Supply",
+        "image": "assets/images/bomb-sites/kanal/site-4.jpg",
+        "imageRoom": "Suprimentos / Supply",
+        "imageAlt": "Suprimentos / Supply. Captura do ambiente no jogo, de 2020."
+      }
+    ],
+    "imageSource": "https://www.r6trainer.com/callout-trainer/",
+    "imageCredit": "R6 Trainer — capturas de 2020"
+  },
+  "laboratorio": {
+    "imageSource": "https://fpsjp.net/archives/434964",
+    "imageCredit": "EAA FPS — guia do mapa",
+    "sites": [
+      {
+        "id": "centro-de-comando-servidores",
+        "name": "Centro de Comando / Servidores",
+        "floor": "2F",
+        "callout": "Command Center/Servers",
+        "image": "assets/images/bomb-sites/laboratorio/eaa-site-1.jpg",
+        "imageRoom": "Visão do bombsite — 2F",
+        "imageAlt": "Vista superior anotada do bombsite Centro de Comando e Servidores no Laboratório Nighthaven."
+      },
+      {
+        "id": "cozinha-cafeteria",
+        "name": "Cozinha / Cafeteria",
+        "floor": "1F",
+        "callout": "Kitchen/Cafeteria",
+        "image": "assets/images/bomb-sites/laboratorio/eaa-site-2.jpg",
+        "imageRoom": "Visão do bombsite — 1F Leste",
+        "imageAlt": "Vista superior anotada do bombsite Cozinha e Cafeteria no Laboratório Nighthaven."
+      },
+      {
+        "id": "deposito-sala-de-controle",
+        "name": "Depósito / Sala de Controle",
+        "floor": "1F",
+        "callout": "Storage/Control Room",
+        "image": "assets/images/bomb-sites/laboratorio/eaa-site-3.jpg",
+        "imageRoom": "Visão do bombsite — 1F Oeste",
+        "imageAlt": "Vista superior anotada do bombsite Depósito e Sala de Controle no Laboratório Nighthaven."
+      },
+      {
+        "id": "montagem-tanque",
+        "name": "Montagem / Tanque",
+        "floor": "B",
+        "callout": "Assembly/Tank",
+        "image": "assets/images/bomb-sites/laboratorio/eaa-site-4.jpg",
+        "imageRoom": "Visão do bombsite — subsolo",
+        "imageAlt": "Vista superior anotada do bombsite Montagem e Tanque no subsolo do Laboratório Nighthaven."
+      }
+    ]
+  },
+  "mansao": {
+    "sites": [
+      {
+        "id": "sala-de-aviacao-sala-de-jogos",
+        "name": "Sala de Aviação / Sala de Jogos",
+        "floor": "2F",
+        "callout": "Aviator/Games",
+        "image": "assets/images/bomb-sites/mansao/site-1.jpg",
+        "imageRoom": "Sala de Aviação / Aviator",
+        "imageAlt": "Sala de Aviação / Aviator. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "sala-de-trofeus-sala-de-estatuas",
+        "name": "Sala de Troféus / Sala de Estátuas",
+        "floor": "2F",
+        "callout": "Trophy/Statuary",
+        "image": "assets/images/bomb-sites/mansao/site-2.jpg",
+        "imageRoom": "Sala de Estátuas / Statuary",
+        "imageAlt": "Sala de Estátuas / Statuary. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "cozinha-sala-de-jantar",
+        "name": "Cozinha / Sala de Jantar",
+        "floor": "1F",
+        "callout": "Kitchen/Dining",
+        "image": "assets/images/bomb-sites/mansao/site-3.jpg",
+        "imageRoom": "Sala de Jantar / Dining",
+        "imageAlt": "Sala de Jantar / Dining. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "deposito-de-arte-escritorio-antigo",
+        "name": "Depósito de Arte / Escritório Antigo",
+        "floor": "B",
+        "callout": "Art Storage/Old Office",
+        "image": "assets/images/bomb-sites/mansao/site-4.jpg",
+        "imageRoom": "Depósito de Arte / Art Storage",
+        "imageAlt": "Depósito de Arte / Art Storage. Captura do ambiente no jogo, de 2020."
+      }
+    ],
+    "imageSource": "https://www.r6trainer.com/callout-trainer/",
+    "imageCredit": "R6 Trainer — capturas de 2020"
+  },
+  "oregon": {
+    "sites": [
+      {
+        "id": "dormitorio-quarto-infantil",
+        "name": "Dormitório / Quarto Infantil",
+        "floor": "2F",
+        "callout": "Dorms/Kids",
+        "image": "assets/images/bomb-sites/oregon/site-1.jpg",
+        "imageRoom": "Dormitório / Dorm Main Hall",
+        "imageAlt": "Dormitório / Dorm Main Hall. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "cozinha-sala-de-jantar",
+        "name": "Cozinha / Sala de Jantar",
+        "floor": "1F",
+        "callout": "Kitchen/Dining",
+        "image": "assets/images/bomb-sites/oregon/site-2.jpg",
+        "imageRoom": "Sala de Jantar / Dining",
+        "imageAlt": "Sala de Jantar / Dining. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "cozinha-sala-de-reunioes",
+        "name": "Cozinha / Sala de Reuniões",
+        "floor": "1F",
+        "callout": "Meeting Hall/Kitchen",
+        "image": "assets/images/bomb-sites/oregon/site-3.jpg",
+        "imageRoom": "Sala de Reuniões / Meeting",
+        "imageAlt": "Sala de Reuniões / Meeting. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "lavanderia-suprimentos",
+        "name": "Lavanderia / Suprimentos",
+        "floor": "B",
+        "callout": "Laundry/Supply",
+        "image": "assets/images/bomb-sites/oregon/site-4.jpg",
+        "imageRoom": "Lavanderia / Laundry",
+        "imageAlt": "Lavanderia / Laundry. Captura do ambiente no jogo, de 2020."
+      }
+    ],
+    "imageSource": "https://www.r6trainer.com/callout-trainer/",
+    "imageCredit": "R6 Trainer — capturas de 2020"
+  },
+  "parque": {
+    "sites": [
+      {
+        "id": "beliches-creche",
+        "name": "Beliches / Creche",
+        "floor": "2F",
+        "callout": "Bunk/Day Care",
+        "image": "assets/images/bomb-sites/parque/site-1.jpg",
+        "imageRoom": "Creche / Day Care",
+        "imageAlt": "Creche / Day Care. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "iniciacao-escritorio",
+        "name": "Iniciação / Escritório",
+        "floor": "2F",
+        "callout": "Initiation Room/Office",
+        "image": "assets/images/bomb-sites/parque/site-2.jpg",
+        "imageRoom": "Iniciação / Initiation",
+        "imageAlt": "Iniciação / Initiation. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "sala-do-trono-arsenal",
+        "name": "Sala do Trono / Arsenal",
+        "floor": "1F",
+        "callout": "Armory/Throne Room",
+        "image": "assets/images/bomb-sites/parque/site-3.jpg",
+        "imageRoom": "Sala do Trono / Throne",
+        "imageAlt": "Sala do Trono / Throne. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "laboratorio-deposito",
+        "name": "Laboratório / Depósito",
+        "floor": "1F",
+        "callout": "Lab/Storage",
+        "image": "assets/images/bomb-sites/parque/site-4.jpg",
+        "imageRoom": "Laboratório / Lab",
+        "imageAlt": "Laboratório / Lab. Captura do ambiente no jogo, de 2020."
+      }
+    ],
+    "imageSource": "https://www.r6trainer.com/callout-trainer/",
+    "imageCredit": "R6 Trainer — capturas de 2020"
+  }
+}

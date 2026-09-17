@@ -1,0 +1,130 @@
+{
+  "defense": {
+    "label": "Defesa",
+    "people": "defensores",
+    "width": 1702,
+    "height": 643,
+    "x": [
+      7,
+      7,
+      187
+    ],
+    "y": [
+      1,
+      220,
+      439
+    ],
+    "rows": [
+      [
+        "Noor",
+        "Denari",
+        "Skopós",
+        "Sentry",
+        "Tubarão",
+        "Fenrir",
+        "Solis",
+        "Azami",
+        "Thorn",
+        "Thunderbird",
+        "Aruni",
+        "Melusi",
+        "Oryx",
+        "Wamai"
+      ],
+      [
+        "Goyo",
+        "Warden",
+        "Mozzie",
+        "Kaid",
+        "Clash",
+        "Maestro",
+        "Alibi",
+        "Vigil",
+        "Ela",
+        "Lesion",
+        "Mira",
+        "Echo",
+        "Caveira",
+        "Valkyrie"
+      ],
+      [
+        "Frost",
+        "Mute",
+        "Smoke",
+        "Castle",
+        "Pulse",
+        "Doc",
+        "Rook",
+        "Jäger",
+        "Bandit",
+        "Tachanka",
+        "Kapkan"
+      ]
+    ],
+    "image": "assets/images/operators/defense.png"
+  },
+  "attack": {
+    "label": "Ataque",
+    "people": "atacantes",
+    "width": 1695,
+    "height": 661,
+    "x": [
+      4,
+      4,
+      184
+    ],
+    "y": [
+      4,
+      224,
+      443
+    ],
+    "rows": [
+      [
+        "Solid Snake",
+        "Rauora",
+        "Striker",
+        "Deimos",
+        "Ram",
+        "Brava",
+        "Grim",
+        "Sens",
+        "Osa",
+        "Flores",
+        "Zero",
+        "Ace",
+        "Iana",
+        "Kali"
+      ],
+      [
+        "Amaru",
+        "Nøkk",
+        "Gridlock",
+        "Nomad",
+        "Maverick",
+        "Lion",
+        "Finka",
+        "Dokkaebi",
+        "Zofia",
+        "Ying",
+        "Jackal",
+        "Hibana",
+        "Capitão",
+        "Blackbeard"
+      ],
+      [
+        "Buck",
+        "Sledge",
+        "Thatcher",
+        "Ash",
+        "Thermite",
+        "Montagne",
+        "Twitch",
+        "Blitz",
+        "IQ",
+        "Fuze",
+        "Glaz"
+      ]
+    ],
+    "image": "assets/images/operators/attack.png"
+  }
+}

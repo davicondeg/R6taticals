@@ -1,0 +1,89 @@
+.operator-grid { --card-width: 110px; display: grid; grid-template-columns: repeat(auto-fill, var(--card-width)); gap: 16px 12px; }
+.operator-grid { margin-top: 28px; }
+.operator-card { position: relative; display: flex; flex-direction: column; padding: 0; border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--surface); color: var(--text); cursor: pointer; transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease; }
+.operator-portrait { display: block; width: 100%; aspect-ratio: 110 / 184; background-image: var(--portrait-sheet); background-size: var(--portrait-size); background-position: var(--portrait-x) var(--portrait-y); background-repeat: no-repeat; border-radius: 3px 3px 0 0; }
+.operator-name { display: grid; place-items: center; min-height: 42px; padding: 8px 2px; font-size: .67rem; font-weight: 800; text-transform: uppercase; letter-spacing: .015em; border-top: 2px solid transparent; }
+.operator-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+.operator-card[aria-pressed="true"] { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent), 0 8px 24px #0006; }
+.operator-card[aria-pressed="true"] .operator-name { background: var(--accent); color: var(--background); }
+.operator-card[aria-pressed="true"]::after { content: "✓"; position: absolute; top: 8px; right: 8px; display: grid; place-items: center; width: 23px; height: 23px; background: var(--accent); color: var(--background); border-radius: 50%; font-weight: 900; }
+.operator-card:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+@media (max-width: 400px) { .operator-grid { justify-content: center; } }
+.operator-card[aria-disabled="true"] { opacity: .48; }
+.operator-card[aria-disabled="true"]:hover { transform: none; }
+.operators-toolbar { display: flex; align-items: end; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 28px; }
+.operators-toolbar label { display: grid; gap: 8px; font-size: .8rem; color: var(--muted); }
+.operators-toolbar input { min-height: 44px; padding: 10px 14px; color: var(--text); background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius); }
+.operators-toolbar p { color: var(--accent); font-size: .8rem; }
+.operators-site { color: var(--muted); margin-top: 24px; }
+.lineup-summary { margin-top: 24px; padding: 24px; border: 1px solid var(--accent); background: #d7ff3509; }
+.lineup-summary strong { color: var(--accent); text-transform: uppercase; font-size: .8rem; letter-spacing: .1em; }
+.lineup-summary p { margin-bottom: 0; line-height: 1.6; }
+.site-overview { position: relative; height: 150px; overflow: hidden; margin-top: 32px; border: 1px solid var(--line); border-radius: var(--radius); }
+.site-overview img { width: 100%; height: 100%; object-fit: cover; opacity: .55; }
+.site-overview span { position: absolute; bottom: 16px; left: 20px; background: var(--background); padding: 8px 12px; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; }
+.site-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 24px; }
+.site-card { position: relative; display: flex; flex-direction: column; align-items: start; min-height: 230px; padding: 24px; border: 1px solid var(--line-strong); background: linear-gradient(135deg, #d7ff3507, transparent 60%), var(--surface); color: var(--text); text-align: left; border-radius: var(--radius); cursor: pointer; transition: border-color 160ms ease, transform 160ms ease; }
+.site-card:hover, .site-card[aria-pressed="true"] { border-color: var(--accent); transform: translateY(-3px); }
+.site-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.site-card__floor { color: var(--accent); font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; padding-right: 72px; }
+.site-card__badge { position: absolute; right: 24px; top: 20px; padding: 7px 10px; border: 1px solid var(--line-strong); color: var(--muted); font: .8rem ui-monospace, monospace; }
+.site-card strong { margin-top: 24px; max-width: 95%; font-family: var(--font-display); font-size: clamp(1.25rem, 2.4vw, 1.75rem); font-weight: 850; letter-spacing: -.03em; }
+.site-card__callout { margin-block: 10px 24px; color: var(--muted); font-size: .8rem; }
+.site-card__action { margin-top: auto; border-top: 1px solid var(--line); padding-top: 15px; width: 100%; font-size: .65rem; text-transform: uppercase; letter-spacing: .1em; }
+.site-card__media { display: block; position: relative; width: calc(100% + 48px); margin: -24px -24px 22px; overflow: hidden; border-radius: 3px 3px 0 0; background: #08090b; }
+.site-card__media img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; transition: transform 200ms ease; }
+.site-card:hover .site-card__media img { transform: scale(1.025); }
+.site-card__scene { position: absolute; bottom: 12px; left: 16px; padding: 7px 10px; background: #090a0ce6; color: var(--text); font-size: .7rem; font-weight: 750; border-left: 2px solid var(--accent); }
+.site-card--pictured .site-card__badge { background: #090a0ce6; color: var(--text); z-index: 1; }
+.site-image-credit { display: inline-block; margin-top: 18px; color: var(--muted); font-size: .7rem; text-decoration: underline; text-underline-offset: 3px; }
+.site-image-credit:hover { color: var(--text); }
+.site-image-credit a + a { margin-left: 18px; }
+@media (max-width: 640px) { .site-options { grid-template-columns: 1fr; } .site-overview { height: 120px; } }
+
+.tactics-site { margin-top: 28px; color: var(--muted); font: 700 .7rem ui-monospace, "Cascadia Code", monospace; letter-spacing: .1em; text-transform: uppercase; }
+.tactics-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 24px; }
+.tactic-card { position: relative; display: flex; min-height: 250px; padding: 28px; flex-direction: column; align-items: flex-start; border: 1px solid var(--line-strong); border-radius: var(--radius); background: linear-gradient(145deg, rgba(215,255,53,.07), transparent 58%), var(--surface); color: var(--text); text-align: left; cursor: pointer; transition: border-color 160ms ease, transform 160ms ease; }
+.tactic-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+.tactic-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.tactic-card__number { color: var(--accent); font: 800 .68rem ui-monospace, "Cascadia Code", monospace; letter-spacing: .12em; }
+.tactic-card strong { margin-top: 32px; font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; letter-spacing: -.05em; line-height: .95; text-transform: uppercase; }
+.tactic-card__meta { margin-top: 12px; color: var(--muted); font-size: .78rem; }
+.tactic-card__action { display: flex; width: 100%; margin-top: auto; padding-top: 18px; border-top: 1px solid var(--line); justify-content: space-between; color: var(--text); font-size: .66rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.tactic-card__action span { color: var(--accent); font-size: 1rem; }
+.tactics-empty, .tactic-draft { margin-top: 24px; padding: 34px; border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--surface); }
+.tactics-empty strong, .tactic-draft strong { display: block; margin-top: 8px; font-family: var(--font-display); font-size: 1.7rem; text-transform: uppercase; }
+.tactics-empty p, .tactic-draft p { margin: 10px 0 0; color: var(--muted); line-height: 1.6; }
+.tactic-draft > span { color: var(--accent); font: 800 .65rem ui-monospace, "Cascadia Code", monospace; letter-spacing: .12em; text-transform: uppercase; }
+.tactic-lineup-heading { display: flex; gap: 28px; margin-top: 34px; align-items: end; justify-content: space-between; }
+.tactic-lineup-heading div { display: flex; flex-direction: column; }
+.tactic-lineup-heading span { color: var(--accent); font: 800 .65rem ui-monospace, "Cascadia Code", monospace; letter-spacing: .12em; text-transform: uppercase; }
+.tactic-lineup-heading strong { margin-top: 6px; font-family: var(--font-display); font-size: 1.75rem; text-transform: uppercase; }
+.tactic-lineup-heading p { max-width: 430px; margin: 0; color: var(--muted); font-size: .78rem; line-height: 1.5; text-align: right; }
+.tactic-ban-controls { display: flex; gap: 10px; margin-top: 22px; align-items: center; flex-wrap: wrap; }
+.tactic-ban-controls button { min-height: 40px; padding: 0 15px; border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--surface); color: var(--text); font-size: .64rem; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; cursor: pointer; }
+.tactic-ban-controls button:hover, .tactic-ban-controls button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+.tactic-ban-controls button:disabled { opacity: .45; cursor: default; }
+.tactic-ban-controls button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.tactic-ban-controls p { margin: 0 0 0 6px; color: var(--muted); font: 700 .6rem ui-monospace, "Cascadia Code", monospace; letter-spacing: .06em; text-transform: uppercase; }
+.tactic-ban-banner { display: flex; gap: 12px; margin-top: 18px; padding: 14px 16px; align-items: center; border-left: 3px solid #ff5757; background: rgba(255,87,87,.08); }
+.tactic-ban-banner span { color: #ff8585; font-size: .7rem; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; }
+.tactic-ban-banner strong { color: var(--text); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; }
+.tactic-operator-grid { --tactic-card-width: 110px; display: flex; gap: 12px; margin-top: 20px; overflow-x: auto; padding-bottom: 8px; }
+.tactic-operator { position: relative; flex: 0 0 var(--tactic-card-width); min-width: 0; padding: 0; overflow: hidden; border: 1px solid var(--line-strong); border-radius: var(--radius); background: linear-gradient(155deg, rgba(215,255,53,.1), transparent 48%), #111418; color: var(--text); text-align: left; }
+.tactic-operator[data-ban-enabled="true"] { cursor: pointer; }
+.tactic-operator[data-ban-enabled="true"]:hover { border-color: #ff5757; transform: translateY(-2px); }
+.tactic-operator[data-ban-enabled="true"]:focus-visible { outline: 2px solid #ff5757; outline-offset: 3px; }
+.tactic-operator.is-replacement { border-color: var(--accent); box-shadow: inset 0 0 0 1px rgba(215,255,53,.18); }
+.tactic-operator__visual { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); background: radial-gradient(circle at 50% 42%, rgba(215,255,53,.14), transparent 42%), #0b0d10; }
+.tactic-operator__visual .operator-portrait { width: 110px; height: 184px; aspect-ratio: auto; border-radius: 0; }
+.tactic-operator__slot { position: absolute; top: 7px; left: 7px; padding: 4px 5px; background: rgba(9,10,12,.82); color: var(--accent); font: 800 .48rem ui-monospace, "Cascadia Code", monospace; letter-spacing: .08em; }
+.tactic-operator__body { padding: 10px 8px; }
+.tactic-operator__body strong { display: block; overflow: hidden; font-family: var(--font-display); font-size: .92rem; letter-spacing: -.02em; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
+.tactic-operator__body span { display: block; margin-top: 6px; color: var(--muted); font-size: .58rem; line-height: 1.35; }
+.tactic-overview { margin-top: 48px; padding-top: 34px; border-top: 1px solid var(--line-strong); }
+.tactic-overview__heading span { color: var(--accent); font: 800 .65rem ui-monospace, "Cascadia Code", monospace; letter-spacing: .12em; text-transform: uppercase; }
+.tactic-overview__heading h3 { margin: 7px 0 0; font-family: var(--font-display); font-size: clamp(1.6rem, 4vw, 2.4rem); text-transform: uppercase; }
+.tactic-overview__heading p { margin: 9px 0 0; color: var(--muted); line-height: 1.6; }
+.tactic-overview img { display: block; width: 100%; height: auto; margin-top: 22px; border: 1px solid var(--line-strong); border-radius: var(--radius); background: #edf2f5; }
+@media (max-width: 640px) { .tactics-list { grid-template-columns: 1fr; } .tactic-card { min-height: 220px; } .tactic-lineup-heading { display: block; } .tactic-lineup-heading p { margin-top: 10px; text-align: left; } }

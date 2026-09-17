@@ -1,0 +1,80 @@
+[
+  {
+    "id": "tisk-eu",
+    "name": "tisk",
+    "mapId": "clubhouse",
+    "side": "defense",
+    "groupSize": 4,
+    "bombSiteIds": ["sala-vigilancia-sala-cofre"],
+    "status": "draft",
+    "operators": [
+      { "name": "Castle", "assignment": "Função a definir" },
+      { "name": "Azami", "assignment": "Função a definir" },
+      { "name": "Kaid", "assignment": "Função a definir" },
+      { "name": "Tubarão", "assignment": "Função a definir" }
+    ],
+    "banReplacements": {
+      "Castle": "Thorn",
+      "Kaid": "Bandit",
+      "Bandit": "Mute"
+    }
+  },
+  {
+    "id": "quarto-academia",
+    "name": "Quarto / Academia",
+    "mapId": "clubhouse",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["academia-quarto"],
+    "status": "draft",
+    "overviewImage": "assets/images/tactics/clubhouse/quarto-academia-overview.png",
+    "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no andar de Academia e Quarto do Clubhouse.",
+    "overviewVariants": [
+      {
+        "operators": ["Castle", "Thorn", "Kaid", "Melusi", "Mira"],
+        "image": "assets/images/tactics/clubhouse/quarto-academia-kaid-overview.png",
+        "alt": "Visão geral da distribuição com Kaid substituindo Bandit no andar de Academia e Quarto do Clubhouse."
+      },
+      {
+        "operators": ["Castle", "Fenrir", "Bandit", "Melusi", "Mira"],
+        "image": "assets/images/tactics/clubhouse/quarto-academia-fenrir-overview.png",
+        "alt": "Visão geral da distribuição com Fenrir substituindo Thorn no andar de Academia e Quarto do Clubhouse."
+      },
+      {
+        "operators": ["Castle", "Fenrir", "Kaid", "Melusi", "Mira"],
+        "image": "assets/images/tactics/clubhouse/quarto-academia-kaid-fenrir-overview.png",
+        "alt": "Visão geral da distribuição com Fenrir e Kaid substituindo Thorn e Bandit no andar de Academia e Quarto do Clubhouse."
+      }
+    ],
+    "operators": [
+      { "name": "Castle", "assignment": "Função a definir" },
+      { "name": "Thorn", "assignment": "Função a definir" },
+      { "name": "Bandit", "assignment": "Função a definir" },
+      { "name": "Melusi", "assignment": "Função a definir" },
+      { "name": "Mira", "assignment": "Função a definir" }
+    ],
+    "banReplacements": {
+      "Bandit": "Kaid",
+      "Thorn": "Fenrir"
+    }
+  },
+  {
+    "id": "consulado-garagem-cafeteria",
+    "name": "Garagem / Cafeteria",
+    "mapId": "consulado",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["garagem-cafeteria"],
+    "status": "draft",
+    "overviewImage": "assets/images/tactics/consulado/garagem-cafeteria-overview.png",
+    "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Garagem e Cafeteria do Consulado.",
+    "operators": [
+      { "name": "Kaid", "assignment": "Função a definir" },
+      { "name": "Tubarão", "assignment": "Função a definir" },
+      { "name": "Melusi", "assignment": "Função a definir" },
+      { "name": "Vigil", "assignment": "Função a definir" },
+      { "name": "Thorn", "assignment": "Função a definir" }
+    ],
+    "banReplacements": {}
+  }
+]

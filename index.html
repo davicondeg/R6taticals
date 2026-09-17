@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="R6 Hub: escolha um mapa e encontre um plano tático direto para a sua próxima partida."
+    />
+    <meta name="theme-color" content="#090a0c" />
+    <title>R6 Hub — Mapas</title>
+    <link rel="stylesheet" href="./assets/css/styles.css?v=selection-21" />
+    <link rel="stylesheet" href="./assets/css/operators.css?v=selection-23" />
+    <script src="./assets/js/app.js?v=selection-26" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#mapas">Ir para os mapas</a>
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="./" aria-label="R6 Hub, página inicial">
+          <span class="brand__mark" aria-hidden="true">R6</span>
+          <span class="brand__name">
+            <strong>R6</strong>
+            <span>HUB</span>
+          </span>
+        </a>
+
+        <div class="site-header__meta" aria-label="Contexto atual">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span>Guias para Ranked</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero__grid" aria-hidden="true"></div>
+        <div class="container hero__inner">
+          <div class="hero__copy">
+            <p class="eyebrow">
+              <span class="eyebrow__line" aria-hidden="true"></span>
+              Playbook tático
+            </p>
+            <h1 id="hero-title">
+              <span class="hero__title-solid">Escolha o<br />mapa.</span>
+              <span class="hero__title-outline">Entre com<br />um plano.</span>
+            </h1>
+            <p class="hero__description">
+              Estratégias visuais e objetivas para ajudar seu squad a decidir a composição,
+              preparar o bomb e executar cada rodada.
+            </p>
+            <a class="hero__action" href="#mapas">
+              Explorar mapas
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M10 3v13M5 11l5 5 5-5" />
+              </svg>
+            </a>
+          </div>
+
+          <aside class="hero__panel" aria-label="Visão geral do produto">
+            <div class="hero__panel-top">
+              <span>ROTAÇÃO / RANKED</span>
+              <span class="hero__panel-code">R6H-01</span>
+            </div>
+            <div class="hero__panel-main">
+              <strong id="hero-map-total">—</strong>
+              <span>mapas para explorar</span>
+            </div>
+            <div class="hero__flow" aria-label="Fluxo da experiência">
+              <span>Mapa</span>
+              <svg viewBox="0 0 18 18" aria-hidden="true"><path d="m6 3 6 6-6 6" /></svg>
+              <span>Lado</span>
+              <svg viewBox="0 0 18 18" aria-hidden="true"><path d="m6 3 6 6-6 6" /></svg>
+              <span>Estratégia</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="maps-section" id="mapas" aria-labelledby="maps-title">
+        <div class="container">
+          <div class="maps-heading">
+            <div>
+              <p class="section-index">01 / MAPAS</p>
+              <h2 id="maps-title">Escolha seu campo<br />de batalha</h2>
+              <p class="maps-heading__description">
+                Selecione um mapa para iniciar seu plano de jogo.
+              </p>
+            </div>
+
+            <div class="search-field">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="6.5" />
+                <path d="m16 16 4 4" />
+              </svg>
+              <label class="sr-only" for="map-search">Buscar mapa</label>
+              <input
+                id="map-search"
+                type="search"
+                placeholder="Buscar mapa"
+                autocomplete="off"
+                spellcheck="false"
+              />
+              <kbd aria-hidden="true">/</kbd>
+            </div>
+          </div>
+
+          <div class="maps-toolbar">
+            <p id="maps-status" role="status" aria-live="polite">Carregando mapas…</p>
+            <span>Atualizado para a rotação atual</span>
+          </div>
+
+          <div class="maps-grid" id="maps-grid" aria-busy="true">
+            <div class="map-card map-card--skeleton" aria-hidden="true"></div>
+            <div class="map-card map-card--skeleton" aria-hidden="true"></div>
+            <div class="map-card map-card--skeleton" aria-hidden="true"></div>
+            <div class="map-card map-card--skeleton" aria-hidden="true"></div>
+            <div class="map-card map-card--skeleton" aria-hidden="true"></div>
+            <div class="map-card map-card--skeleton" aria-hidden="true"></div>
+          </div>
+
+          <div class="empty-state" id="empty-state" hidden>
+            <span class="empty-state__icon" aria-hidden="true">—</span>
+            <h3>Nenhum mapa encontrado</h3>
+            <p>Tente buscar por outro nome.</p>
+            <button id="clear-search" type="button">Limpar busca</button>
+          </div>
+
+          <noscript>
+            <p class="error-message">Ative o JavaScript para visualizar os mapas.</p>
+          </noscript>
+        </div>
+      </section>
+
+      <section class="side-section" id="lado" aria-labelledby="side-title" hidden>
+        <div class="side-section__grid" aria-hidden="true"></div>
+        <div class="container side-selection">
+          <button class="side-selection__back" id="back-to-maps" type="button">
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M16 10H4m5-5-5 5 5 5" />
+            </svg>
+            Trocar mapa
+          </button>
+
+          <div class="side-selection__heading">
+            <div>
+              <p class="section-index">02 / LADO</p>
+              <h2 id="side-title">Escolha seu lado</h2>
+              <p>Defina como seu squad começará a rodada para abrir o plano correto.</p>
+            </div>
+
+            <div class="side-selection__map" aria-label="Mapa selecionado">
+              <span>Mapa selecionado</span>
+              <strong id="side-map-name">—</strong>
+              <span id="side-map-code">R6H / MAPA —</span>
+            </div>
+          </div>
+
+          <div class="side-options" role="group" aria-labelledby="side-title">
+            <button class="side-option side-option--attack" type="button" data-side="attack" aria-pressed="false">
+              <span class="side-option__number" aria-hidden="true">01</span>
+              <span class="side-option__icon" aria-hidden="true">
+                <svg viewBox="0 0 120 120">
+                  <path d="m25 18 13 3 46 46-17 17-46-46-3-13 7-7Z" />
+                  <path d="m74 77 18 18m-9-9 10-10m-17 17 10-10" />
+                  <path d="m95 18-13 3-46 46 17 17 46-46 3-13-7-7Z" />
+                  <path d="M46 77 28 95m9-9L27 76m17 17L34 83" />
+                </svg>
+              </span>
+              <span class="side-option__content">
+                <small>Pressione o ataque</small>
+                <strong>Ataque</strong>
+                <span>Entrada, controle de mapa e execução do plant.</span>
+              </span>
+              <span class="side-option__action">
+                Selecionar ataque
+                <svg viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M4 10h12m-5-5 5 5-5 5" />
+                </svg>
+              </span>
+            </button>
+
+            <button class="side-option side-option--defense" type="button" data-side="defense" aria-pressed="false">
+              <span class="side-option__number" aria-hidden="true">02</span>
+              <span class="side-option__icon" aria-hidden="true">
+                <svg viewBox="0 0 120 120">
+                  <path d="M30 20v26l12 8-8 48h52l-8-48 12-8V20H75v17H67V20H53v17h-8V20H30Z" />
+                  <path d="M42 54h36M34 102h52" />
+                </svg>
+              </span>
+              <span class="side-option__content">
+                <small>Proteja o objetivo</small>
+                <strong>Defesa</strong>
+                <span>Preparação do bomb, posições e contenção do avanço.</span>
+              </span>
+              <span class="side-option__action">
+                Selecionar defesa
+                <svg viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M4 10h12m-5-5 5 5-5 5" />
+                </svg>
+              </span>
+            </button>
+          </div>
+
+          <p class="side-selection__status" id="side-selection-status" role="status" aria-live="polite">
+            Escolha ataque ou defesa para continuar.
+          </p>
+        </div>
+      </section>
+
+      <section class="side-section" id="grupo" aria-labelledby="group-title" hidden>
+        <div class="side-section__grid" aria-hidden="true"></div>
+        <div class="container side-selection">
+          <button class="side-selection__back" id="group-back-to-sides" type="button">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H4m5-5-5 5 5 5" /></svg>
+            Trocar lado
+          </button>
+          <div class="side-selection__heading">
+            <div>
+              <p class="section-index">03 / GRUPO</p>
+              <h2 id="group-title" tabindex="-1">Quantos vão jogar?</h2>
+              <p>Escolha o tamanho do seu grupo para montar o plano da rodada.</p>
+            </div>
+            <div class="side-selection__map" aria-label="Mapa e lado selecionados">
+              <span>Seu plano</span>
+              <strong id="group-map-name">—</strong>
+              <span id="group-side-name">—</span>
+            </div>
+          </div>
+          <div class="group-options" id="group-options" role="group" aria-labelledby="group-title"></div>
+          <p class="side-selection__status" id="group-selection-status" role="status" aria-live="polite">Escolha uma das cinco opções para continuar.</p>
+        </div>
+      </section>
+
+      <section class="side-section" id="bomb-site" aria-labelledby="bomb-site-title" hidden>
+        <div class="side-section__grid" aria-hidden="true"></div>
+        <div class="container side-selection">
+          <button class="side-selection__back" id="back-to-sides" type="button">← Trocar grupo</button>
+          <div class="side-selection__heading">
+            <div><p class="section-index">04 / BOMB SITE</p><h2 id="bomb-site-title" tabindex="-1">Escolha o bomb site</h2><p>Defina onde seu grupo vai jogar esta rodada.</p></div>
+            <div class="side-selection__map"><span>Seu plano</span><strong id="bomb-map-name">—</strong><span id="bomb-side-context">—</span></div>
+          </div>
+          <div class="site-overview"><img id="site-map-image" alt="" /><span>Objetivo / Bomba</span></div>
+          <div class="site-options" id="bomb-site-list" role="group" aria-labelledby="bomb-site-title"></div>
+          <div class="site-image-credit" id="site-image-credit" aria-label="Fontes das imagens" hidden></div>
+          <p class="side-selection__status" id="bomb-selection-status" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+      <section class="side-section" id="taticas" aria-labelledby="tactics-title" hidden>
+        <div class="side-section__grid" aria-hidden="true"></div>
+        <div class="container side-selection">
+          <button class="side-selection__back" id="back-to-bomb-sites" type="button">← Trocar bomb site</button>
+          <div class="side-selection__heading">
+            <div>
+              <p class="section-index">05 / TÁTICAS</p>
+              <h2 id="tactics-title" tabindex="-1">Escolha uma tática</h2>
+              <p>Veja os planos disponíveis para o contexto selecionado.</p>
+            </div>
+            <div class="side-selection__map" aria-label="Contexto da tática">
+              <span>Seu plano</span>
+              <strong id="tactics-map-name">—</strong>
+              <span id="tactics-context">—</span>
+            </div>
+          </div>
+          <p class="tactics-site" id="tactics-site"></p>
+          <div class="tactics-list" id="tactics-list" aria-labelledby="tactics-title"></div>
+          <div class="tactics-empty" id="tactics-empty" hidden>
+            <strong>Nenhuma tática cadastrada</strong>
+            <p>Ainda não há um plano disponível para esta combinação.</p>
+          </div>
+          <p class="side-selection__status" id="tactics-status" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+      <section class="side-section" id="detalhe-tatica" aria-labelledby="tactic-detail-title" hidden>
+        <div class="side-section__grid" aria-hidden="true"></div>
+        <div class="container side-selection">
+          <button class="side-selection__back" id="back-to-tactics" type="button">← Ver outras táticas</button>
+          <div class="side-selection__heading">
+            <div>
+              <p class="section-index">06 / PLANO TÁTICO</p>
+              <h2 id="tactic-detail-title" tabindex="-1">—</h2>
+              <p id="tactic-detail-description">Confira a composição escolhida para executar este plano.</p>
+            </div>
+            <div class="side-selection__map" aria-label="Contexto do plano">
+              <span>Contexto</span>
+              <strong id="tactic-detail-map">—</strong>
+              <span id="tactic-detail-context">—</span>
+            </div>
+          </div>
+          <p class="tactics-site" id="tactic-detail-site"></p>
+          <div class="tactic-lineup-heading">
+            <div>
+              <span>Composição</span>
+              <strong id="tactic-operator-count">—</strong>
+            </div>
+            <p>As funções serão detalhadas individualmente nas próximas etapas.</p>
+          </div>
+          <div class="tactic-ban-controls">
+            <button id="tactic-ban-toggle" type="button">Banir operador</button>
+            <button id="tactic-ban-clear" type="button" hidden>Limpar banimentos</button>
+            <p id="tactic-ban-status" role="status" aria-live="polite">Escolha Banir operador para ajustar a composição.</p>
+          </div>
+          <div class="tactic-ban-banner" id="tactic-ban-banner" hidden>
+            <span id="tactic-banned-name">—</span>
+            <strong id="tactic-replacement-name">—</strong>
+          </div>
+          <div class="tactic-operator-grid" id="tactic-operator-grid" aria-label="Operadores da tática"></div>
+          <section class="tactic-overview" id="tactic-overview" aria-labelledby="tactic-overview-title" hidden>
+            <div class="tactic-overview__heading">
+              <span>Visão geral</span>
+              <h3 id="tactic-overview-title">Posicionamento da tática</h3>
+              <p>Distribuição dos operadores e equipamentos pelo bomb site.</p>
+            </div>
+            <img id="tactic-overview-image" alt="" />
+          </section>
+          <div class="tactic-draft">
+            <span>Rascunho</span>
+            <strong>Funções em construção</strong>
+            <p>A composição está definida. O próximo passo é cadastrar o que cada operador fará.</p>
+          </div>
+        </div>
+      </section>
+      <section class="side-section" id="operadores" aria-labelledby="operators-title" hidden>
+        <div class="side-section__grid" aria-hidden="true"></div>
+        <div class="container side-selection">
+          <button class="side-selection__back" id="back-to-bombs" type="button">← Trocar bomb site</button>
+          <div class="side-selection__heading">
+            <div><p class="section-index">07 / OPERADORES</p><h2 id="operators-title" tabindex="-1">Monte seu grupo</h2><p id="operators-description"></p></div>
+            <div class="side-selection__map"><span>Seu plano</span><strong id="operators-map-name">—</strong><span id="operators-context">—</span></div>
+          </div>
+          <p class="operators-site" id="operators-site"></p>
+          <div class="operators-toolbar">
+            <label for="operator-search">Buscar operador<input id="operator-search" type="search" placeholder="Nome do operador" autocomplete="off" /></label>
+            <p id="operators-count" aria-live="polite"></p>
+          </div>
+          <div class="operator-grid" id="operator-grid" role="group" aria-labelledby="operators-title"></div>
+          <p id="operators-empty" hidden>Nenhum operador encontrado.</p>
+          <p class="side-selection__status" id="operators-status" role="status" aria-live="polite"></p>
+          <div class="lineup-summary" id="lineup-summary" hidden><strong>Grupo definido</strong><p id="lineup-names"></p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <a class="brand brand--footer" href="./" aria-label="R6 Hub, página inicial">
+          <span class="brand__mark" aria-hidden="true">R6</span>
+          <span class="brand__name"><strong>R6</strong><span>HUB</span></span>
+        </a>
+        <p>Planeje rápido. Jogue coordenado.</p>
+      </div>
+    </footer>
+  </body>
+</html>

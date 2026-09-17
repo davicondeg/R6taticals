@@ -1,0 +1,86 @@
+[
+  {
+    "id": "banco",
+    "name": "Banco",
+    "mode": "Ranked",
+    "image": "assets/images/maps/bank.avif",
+    "order": 1
+  },
+  {
+    "id": "cafe",
+    "name": "Café Dostoyevsky",
+    "mode": "Ranked",
+    "image": "assets/images/maps/cafe.avif",
+    "order": 2
+  },
+  {
+    "id": "cassino-calypso",
+    "name": "Cassino Calypso",
+    "mode": "Ranked",
+    "image": "assets/images/maps/cassino-calypso.avif",
+    "order": 3
+  },
+  {
+    "id": "chale",
+    "name": "Chalé",
+    "mode": "Ranked",
+    "image": "assets/images/maps/chale.avif",
+    "order": 4
+  },
+  {
+    "id": "clubhouse",
+    "name": "Clubhouse",
+    "mode": "Ranked",
+    "image": "assets/images/maps/clubhouse.avif",
+    "order": 5
+  },
+  {
+    "id": "consulado",
+    "name": "Consulado",
+    "mode": "Ranked",
+    "image": "assets/images/maps/consulado.avif",
+    "order": 6
+  },
+  {
+    "id": "fronteira",
+    "name": "Fronteira",
+    "mode": "Ranked",
+    "image": "assets/images/maps/fronteira.avif",
+    "order": 7
+  },
+  {
+    "id": "kanal",
+    "name": "Kanal",
+    "mode": "Ranked",
+    "image": "assets/images/maps/kanal.avif",
+    "order": 8
+  },
+  {
+    "id": "laboratorio",
+    "name": "Laboratórios Nighthaven",
+    "mode": "Ranked",
+    "image": "assets/images/maps/laboratorio.avif",
+    "order": 9
+  },
+  {
+    "id": "mansao",
+    "name": "Mansão",
+    "mode": "Ranked",
+    "image": "assets/images/maps/mansao.avif",
+    "order": 10
+  },
+  {
+    "id": "oregon",
+    "name": "Oregon",
+    "mode": "Ranked",
+    "image": "assets/images/maps/oregon.avif",
+    "order": 11
+  },
+  {
+    "id": "parque",
+    "name": "Parque Temático",
+    "mode": "Ranked",
+    "image": "assets/images/maps/parque.avif",
+    "order": 12
+  }
+]
