@@ -76,5 +76,24 @@
       { "name": "Thorn", "assignment": "Função a definir" }
     ],
     "banReplacements": {}
+  },
+  {
+    "id": "mansao-aviacao-jogos",
+    "name": "Aviação / Jogos",
+    "mapId": "mansao",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["sala-de-aviacao-sala-de-jogos"],
+    "status": "draft",
+    "overviewImage": "assets/images/tactics/mansao/aviacao-jogos-overview.png",
+    "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Sala de Aviação e Sala de Jogos da Mansão.",
+    "operators": [
+      { "name": "Mira", "assignment": "Função a definir" },
+      { "name": "Bandit", "assignment": "Função a definir" },
+      { "name": "Azami", "assignment": "Função a definir" },
+      { "name": "Maestro", "assignment": "Função a definir" },
+      { "name": "Thorn", "assignment": "Função a definir" }
+    ],
+    "banReplacements": {}
   }
 ]
