@@ -214,7 +214,8 @@
     "overviewAlt": "Planta do subsolo do Chalé com a distribuição dos operadores e equipamentos da defesa de Adega e Garagem de Snowmobile.",
     "operatorVideos": {
       "Azami": "assets/videos/tactics/chale/azami-adega-garagem.mp4",
-      "Maestro": "assets/videos/tactics/chale/maestro-adega-garagem.mp4"
+      "Maestro": "assets/videos/tactics/chale/maestro-adega-garagem.mp4",
+      "Denari": "assets/videos/tactics/chale/denari-adega-garagem.mp4"
     },
     "operators": [
       { "name": "Kaid", "assignment": "Função a definir" },
@@ -223,7 +224,7 @@
       { "name": "Azami", "assignment": "Função a definir" },
       { "name": "Maestro", "assignment": "Função a definir" }
     ],
-    "recommendedBans": ["Fuze"],
+    "recommendedBans": ["Fuze", "Brava"],
     "banReplacements": {
       "Kaid": "Bandit"
     }
@@ -239,6 +240,9 @@
     "description": "Azami defende a Biblioteca. Clash dificulta a entrada pela porta da Varanda. Maestro posiciona os Evil Eyes e fica de olho nas câmeras. Thorn distribui seus dispositivos pela Biblioteca, pelo Banheiro e pela Escada Animal, jogando de dentro do bombsite. Denari prepara o setup e alterna entre jogar no meio do bombsite e apoiar Azami.",
     "overviewImage": "assets/images/tactics/chale/quarto-principal-escritorio-overview.png",
     "overviewAlt": "Planta do segundo andar do Chalé com a distribuição dos operadores e equipamentos da defesa de Quarto Principal e Escritório.",
+    "operatorVideos": {
+      "Denari": "assets/videos/tactics/chale/denari-quarto-escritorio.mp4"
+    },
     "operators": [
       { "name": "Denari", "assignment": "Função a definir" },
       { "name": "Maestro", "assignment": "Função a definir" },

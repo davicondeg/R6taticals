@@ -9,9 +9,9 @@
     />
     <meta name="theme-color" content="#090a0c" />
     <title>R6 Hub — Mapas</title>
-    <link rel="stylesheet" href="./assets/css/styles.css?v=selection-21" />
+    <link rel="stylesheet" href="./assets/css/styles.css?v=selection-22" />
     <link rel="stylesheet" href="./assets/css/operators.css?v=selection-26" />
-    <script src="./assets/js/app.js?v=selection-34" defer></script>
+    <script src="./assets/js/app.js?v=selection-35" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#mapas">Ir para os mapas</a>
@@ -209,36 +209,12 @@
         </div>
       </section>
 
-      <section class="side-section" id="grupo" aria-labelledby="group-title" hidden>
-        <div class="side-section__grid" aria-hidden="true"></div>
-        <div class="container side-selection">
-          <button class="side-selection__back" id="group-back-to-sides" type="button">
-            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H4m5-5-5 5 5 5" /></svg>
-            Trocar lado
-          </button>
-          <div class="side-selection__heading">
-            <div>
-              <p class="section-index">03 / GRUPO</p>
-              <h2 id="group-title" tabindex="-1">Quantos vão jogar?</h2>
-              <p>Escolha o tamanho do seu grupo para montar o plano da rodada.</p>
-            </div>
-            <div class="side-selection__map" aria-label="Mapa e lado selecionados">
-              <span>Seu plano</span>
-              <strong id="group-map-name">—</strong>
-              <span id="group-side-name">—</span>
-            </div>
-          </div>
-          <div class="group-options" id="group-options" role="group" aria-labelledby="group-title"></div>
-          <p class="side-selection__status" id="group-selection-status" role="status" aria-live="polite">Escolha uma das cinco opções para continuar.</p>
-        </div>
-      </section>
-
       <section class="side-section" id="bomb-site" aria-labelledby="bomb-site-title" hidden>
         <div class="side-section__grid" aria-hidden="true"></div>
         <div class="container side-selection">
-          <button class="side-selection__back" id="back-to-sides" type="button">← Trocar grupo</button>
+          <button class="side-selection__back" id="back-to-sides" type="button">← Trocar lado</button>
           <div class="side-selection__heading">
-            <div><p class="section-index">04 / BOMB SITE</p><h2 id="bomb-site-title" tabindex="-1">Escolha o bomb site</h2><p>Defina onde seu grupo vai jogar esta rodada.</p></div>
+            <div><p class="section-index">03 / BOMB SITE</p><h2 id="bomb-site-title" tabindex="-1">Escolha o bomb site</h2><p>Defina onde seu squad vai jogar esta rodada.</p></div>
             <div class="side-selection__map"><span>Seu plano</span><strong id="bomb-map-name">—</strong><span id="bomb-side-context">—</span></div>
           </div>
           <div class="site-overview"><img id="site-map-image" alt="" /><span>Objetivo / Bomba</span></div>
@@ -253,7 +229,7 @@
           <button class="side-selection__back" id="back-to-bomb-sites" type="button">← Trocar bomb site</button>
           <div class="side-selection__heading">
             <div>
-              <p class="section-index">05 / TÁTICAS</p>
+              <p class="section-index">04 / TÁTICAS</p>
               <h2 id="tactics-title" tabindex="-1">Escolha uma tática</h2>
               <p>Veja os planos disponíveis para o contexto selecionado.</p>
             </div>
@@ -278,7 +254,7 @@
           <button class="side-selection__back" id="back-to-tactics" type="button">← Ver outras táticas</button>
           <div class="side-selection__heading">
             <div>
-              <p class="section-index">06 / PLANO TÁTICO</p>
+              <p class="section-index">05 / PLANO TÁTICO</p>
               <h2 id="tactic-detail-title" tabindex="-1">—</h2>
               <p id="tactic-detail-description">Confira a composição escolhida para executar este plano.</p>
             </div>
@@ -331,7 +307,7 @@
         <div class="container side-selection">
           <button class="side-selection__back" id="back-to-bombs" type="button">← Trocar bomb site</button>
           <div class="side-selection__heading">
-            <div><p class="section-index">07 / OPERADORES</p><h2 id="operators-title" tabindex="-1">Monte seu grupo</h2><p id="operators-description"></p></div>
+            <div><p class="section-index">05 / OPERADORES</p><h2 id="operators-title" tabindex="-1">Monte seu squad</h2><p id="operators-description"></p></div>
             <div class="side-selection__map"><span>Seu plano</span><strong id="operators-map-name">—</strong><span id="operators-context">—</span></div>
           </div>
           <p class="operators-site" id="operators-site"></p>

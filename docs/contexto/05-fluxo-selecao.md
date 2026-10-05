@@ -1,6 +1,6 @@
 # Fluxo de seleção
 
-Mapa → lado → tamanho do grupo → bomb site → táticas → detalhes da tática.
+Mapa → lado → bomb site → táticas → detalhes da tática. O grupo é sempre um squad completo de cinco jogadores.
 
 As táticas ficam em `data/tactics.json`. O primeiro cadastro, `Tisk Eu`, aparece para Clubhouse, Defesa e Quarteto. Enquanto o bombsite definitivo não for informado, `bombSiteIds: ["*"]` disponibiliza o plano para qualquer bombsite desse contexto. Sua composição inicial é Castle, Azami, Kaid e Tubarão; as funções individuais ainda serão cadastradas. Os cards do plano reutilizam os recortes da montagem de defesa definida em `data/operators.json` e esperam o arquivo `assets/images/operators/defense.png` nas dimensões originais de 1702 × 643 pixels. Cada retrato é exibido em 110 × 184 pixels, sem ampliação do print original.
 
@@ -10,7 +10,7 @@ Os bomb sites ficam em `data/bomb-sites.json`, com nome em português, callout e
 
 Os 78 operadores das montagens fornecidas pelo usuário ficam em `data/operators.json`. Os retratos usam recorte CSS das montagens originais; os nomes são texto HTML. Os arquivos esperados são `assets/images/operators/attack.png` e `assets/images/operators/defense.png`. Não ampliar nem recortar as montagens antes de salvá-las: os recortes dependem de suas proporções originais.
 
-A seleção permite um operador por jogador, sem repetições. Voltar do grupo de operadores ao bomb site preserva a seleção; escolher outro bomb site limpa os operadores. Trocar o lado ou o tamanho do grupo também limpa a composição. A experiência termina com um resumo do grupo, pois estratégias ainda não foram cadastradas.
+A seleção permite um operador por jogador, sem repetições. Voltar do grupo de operadores ao bomb site preserva a seleção; escolher outro bomb site ou trocar o lado limpa os operadores. O tamanho do grupo é fixo em cinco jogadores.
 
 ## Referências de cadastro dos bomb sites
 

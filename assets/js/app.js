@@ -5,7 +5,7 @@ const state = {
   selectedBombSiteId: null,
   selectedMapId: null,
   selectedSide: null,
-  selectedGroupSize: null,
+  selectedGroupSize: 5,
   selectedTacticId: null,
   bannedOperatorNames: [],
   banMode: false,
@@ -17,12 +17,6 @@ const state = {
 const elements = {
   backToMaps: document.querySelector("#back-to-maps"),
   backToSides: document.querySelector("#back-to-sides"),
-  groupBack: document.querySelector("#group-back-to-sides"),
-  groupSection: document.querySelector("#grupo"),
-  groupOptions: document.querySelector("#group-options"),
-  groupMap: document.querySelector("#group-map-name"),
-  groupSide: document.querySelector("#group-side-name"),
-  groupStatus: document.querySelector("#group-selection-status"),
   body: document.body,
   bombList: document.querySelector("#bomb-site-list"),
   bombSection: document.querySelector("#bomb-site"),
@@ -64,67 +58,7 @@ const sideLabels = {
 };
 
 const defaultDocumentTitle = document.title;
-const groupLabels = ["Solo", "Duo", "Trio", "Quarteto", "Squad full"];
-
-function renderGroupOptions() {
-  elements.groupOptions.replaceChildren(...groupLabels.map((label, index) => {
-    const size = index + 1;
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "group-option";
-    button.dataset.groupSize = size;
-    button.setAttribute("aria-pressed", String(state.selectedGroupSize === size));
-    button.classList.toggle("is-selected", state.selectedGroupSize === size);
-    button.innerHTML = `
-      <span class="group-option__count" aria-hidden="true">0${size}<span>/ 05</span></span>
-      <span class="group-option__players" aria-hidden="true">${Array.from({ length: 5 }, (_, slot) => `<svg class="${slot < size ? "is-active" : ""}" viewBox="0 0 24 32"><circle cx="12" cy="7" r="5"/><path d="M3 30V21a9 9 0 0 1 18 0v9Z"/></svg>`).join("")}</span>
-      <strong>${label}</strong>
-      <span class="group-option__description">${size === 1 ? "Você no comando do seu jogo." : size === 5 ? "Equipe completa. Todos conectados." : `Você e mais ${size - 1} ${size === 2 ? "amigo" : "amigos"}.`}</span>
-      <span class="group-option__action">${size} ${size === 1 ? "jogador" : "jogadores"}<span aria-hidden="true">↗</span></span>`;
-    button.addEventListener("click", () => selectGroup(size));
-    return button;
-  }));
-}
-
-function showGroupSelection() {
-  elements.operatorSection.hidden = true;
-  elements.tacticsSection.hidden = true;
-  elements.tacticDetailSection.hidden = true;
-  const map = state.maps.find((map) => map.id === state.selectedMapId);
-  elements.groupMap.textContent = map.name;
-  elements.groupSide.textContent = sideLabels[state.selectedSide];
-  elements.sideSection.hidden = true;
-  elements.bombSection.hidden = true;
-  elements.groupSection.hidden = false;
-  elements.body.classList.remove("is-bomb-view");
-  elements.groupStatus.textContent = "Escolha uma das cinco opções para continuar.";
-  renderGroupOptions();
-  elements.skipLink.href = "#grupo";
-  elements.skipLink.textContent = "Ir para a escolha do grupo";
-  document.title = `${map.name} — Escolha o grupo | R6 Hub`;
-  window.scrollTo({ top: 0, behavior: "smooth" });
-  (elements.groupOptions.querySelector('[aria-pressed="true"]') || elements.groupOptions.firstElementChild).focus({ preventScroll: true });
-}
-
-async function selectGroup(size) {
-  state.selectedOperators = [];
-  state.selectedGroupSize = size;
-  state.selectedBombSiteId = null;
-  renderGroupOptions();
-  elements.groupOptions.children[size - 1].focus({ preventScroll: true });
-  elements.groupStatus.textContent = `${groupLabels[size - 1]} selecionado. Carregando bomb sites…`;
-  const mapId = state.selectedMapId;
-  const side = state.selectedSide;
-  await bombSiteFlowsReady;
-  if (elements.groupSection.hidden || state.selectedGroupSize !== size || state.selectedMapId !== mapId || state.selectedSide !== side) return;
-  const map = state.maps.find((map) => map.id === mapId);
-  const flow = state.bombSiteFlows[mapId];
-  if (!flow) {
-    elements.groupStatus.textContent = `${groupLabels[size - 1]} selecionado. Os bomb sites de ${map.name} serão adicionados em uma próxima etapa.`;
-    return;
-  }
-  openBombSiteSelection(map, flow);
-}
+const fullSquadLabel = "Squad full";
 
 function normalizeText(value) {
   return value
@@ -225,7 +159,7 @@ function selectMap(mapId) {
   state.selectedMapId = mapId;
   state.selectedBombSiteId = null;
   state.selectedSide = null;
-  state.selectedGroupSize = null;
+  state.selectedGroupSize = 5;
   state.selectedOperators = [];
   renderMaps();
 
@@ -253,16 +187,17 @@ function selectMap(mapId) {
   window.setTimeout(() => elements.sideOptions[0]?.focus({ preventScroll: true }), 220);
 }
 
-function selectSide(side) {
+async function selectSide(side) {
   if (!sideLabels[side]) {
     return;
   }
 
   if (state.selectedSide !== side) {
-    state.selectedGroupSize = null;
     state.selectedOperators = [];
   }
   state.selectedSide = side;
+  state.selectedGroupSize = 5;
+  state.selectedBombSiteId = null;
   const selectedMap = state.maps.find((map) => map.id === state.selectedMapId);
 
   elements.sideOptions.forEach((option) => {
@@ -278,8 +213,16 @@ function selectSide(side) {
     }
   });
 
-  elements.sideStatus.textContent = `${sideLabels[side]} selecionado para ${selectedMap.name}.`;
-  showGroupSelection();
+  elements.sideStatus.textContent = `${sideLabels[side]} selecionado para ${selectedMap.name}. Carregando bomb sites…`;
+  const mapId = state.selectedMapId;
+  await bombSiteFlowsReady;
+  if (state.selectedMapId !== mapId || state.selectedSide !== side) return;
+  const flow = state.bombSiteFlows[mapId];
+  if (!flow) {
+    elements.sideStatus.textContent = `Os bomb sites de ${selectedMap.name} serão adicionados em uma próxima etapa.`;
+    return;
+  }
+  openBombSiteSelection(selectedMap, flow);
 }
 
 function openBombSiteSelection(selectedMap, flow) {
@@ -287,7 +230,7 @@ function openBombSiteSelection(selectedMap, flow) {
   elements.bombTitle.textContent = "Escolha o bomb site";
   document.querySelector("#bomb-map-name").textContent = selectedMap.name;
   document.querySelector("#site-map-image").src = selectedMap.image;
-  elements.bombSideContext.textContent = sideLabels[state.selectedSide] + " / " + groupLabels[state.selectedGroupSize - 1];
+  elements.bombSideContext.textContent = sideLabels[state.selectedSide] + " / " + fullSquadLabel;
   elements.bombStatus.textContent = "Escolha um local de bomba para selecionar os operadores.";
   const floorLabels = { "B": "Subsolo", "1F": "Térreo", "2F": "1º andar", "3F": "2º andar", "1F / B": "Térreo / Subsolo" };
   elements.bombList.replaceChildren(...flow.sites.map((site, index) => {
@@ -350,7 +293,6 @@ function openBombSiteSelection(selectedMap, flow) {
   }));
   elements.sideSection.hidden = true;
   elements.bombSection.hidden = false;
-  elements.groupSection.hidden = true;
   elements.body.classList.remove("is-bomb-view");
   elements.skipLink.href = "#bomb-site";
   elements.skipLink.textContent = "Ir para a escolha do bomb site";
@@ -380,7 +322,7 @@ async function showTacticSelection() {
   elements.tacticDetailSection.hidden = true;
   elements.tacticsSection.hidden = false;
   document.querySelector("#tactics-map-name").textContent = map.name;
-  document.querySelector("#tactics-context").textContent = sideLabels[state.selectedSide] + " / " + groupLabels[state.selectedGroupSize - 1];
+  document.querySelector("#tactics-context").textContent = sideLabels[state.selectedSide] + " / " + fullSquadLabel;
   document.querySelector("#tactics-site").textContent = "Bombsite · " + site.name;
   const available = state.tactics.filter((tactic) => tactic.mapId === state.selectedMapId
     && tactic.side === state.selectedSide
@@ -414,7 +356,7 @@ async function showTacticDetail(tacticId) {
   elements.tacticDetailSection.hidden = false;
   document.querySelector("#tactic-detail-title").textContent = tactic.name;
   document.querySelector("#tactic-detail-map").textContent = map.name;
-  document.querySelector("#tactic-detail-context").textContent = sideLabels[state.selectedSide] + " / " + groupLabels[state.selectedGroupSize - 1];
+  document.querySelector("#tactic-detail-context").textContent = sideLabels[state.selectedSide] + " / " + fullSquadLabel;
   document.querySelector("#tactic-detail-site").textContent = "Bombsite · " + site.name;
   document.querySelector("#tactic-operator-count").textContent = tactic.operators.length + " operadores";
   const description = document.querySelector("#tactic-description");
@@ -619,7 +561,7 @@ async function showOperatorSelection() {
   elements.skipLink.textContent = "Ir para a escolha dos operadores";
   document.title = map.name + " — Escolha os operadores | R6 Hub";
   document.querySelector("#operators-map-name").textContent = map.name;
-  document.querySelector("#operators-context").textContent = sideLabels[state.selectedSide] + " / " + groupLabels[state.selectedGroupSize - 1];
+  document.querySelector("#operators-context").textContent = sideLabels[state.selectedSide] + " / " + fullSquadLabel;
   document.querySelector("#operators-site").textContent = site.name;
   document.querySelector("#operators-description").textContent = "Selecione " + state.selectedGroupSize + (state.selectedGroupSize === 1 ? " operador para jogar esta rodada." : " operadores, um para cada jogador do grupo.");
   document.querySelector("#operator-search").value = "";
@@ -695,7 +637,6 @@ function showSideSelection() {
   elements.operatorSection.hidden = true;
   elements.tacticsSection.hidden = true;
   elements.tacticDetailSection.hidden = true;
-  elements.groupSection.hidden = true;
   const selectedSide = state.selectedSide;
   const selectedMap = state.maps.find((map) => map.id === state.selectedMapId);
   elements.bombSection.hidden = true;
@@ -715,7 +656,6 @@ function showMapSelection() {
   elements.operatorSection.hidden = true;
   elements.tacticsSection.hidden = true;
   elements.tacticDetailSection.hidden = true;
-  elements.groupSection.hidden = true;
   const selectedMapId = state.selectedMapId;
   elements.sideSection.hidden = true;
   elements.bombSection.hidden = true;
@@ -758,8 +698,7 @@ function bindEvents() {
 
   elements.clearSearch.addEventListener("click", clearSearch);
   elements.backToMaps.addEventListener("click", showMapSelection);
-  elements.backToSides.addEventListener("click", showGroupSelection);
-  elements.groupBack.addEventListener("click", showSideSelection);
+  elements.backToSides.addEventListener("click", showSideSelection);
   elements.sideOptions.forEach((option) => {
     option.addEventListener("click", () => selectSide(option.dataset.side));
   });
@@ -792,11 +731,6 @@ function bindEvents() {
     }
 
     if (event.key === "Escape" && !elements.bombSection.hidden) {
-      showGroupSelection();
-      return;
-    }
-
-    if (event.key === "Escape" && !elements.groupSection.hidden) {
       showSideSelection();
       return;
     }
