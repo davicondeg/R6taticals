@@ -417,6 +417,12 @@ async function showTacticDetail(tacticId) {
   document.querySelector("#tactic-detail-context").textContent = sideLabels[state.selectedSide] + " / " + groupLabels[state.selectedGroupSize - 1];
   document.querySelector("#tactic-detail-site").textContent = "Bombsite · " + site.name;
   document.querySelector("#tactic-operator-count").textContent = tactic.operators.length + " operadores";
+  const description = document.querySelector("#tactic-description");
+  const descriptionText = tactic.description || tactic.defenseDescription || "";
+  description.hidden = !descriptionText;
+  description.dataset.sideLabel = tactic.side === "attack" ? "ATAQUE" : "DEFESA";
+  document.querySelector("#tactic-description-title").textContent = tactic.side === "attack" ? "Descrição do ataque" : "Descrição da defesa";
+  document.querySelector("#tactic-description-text").textContent = descriptionText;
   renderTacticOverview(tactic);
   await operatorsReady;
   renderTacticLineup(tactic);
@@ -500,6 +506,38 @@ function renderTacticLineup(tactic) {
     card.addEventListener("click", () => selectBannedOperator(tactic, operator));
     return card;
   }));
+  const opponentSheet = state.operatorSheets[tactic.side === "attack" ? "defense" : "attack"];
+  (tactic.recommendedBans || []).forEach((operatorName) => {
+    const card = document.createElement("div");
+    card.className = "tactic-operator tactic-operator--recommended-ban";
+    card.setAttribute("aria-label", operatorName + ", ban recomendado");
+    const visual = document.createElement("div");
+    visual.className = "tactic-operator__visual";
+    const portrait = document.createElement("span");
+    portrait.className = "operator-portrait";
+    portrait.setAttribute("role", "img");
+    portrait.setAttribute("aria-label", "Retrato de " + operatorName);
+    const position = opponentSheet?.rows.flatMap((names, row) => names.map((name, column) => ({ name, row, column }))).find((item) => item.name === operatorName);
+    if (opponentSheet && position) {
+      portrait.style.setProperty("--portrait-sheet", `url("${new URL(opponentSheet.image, document.baseURI).href}")`);
+      portrait.style.setProperty("--portrait-size", (opponentSheet.width / 110 * 100) + "% " + (opponentSheet.height / 184 * 100) + "%");
+      portrait.style.setProperty("--portrait-x", ((opponentSheet.x[position.row] + position.column * 120) / (opponentSheet.width - 110) * 100) + "%");
+      portrait.style.setProperty("--portrait-y", (opponentSheet.y[position.row] / (opponentSheet.height - 184) * 100) + "%");
+    }
+    const badge = document.createElement("span");
+    badge.className = "tactic-operator__slot";
+    badge.textContent = "BAN RECOMENDADO";
+    const body = document.createElement("div");
+    body.className = "tactic-operator__body";
+    const name = document.createElement("strong");
+    name.textContent = operatorName;
+    const description = document.createElement("span");
+    description.textContent = "Prioridade de banimento";
+    visual.append(portrait, badge);
+    body.append(name, description);
+    card.append(visual, body);
+    operatorGrid.append(card);
+  });
 }
 
 function updateBanInterface(tactic) {
@@ -763,7 +801,7 @@ function bindEvents() {
 
 async function loadBombSiteFlows() {
   try {
-    const response = await fetch("./data/bomb-sites.json?v=selection-21");
+    const response = await fetch("./data/bomb-sites.json?v=selection-28", { cache: "no-store" });
     if (!response.ok) {
       throw new Error(`Falha ao carregar bomb sites: ${response.status}`);
     }
@@ -777,7 +815,7 @@ async function loadBombSiteFlows() {
 
 async function loadMaps() {
   try {
-    const response = await fetch("./data/maps.json");
+    const response = await fetch("./data/maps.json?v=selection-28", { cache: "no-store" });
     if (!response.ok) {
       throw new Error(`Falha ao carregar mapas: ${response.status}`);
     }
@@ -808,7 +846,7 @@ async function loadOperators() {
 
 async function loadTactics() {
   try {
-    const response = await fetch("./data/tactics.json?v=selection-26", { cache: "no-store" });
+    const response = await fetch("./data/tactics.json?v=selection-29", { cache: "no-store" });
     if (!response.ok) throw new Error("Falha ao carregar táticas: " + response.status);
     state.tactics = await response.json();
   } catch (error) {

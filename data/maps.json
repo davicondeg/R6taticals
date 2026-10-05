@@ -82,5 +82,12 @@
     "mode": "Ranked",
     "image": "assets/images/maps/parque.avif",
     "order": 12
+  },
+  {
+    "id": "litoral",
+    "name": "Litoral",
+    "mode": "Ranked",
+    "image": "assets/images/maps/litoral.jpg",
+    "order": 13
   }
 ]

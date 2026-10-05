@@ -75,6 +75,7 @@
       { "name": "Vigil", "assignment": "Função a definir" },
       { "name": "Thorn", "assignment": "Função a definir" }
     ],
+    "recommendedBans": ["Ram", "Fuze"],
     "banReplacements": {}
   },
   {
@@ -87,6 +88,13 @@
     "status": "draft",
     "overviewImage": "assets/images/tactics/mansao/aviacao-jogos-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Sala de Aviação e Sala de Jogos da Mansão.",
+    "overviewVariants": [
+      {
+        "operators": ["Mira", "Bandit", "Castle", "Maestro", "Thorn"],
+        "image": "assets/images/tactics/mansao/aviacao-jogos-castle-overview.png",
+        "alt": "Visão geral da distribuição com Castle substituindo Azami no bomb site Sala de Aviação e Sala de Jogos da Mansão."
+      }
+    ],
     "operators": [
       { "name": "Mira", "assignment": "Função a definir" },
       { "name": "Bandit", "assignment": "Função a definir" },
@@ -94,6 +102,222 @@
       { "name": "Maestro", "assignment": "Função a definir" },
       { "name": "Thorn", "assignment": "Função a definir" }
     ],
+    "banReplacements": {
+      "Azami": "Castle"
+    }
+  },
+  {
+    "id": "cafe-cozinha-servico",
+    "name": "Cozinha / Serviço",
+    "mapId": "cafe",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["cozinha-servico"],
+    "status": "draft",
+    "overviewImage": "assets/images/tactics/cafe/cozinha-servico-overview.png",
+    "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Cozinha e Serviço do Café.",
+    "operators": [
+      { "name": "Warden", "assignment": "Função a definir" },
+      { "name": "Jäger", "assignment": "Função a definir" },
+      { "name": "Castle", "assignment": "Função a definir" },
+      { "name": "Azami", "assignment": "Função a definir" },
+      { "name": "Kaid", "assignment": "Função a definir" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "cafe-bar-coqueteis",
+    "name": "Bar / Lounge de Coquetéis",
+    "mapId": "cafe",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["bar-lounge-de-coqueteis"],
+    "status": "draft",
+    "overviewImage": "assets/images/tactics/cafe/bar-coqueteis-overview.png",
+    "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Bar e Lounge de Coquetéis do Café.",
+    "operators": [
+      { "name": "Mira", "assignment": "Função a definir" },
+      { "name": "Wamai", "assignment": "Função a definir" },
+      { "name": "Castle", "assignment": "Função a definir" },
+      { "name": "Mute", "assignment": "Função a definir" },
+      { "name": "Azami", "assignment": "Função a definir" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "litoral-narguile-bilhar",
+    "name": "Lounge de Narguilé / Sala de Bilhar",
+    "mapId": "litoral",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["lounge-de-narguile-sala-de-bilhar"],
+    "status": "draft",
+    "overviewImage": "assets/images/tactics/litoral/narguile-bilhar-overview.png",
+    "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Lounge de Narguilé e Sala de Bilhar do Litoral.",
+    "operators": [
+      { "name": "Maestro", "assignment": "Função a definir" },
+      { "name": "Bandit", "assignment": "Função a definir" },
+      { "name": "Warden", "assignment": "Função a definir" },
+      { "name": "Castle", "assignment": "Função a definir" },
+      { "name": "Thorn", "assignment": "Função a definir" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "banco-armarios-vigilancia",
+    "name": "Armários / Vigilância",
+    "mapId": "banco",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["armarios-vigilancia"],
+    "status": "draft",
+    "overviewImage": "assets/images/tactics/banco/armarios-vigilancia-overview.png",
+    "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Armários e Vigilância do Banco.",
+    "operators": [
+      { "name": "Mira", "assignment": "Função a definir" },
+      { "name": "Kaid", "assignment": "Função a definir" },
+      { "name": "Jäger", "assignment": "Função a definir" },
+      { "name": "Warden", "assignment": "Função a definir" },
+      { "name": "Smoke", "assignment": "Função a definir" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "banco-sala-ceo-lounge",
+    "name": "Sala do CEO / Lounge",
+    "mapId": "banco",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["sala-do-ceo-lounge"],
+    "status": "draft",
+    "overviewImage": "assets/images/tactics/banco/sala-ceo-lounge-overview.png",
+    "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Sala do CEO e Lounge do Banco.",
+    "operators": [
+      { "name": "Azami", "assignment": "Função a definir" },
+      { "name": "Bandit", "assignment": "Função a definir" },
+      { "name": "Castle", "assignment": "Função a definir" },
+      { "name": "Thorn", "assignment": "Função a definir" },
+      { "name": "Echo", "assignment": "Função a definir" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "chale-adega-garagem-snowmobile",
+    "name": "Adega / Garagem de Snowmobile",
+    "mapId": "chale",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["adega-garagem-de-snowmobile"],
+    "status": "draft",
+    "defenseDescription": "Kaid e Tubarão jogam da Garagem para proteger a parede externa. Azami joga da Animal, marcando tanto a Escada Animal quanto a Principal, além de apoiar a entrada da Adega. Maestro joga atrás do escudo na Adega, monitorando os Evil Eyes e protegendo o bombsite. Denari prepara seu setup e pode atuar como lurker ou jogar da Garagem 2 para dificultar o avanço inimigo pelas costas.",
+    "overviewImage": "assets/images/tactics/chale/adega-garagem-overview.png",
+    "overviewAlt": "Planta do subsolo do Chalé com a distribuição dos operadores e equipamentos da defesa de Adega e Garagem de Snowmobile.",
+    "operators": [
+      { "name": "Kaid", "assignment": "Função a definir" },
+      { "name": "Tubarão", "assignment": "Função a definir" },
+      { "name": "Denari", "assignment": "Função a definir" },
+      { "name": "Azami", "assignment": "Função a definir" },
+      { "name": "Maestro", "assignment": "Função a definir" }
+    ],
+    "recommendedBans": ["Fuze"],
+    "banReplacements": {
+      "Kaid": "Bandit"
+    }
+  },
+  {
+    "id": "chale-quarto-principal-escritorio",
+    "name": "Quarto Principal / Escritório",
+    "mapId": "chale",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["quarto-principal-escritorio"],
+    "status": "draft",
+    "description": "Azami defende a Biblioteca. Clash dificulta a entrada pela porta da Varanda. Maestro posiciona os Evil Eyes e fica de olho nas câmeras. Thorn distribui seus dispositivos pela Biblioteca, pelo Banheiro e pela Escada Animal, jogando de dentro do bombsite. Denari prepara o setup e alterna entre jogar no meio do bombsite e apoiar Azami.",
+    "overviewImage": "assets/images/tactics/chale/quarto-principal-escritorio-overview.png",
+    "overviewAlt": "Planta do segundo andar do Chalé com a distribuição dos operadores e equipamentos da defesa de Quarto Principal e Escritório.",
+    "operators": [
+      { "name": "Denari", "assignment": "Função a definir" },
+      { "name": "Maestro", "assignment": "Função a definir" },
+      { "name": "Clash", "assignment": "Função a definir" },
+      { "name": "Azami", "assignment": "Função a definir" },
+      { "name": "Thorn", "assignment": "Função a definir" }
+    ],
+    "recommendedBans": ["Brava"],
+    "banReplacements": {}
+  },
+  {
+    "id": "banco-ataque-armarios-vigilancia",
+    "name": "Ataque Armários / Vigilância",
+    "mapId": "banco",
+    "side": "attack",
+    "groupSize": 5,
+    "bombSiteIds": ["armarios-vigilancia"],
+    "status": "draft",
+    "description": "Rauora e Ying entram pela Área Aberta para abrir os alçapões. Montagne e Thermite entram pelo Servidor para abrir a parede e executar o plant. Brava envia seu drone ao bombsite para capturar dispositivos de operadores como Maestro, Jäger e Wamai, entre outros.",
+    "operators": [
+      { "name": "Rauora", "assignment": "Função a definir" },
+      { "name": "Ying", "assignment": "Função a definir" },
+      { "name": "Montagne", "assignment": "Função a definir" },
+      { "name": "Thermite", "assignment": "Função a definir" },
+      { "name": "Brava", "assignment": "Função a definir" }
+    ],
+    "recommendedBans": ["Kaid"],
+    "banReplacements": {}
+  },
+  {
+    "id": "fronteira-ataque-arsenal-arquivos",
+    "name": "Ataque Arsenal / Arquivos",
+    "mapId": "fronteira",
+    "side": "attack",
+    "groupSize": 5,
+    "bombSiteIds": ["arsenal-arquivos"],
+    "status": "draft",
+    "operators": [
+      { "name": "Montagne", "assignment": "Função a definir" },
+      { "name": "Osa", "assignment": "Função a definir" },
+      { "name": "Lion", "assignment": "Função a definir" },
+      { "name": "Glaz", "assignment": "Função a definir" },
+      { "name": "Capitão", "assignment": "Função a definir" }
+    ],
+    "recommendedBans": ["Mira"],
+    "banReplacements": {}
+  },
+  {
+    "id": "fronteira-ataque-arsenal-arquivos-02",
+    "name": "Ataque Arsenal / Arquivos 02",
+    "mapId": "fronteira",
+    "side": "attack",
+    "groupSize": 5,
+    "bombSiteIds": ["arsenal-arquivos"],
+    "status": "draft",
+    "operators": [
+      { "name": "Zofia", "assignment": "Função a definir" },
+      { "name": "Thermite", "assignment": "Função a definir" },
+      { "name": "Glaz", "assignment": "Função a definir" },
+      { "name": "Nomad", "assignment": "Função a definir" },
+      { "name": "Capitão", "assignment": "Função a definir" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "fronteira-defesa-arsenal-arquivos",
+    "name": "Defesa Arsenal / Arquivos",
+    "mapId": "fronteira",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["arsenal-arquivos"],
+    "status": "draft",
+    "description": "Kaid defende o Paredão. Azami e Thorn defendem o Servidor. Melusi prepara seu setup e joga de dentro do bombsite. Maestro também prepara seu setup e joga de dentro do bombsite.",
+    "overviewImage": "assets/images/tactics/fronteira/defesa-arsenal-arquivos-overview.png",
+    "overviewAlt": "Planta do segundo andar da Fronteira com a distribuição dos operadores e equipamentos da defesa de Arsenal e Arquivos.",
+    "operators": [
+      { "name": "Azami", "assignment": "Função a definir" },
+      { "name": "Thorn", "assignment": "Função a definir" },
+      { "name": "Maestro", "assignment": "Função a definir" },
+      { "name": "Kaid", "assignment": "Função a definir" },
+      { "name": "Melusi", "assignment": "Função a definir" }
+    ],
+    "recommendedBans": ["Brava"],
     "banReplacements": {}
   }
 ]

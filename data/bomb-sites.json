@@ -502,5 +502,47 @@
     ],
     "imageSource": "https://www.r6trainer.com/callout-trainer/",
     "imageCredit": "R6 Trainer — capturas de 2020"
+  },
+  "litoral": {
+    "sites": [
+      {
+        "id": "lounge-de-narguile-sala-de-bilhar",
+        "name": "Lounge de Narguilé / Sala de Bilhar",
+        "floor": "2F",
+        "callout": "Hookah/Billiards",
+        "image": "assets/images/bomb-sites/litoral/hookah-lounge.jpg",
+        "imageRoom": "Lounge de Narguilé / Hookah Lounge",
+        "imageAlt": "Lounge de Narguilé / Hookah Lounge. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "cobertura-teatro",
+        "name": "Cobertura / Teatro",
+        "floor": "2F",
+        "callout": "Penthouse/Theater",
+        "image": "assets/images/bomb-sites/litoral/theater.jpg",
+        "imageRoom": "Teatro / Theater",
+        "imageAlt": "Teatro / Theater. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "cozinha-entrada-de-servico",
+        "name": "Cozinha / Entrada de Serviço",
+        "floor": "1F",
+        "callout": "Kitchen/Service",
+        "image": "assets/images/bomb-sites/litoral/kitchen.jpg",
+        "imageRoom": "Cozinha / Kitchen",
+        "imageAlt": "Cozinha / Kitchen. Captura do ambiente no jogo, de 2020."
+      },
+      {
+        "id": "bar-azul-bar-do-amanhecer",
+        "name": "Bar Azul / Bar do Amanhecer",
+        "floor": "1F",
+        "callout": "Blue Bar/Sunrise",
+        "image": "assets/images/bomb-sites/litoral/blue-bar.jpg",
+        "imageRoom": "Bar Azul / Blue Bar",
+        "imageAlt": "Bar Azul / Blue Bar. Captura do ambiente no jogo, de 2020."
+      }
+    ],
+    "imageSource": "https://www.r6trainer.com/callout-trainer/",
+    "imageCredit": "R6 Trainer — capturas de 2020"
   }
 }
