@@ -474,12 +474,14 @@ function renderTacticLineup(tactic) {
   }
   const displayedOperators = getDisplayedTacticOperators(tactic);
   operatorGrid.replaceChildren(...displayedOperators.map((operator, index) => {
+    const video = tactic.operatorVideos?.[operator.name];
     const card = document.createElement("button");
     card.type = "button";
     card.className = "tactic-operator";
     card.classList.toggle("is-replacement", Boolean(operator.replacementFor));
+    card.classList.toggle("has-video", Boolean(video));
     card.dataset.banEnabled = String(state.banMode);
-    card.setAttribute("aria-label", state.banMode ? "Banir " + operator.name : operator.name);
+    card.setAttribute("aria-label", state.banMode ? "Banir " + operator.name : video ? "Assistir vídeo de " + operator.name : operator.name);
     const visual = document.createElement("div");
     visual.className = "tactic-operator__visual";
     const portrait = document.createElement("span");
@@ -499,11 +501,17 @@ function renderTacticLineup(tactic) {
     const name = document.createElement("strong");
     name.textContent = operator.name;
     const assignment = document.createElement("span");
-    assignment.textContent = operator.assignment;
+    assignment.textContent = video && !state.banMode ? "Assistir vídeo ↗" : operator.assignment;
     visual.append(portrait, slot);
     body.append(name, assignment);
     card.append(visual, body);
-    card.addEventListener("click", () => selectBannedOperator(tactic, operator));
+    card.addEventListener("click", () => {
+      if (state.banMode) {
+        selectBannedOperator(tactic, operator);
+        return;
+      }
+      if (video) window.location.assign(new URL(video, document.baseURI).href);
+    });
     return card;
   }));
   const opponentSheet = state.operatorSheets[tactic.side === "attack" ? "defense" : "attack"];

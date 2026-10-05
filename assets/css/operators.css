@@ -80,6 +80,9 @@
 .tactic-operator[data-ban-enabled="true"] { cursor: pointer; }
 .tactic-operator[data-ban-enabled="true"]:hover { border-color: #ff5757; transform: translateY(-2px); }
 .tactic-operator[data-ban-enabled="true"]:focus-visible { outline: 2px solid #ff5757; outline-offset: 3px; }
+.tactic-operator.has-video:not([data-ban-enabled="true"]) { border-color: rgba(215,255,53,.6); box-shadow: inset 0 0 0 1px rgba(215,255,53,.1); cursor: pointer; }
+.tactic-operator.has-video:not([data-ban-enabled="true"]):hover { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(215,255,53,.18), 0 10px 26px rgba(0,0,0,.28); transform: translateY(-2px); }
+.tactic-operator.has-video:not([data-ban-enabled="true"]) .tactic-operator__body span { color: var(--accent); font-weight: 800; text-transform: uppercase; }
 .tactic-operator.is-replacement { border-color: var(--accent); box-shadow: inset 0 0 0 1px rgba(215,255,53,.18); }
 .tactic-operator--recommended-ban { border: 2px solid #ff5757; background: linear-gradient(155deg, rgba(255,87,87,.18), transparent 48%), #111418; box-shadow: 0 0 0 1px rgba(255,87,87,.2), 0 10px 30px rgba(255,87,87,.12); }
 .tactic-operator:not(.tactic-operator--recommended-ban) + .tactic-operator--recommended-ban { margin-left: 34px; }

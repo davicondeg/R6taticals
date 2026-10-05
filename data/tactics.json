@@ -212,6 +212,10 @@
     "defenseDescription": "Kaid e Tubarão jogam da Garagem para proteger a parede externa. Azami joga da Animal, marcando tanto a Escada Animal quanto a Principal, além de apoiar a entrada da Adega. Maestro joga atrás do escudo na Adega, monitorando os Evil Eyes e protegendo o bombsite. Denari prepara seu setup e pode atuar como lurker ou jogar da Garagem 2 para dificultar o avanço inimigo pelas costas.",
     "overviewImage": "assets/images/tactics/chale/adega-garagem-overview.png",
     "overviewAlt": "Planta do subsolo do Chalé com a distribuição dos operadores e equipamentos da defesa de Adega e Garagem de Snowmobile.",
+    "operatorVideos": {
+      "Azami": "assets/videos/tactics/chale/azami-adega-garagem.mp4",
+      "Maestro": "assets/videos/tactics/chale/maestro-adega-garagem.mp4"
+    },
     "operators": [
       { "name": "Kaid", "assignment": "Função a definir" },
       { "name": "Tubarão", "assignment": "Função a definir" },
