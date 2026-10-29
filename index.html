@@ -9,22 +9,26 @@
     />
     <meta name="theme-color" content="#090a0c" />
     <title>R6 Hub — Mapas</title>
-    <link rel="stylesheet" href="./assets/css/styles.css?v=selection-22" />
-    <link rel="stylesheet" href="./assets/css/operators.css?v=selection-26" />
-    <script src="./assets/js/app.js?v=selection-35" defer></script>
+    <link rel="stylesheet" href="./assets/css/styles.css?v=broken-angle-header-1" />
+    <link rel="stylesheet" href="./assets/css/operators.css?v=tactic-lineup-1" />
+    <script src="./assets/js/app.js?v=broken-angle-header-1" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#mapas">Ir para os mapas</a>
 
     <header class="site-header">
       <div class="container site-header__inner">
-        <a class="brand" href="./" aria-label="R6 Hub, página inicial">
-          <span class="brand__mark" aria-hidden="true">R6</span>
-          <span class="brand__name">
-            <strong>R6</strong>
-            <span>HUB</span>
-          </span>
-        </a>
+        <div class="site-header__primary">
+          <a class="brand" href="./" aria-label="R6 Hub, página inicial">
+            <span class="brand__mark" aria-hidden="true">R6</span>
+            <span class="brand__name">
+              <strong>R6</strong>
+              <span>HUB</span>
+            </span>
+          </a>
+          <button class="header-setups" id="open-setups" type="button">Setups</button>
+          <button class="header-setups header-broken-angle" id="open-broken-angle" type="button">Broken Angle</button>
+        </div>
 
         <div class="site-header__meta" aria-label="Contexto atual">
           <span class="live-dot" aria-hidden="true"></span>
@@ -34,6 +38,101 @@
     </header>
 
     <main>
+      <section class="side-section setups-section" id="setups" aria-labelledby="setups-title" hidden>
+        <div class="side-section__grid" aria-hidden="true"></div>
+        <div class="container side-selection">
+          <div id="setup-map-view">
+            <button class="side-selection__back setup-back" id="back-from-setups" type="button">← Voltar ao início</button>
+            <div class="side-selection__heading">
+              <div>
+                <p class="section-index">BIBLIOTECA / SETUPS</p>
+                <h1 id="setups-title" tabindex="-1">Escolha o mapa</h1>
+                <p>Selecione um mapa para encontrar os setups disponíveis.</p>
+              </div>
+              <div class="side-selection__map" aria-label="Quantidade de vídeos disponíveis">
+                <span>Biblioteca</span>
+                <strong id="setups-video-total">—</strong>
+                <span>vídeos cadastrados</span>
+              </div>
+            </div>
+
+            <div class="setup-step">
+              <span class="setup-step__number">01</span>
+              <div><strong>Mapa</strong><p>Onde será feito o setup?</p></div>
+            </div>
+            <div class="setup-map-grid" id="setup-maps" role="group" aria-label="Escolha o mapa"></div>
+          </div>
+
+          <div class="setup-view" id="setup-broken-angle-stage" hidden>
+            <button class="side-selection__back setup-back" id="back-from-broken-angle" type="button">← Voltar ao início</button>
+            <div class="side-selection__heading">
+              <div>
+                <p class="section-index">SETUPS / PLAYLIST</p>
+                <h1 id="broken-angle-title" tabindex="-1">Broken Angle</h1>
+                <p>Ângulos inesperados para criar vantagem durante a rodada.</p>
+              </div>
+              <div class="side-selection__map" aria-label="Quantidade de vídeos da playlist">
+                <span>Playlist</span>
+                <strong id="broken-angle-total">—</strong>
+                <span>vídeos</span>
+              </div>
+            </div>
+            <div class="broken-angle-layout">
+              <div class="broken-angle-list" id="broken-angle-list" role="group" aria-label="Vídeos Broken Angle"></div>
+              <div class="broken-angle-player" id="broken-angle-player"></div>
+            </div>
+          </div>
+
+          <div class="setup-view" id="setup-bomb-stage" hidden>
+            <button class="side-selection__back setup-back" id="back-to-setup-maps" type="button">← Voltar aos mapas</button>
+            <div class="side-selection__heading">
+              <div>
+                <p class="section-index">SETUPS / BOMBSITES</p>
+                <h1 id="setup-bomb-title" tabindex="-1">Escolha o bombsite</h1>
+                <p>Objetivos disponíveis em <strong id="setup-selected-map">—</strong>.</p>
+              </div>
+            </div>
+            <div class="setup-step">
+              <span class="setup-step__number">02</span>
+              <div><strong>Bombsite</strong><p>Selecione o objetivo da rodada.</p></div>
+            </div>
+            <div class="setup-bomb-grid" id="setup-bombs" role="group" aria-label="Escolha o bombsite"></div>
+          </div>
+
+          <div class="setup-view" id="setup-operator-stage" hidden>
+            <button class="side-selection__back setup-back" id="back-to-setup-bombs" type="button">← Voltar aos bombsites</button>
+            <div class="side-selection__heading">
+              <div>
+                <p class="section-index">SETUPS / OPERADORES</p>
+                <h1 id="setup-operator-title" tabindex="-1">Escolha o operador</h1>
+                <p>Defensores com setup para <strong id="setup-selected-bomb">—</strong>.</p>
+              </div>
+            </div>
+            <div class="setup-step">
+              <span class="setup-step__number">03</span>
+              <div><strong>Operador</strong><p>Quem você quer aprender?</p></div>
+            </div>
+            <div class="setup-operator-sides">
+              <section class="setup-operator-side setup-operator-side--defense" aria-labelledby="setup-defense-title">
+                <div class="setup-operator-side__heading"><span>DEF</span><h2 id="setup-defense-title">Defensores</h2></div>
+                <div class="setup-operator-grid" id="setup-defenders" role="group" aria-label="Escolha um defensor"></div>
+              </section>
+            </div>
+          </div>
+
+          <div class="setup-view" id="setup-video-stage" hidden>
+            <button class="side-selection__back setup-back" id="back-to-setup-operators" type="button">← Voltar aos operadores</button>
+            <div class="side-selection__heading">
+              <div>
+                <p class="section-index">SETUPS / VÍDEO</p>
+                <h1 id="setup-video-title" tabindex="-1">Assistir setup</h1>
+                <p id="setup-video-context">Assista ao setup selecionado.</p>
+              </div>
+            </div>
+            <div class="setup-videos" id="setup-videos"></div>
+          </div>
+        </div>
+      </section>
       <section class="hero" id="inicio" aria-labelledby="hero-title">
         <div class="hero__grid" aria-hidden="true"></div>
         <div class="container hero__inner">

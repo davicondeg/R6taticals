@@ -20,6 +20,24 @@
     }
   },
   {
+    "id": "clubhouse-ataque-vigilancia-cofre",
+    "name": "Ataque Sala de Vigilância / Sala do Cofre",
+    "mapId": "clubhouse",
+    "side": "attack",
+    "groupSize": 5,
+    "bombSiteIds": ["sala-vigilancia-sala-cofre"],
+    "status": "draft",
+    "description": "Montagne e Rauora entram pela Garagem. O objetivo de Rauora é dominar a Garagem junto com Thermite e, depois do plant, colocar barricadas na porta da Garagem e nas portas do bombsite. Fuze joga na janela do bombsite e pode avançar para Obras para usar suas cargas na parede reforçada do bomb. Thermite e Dokkaebi abrem o paredão para possibilitar o plant.",
+    "operators": [
+      { "name": "Montagne", "assignment": "Entrada e proteção pela Garagem" },
+      { "name": "Thermite", "assignment": "Abrir o paredão e executar o plant" },
+      { "name": "Rauora", "assignment": "Dominar a Garagem e posicionar barricadas após o plant" },
+      { "name": "Dokkaebi", "assignment": "Apoiar a abertura do paredão e controlar os defensores" },
+      { "name": "Fuze", "assignment": "Pressionar pela janela e pela parede reforçada em Obras" }
+    ],
+    "banReplacements": {}
+  },
+  {
     "id": "quarto-academia",
     "name": "Quarto / Academia",
     "mapId": "clubhouse",
@@ -88,6 +106,9 @@
     "status": "draft",
     "overviewImage": "assets/images/tactics/mansao/aviacao-jogos-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Sala de Aviação e Sala de Jogos da Mansão.",
+    "operatorVideos": {
+      "Azami": "assets/videos/tactics/mansao/azami-aviacao-jogos.mp4"
+    },
     "overviewVariants": [
       {
         "operators": ["Mira", "Bandit", "Castle", "Maestro", "Thorn"],
@@ -105,6 +126,28 @@
     "banReplacements": {
       "Azami": "Castle"
     }
+  },
+  {
+    "id": "mansao-aviacao-jogos-alternativa",
+    "name": "Aviação / Jogos — Alternativa",
+    "mapId": "mansao",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["sala-de-aviacao-sala-de-jogos"],
+    "status": "draft",
+    "overviewImage": "assets/images/tactics/mansao/aviacao-jogos-alternativa-overview.png",
+    "overviewAlt": "Visão geral da formação alternativa para a defesa de Sala de Aviação e Sala de Jogos da Mansão.",
+    "operatorVideos": {
+      "Azami": "assets/videos/tactics/mansao/azami-aviacao-jogos.mp4"
+    },
+    "operators": [
+      { "name": "Azami", "assignment": "Função a definir" },
+      { "name": "Mira", "assignment": "Função a definir" },
+      { "name": "Kaid", "assignment": "Função a definir" },
+      { "name": "Melusi", "assignment": "Função a definir" },
+      { "name": "Wamai", "assignment": "Função a definir" }
+    ],
+    "banReplacements": {}
   },
   {
     "id": "cafe-cozinha-servico",
@@ -135,6 +178,9 @@
     "status": "draft",
     "overviewImage": "assets/images/tactics/cafe/bar-coqueteis-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Bar e Lounge de Coquetéis do Café.",
+    "operatorVideos": {
+      "Thorn": "assets/videos/tactics/cafe/thorn-bar-coqueteis.mp4"
+    },
     "operators": [
       { "name": "Mira", "assignment": "Função a definir" },
       { "name": "Wamai", "assignment": "Função a definir" },
@@ -154,12 +200,34 @@
     "status": "draft",
     "overviewImage": "assets/images/tactics/litoral/narguile-bilhar-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Lounge de Narguilé e Sala de Bilhar do Litoral.",
+    "operatorVideos": {
+      "Maestro": "assets/videos/tactics/litoral/maestro-relax-sala-jogos.mp4",
+      "Azami": "assets/videos/tactics/litoral/azami-relax-sala-jogos.mp4"
+    },
     "operators": [
       { "name": "Maestro", "assignment": "Função a definir" },
       { "name": "Bandit", "assignment": "Função a definir" },
       { "name": "Warden", "assignment": "Função a definir" },
       { "name": "Castle", "assignment": "Função a definir" },
       { "name": "Thorn", "assignment": "Função a definir" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "litoral-ataque-relax-sala-jogos",
+    "name": "Ataque Relax / Sala de Jogos",
+    "mapId": "litoral",
+    "side": "attack",
+    "groupSize": 5,
+    "bombSiteIds": ["lounge-de-narguile-sala-de-bilhar"],
+    "status": "draft",
+    "description": "Osa e Rauora entram pelo Aquário para dominar a área e executar o plant. Ace abre a parede quádrupla do balcão da Sala de Jogos para retirar o defensor que estiver jogando naquela posição. Nomad faz rapel no janelão da Sala de Jogos para marcar quem tentar entrar no bombsite. Dokkaebi faz rapel no Relax para marcar quem passar pela rotação, além de ajudar a equipe ativando os telefones dos defensores nos momentos solicitados. Importante: os jogadores no rapel não devem se expor desnecessariamente. A função deles é marcar as rotações, sobreviver e manter a pressão; é essencial que não morram cedo ou com facilidade.",
+    "operators": [
+      { "name": "Ace", "assignment": "Abrir a parede quádrupla do balcão da Sala de Jogos" },
+      { "name": "Rauora", "assignment": "Entrar pelo Aquário, dominar a área e apoiar o plant" },
+      { "name": "Osa", "assignment": "Entrar pelo Aquário e estabelecer a posição do plant" },
+      { "name": "Nomad", "assignment": "Marcar as entradas pelo rapel no janelão da Sala de Jogos" },
+      { "name": "Dokkaebi", "assignment": "Marcar a rotação pelo rapel no Relax e ativar os telefones" }
     ],
     "banReplacements": {}
   },
@@ -171,8 +239,19 @@
     "groupSize": 5,
     "bombSiteIds": ["armarios-vigilancia"],
     "status": "draft",
-    "overviewImage": "assets/images/tactics/banco/armarios-vigilancia-overview.png",
+    "overviewImage": "assets/images/tactics/banco/armarios-vigilancia-overview-v2.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Armários e Vigilância do Banco.",
+    "operatorVideos": {
+      "Maestro": "assets/videos/tactics/banco/maestro-armarios-vigilancia.mp4",
+      "Denari": "assets/videos/tactics/banco/denari-armarios-vigilancia.mp4"
+    },
+    "overviewVariants": [
+      {
+        "operators": ["Maestro", "Kaid", "Jäger", "Warden", "Smoke"],
+        "image": "assets/images/tactics/banco/armarios-vigilancia-maestro-overview.png",
+        "alt": "Visão geral da distribuição com Maestro substituindo Mira no bomb site Armários e Vigilância do Banco."
+      }
+    ],
     "operators": [
       { "name": "Mira", "assignment": "Função a definir" },
       { "name": "Kaid", "assignment": "Função a definir" },
@@ -180,7 +259,9 @@
       { "name": "Warden", "assignment": "Função a definir" },
       { "name": "Smoke", "assignment": "Função a definir" }
     ],
-    "banReplacements": {}
+    "banReplacements": {
+      "Mira": "Maestro"
+    }
   },
   {
     "id": "banco-sala-ceo-lounge",
@@ -192,6 +273,10 @@
     "status": "draft",
     "overviewImage": "assets/images/tactics/banco/sala-ceo-lounge-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Sala do CEO e Lounge do Banco.",
+    "operatorVideos": {
+      "Castle": "assets/videos/tactics/banco/castle-sala-ceo-lounge.mp4",
+      "Thorn": "assets/videos/tactics/banco/thorn-sala-ceo-lounge.mp4"
+    },
     "operators": [
       { "name": "Azami", "assignment": "Função a definir" },
       { "name": "Bandit", "assignment": "Função a definir" },
@@ -215,7 +300,10 @@
     "operatorVideos": {
       "Azami": "assets/videos/tactics/chale/azami-adega-garagem.mp4",
       "Maestro": "assets/videos/tactics/chale/maestro-adega-garagem.mp4",
-      "Denari": "assets/videos/tactics/chale/denari-adega-garagem.mp4"
+      "Denari": "assets/videos/tactics/chale/denari-adega-garagem.mp4",
+      "Goyo": "assets/videos/tactics/chale/goyo-adega-garagem.mp4",
+      "Thorn": "assets/videos/tactics/chale/thorn-adega-garagem.mp4",
+      "Kaid": "assets/videos/tactics/chale/kaid-adega-garagem.mp4"
     },
     "operators": [
       { "name": "Kaid", "assignment": "Função a definir" },
@@ -241,7 +329,18 @@
     "overviewImage": "assets/images/tactics/chale/quarto-principal-escritorio-overview.png",
     "overviewAlt": "Planta do segundo andar do Chalé com a distribuição dos operadores e equipamentos da defesa de Quarto Principal e Escritório.",
     "operatorVideos": {
-      "Denari": "assets/videos/tactics/chale/denari-quarto-escritorio.mp4"
+      "Denari": [
+        {
+          "title": "Setup 1",
+          "video": "assets/videos/tactics/chale/denari-quarto-escritorio-opcao-1.mp4"
+        },
+        {
+          "title": "Setup 2",
+          "video": "assets/videos/tactics/chale/denari-quarto-escritorio-opcao-2.mp4"
+        }
+      ],
+      "Melusi": "assets/videos/tactics/chale/melusi-quarto-escritorio.mp4",
+      "Kaid": "assets/videos/tactics/chale/kaid-quarto-escritorio.mp4"
     },
     "operators": [
       { "name": "Denari", "assignment": "Função a definir" },
@@ -326,6 +425,74 @@
       { "name": "Melusi", "assignment": "Função a definir" }
     ],
     "recommendedBans": ["Brava"],
+    "banReplacements": {}
+  },
+  {
+    "id": "kanal-defesa-servidores-radar",
+    "name": "Servidores / Radar",
+    "mapId": "kanal",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["servidores-radar"],
+    "status": "draft",
+    "description": "Maestro prepara os Evil Eyes para negar o plant na defesa do Radar.",
+    "operatorVideos": {
+      "Maestro": "assets/videos/tactics/kanal/maestro-servidores-radar.mp4"
+    },
+    "operators": [
+      { "name": "Maestro", "assignment": "Posicionar os Evil Eyes para negar o plant no Radar" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "oregon-defesa-dormitorio-quarto-infantil",
+    "name": "Dormitório / Quarto Infantil",
+    "mapId": "oregon",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["dormitorio-quarto-infantil"],
+    "status": "draft",
+    "description": "Thorn prepara o setup defensivo do Dormitório e do Quarto Infantil.",
+    "operatorVideos": {
+      "Thorn": "assets/videos/tactics/oregon/thorn-dormitorio-quarto-infantil.mp4"
+    },
+    "operators": [
+      { "name": "Thorn", "assignment": "Preparar as armadilhas do setup no bombsite" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "clubhouse-defesa-capela-sala-armas",
+    "name": "Capela / Sala de Armas",
+    "mapId": "clubhouse",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["capela-sala-armas"],
+    "status": "draft",
+    "description": "Thorn prepara o setup defensivo da Capela e da Sala de Armas.",
+    "operatorVideos": {
+      "Thorn": "assets/videos/tactics/clubhouse/thorn-capela-sala-armas.mp4"
+    },
+    "operators": [
+      { "name": "Thorn", "assignment": "Preparar as armadilhas do setup no subsolo" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "cassino-calypso-defesa-charutos-bilhar",
+    "name": "Sala de Charutos / Bilhar",
+    "mapId": "cassino-calypso",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["sala-de-charutos-bilhar"],
+    "status": "draft",
+    "description": "Thorn prepara o setup defensivo da Sala de Charutos e do Bilhar.",
+    "operatorVideos": {
+      "Thorn": "assets/videos/tactics/cassino-calypso/thorn-charutos-bilhar.mp4"
+    },
+    "operators": [
+      { "name": "Thorn", "assignment": "Preparar as armadilhas do setup no segundo andar" }
+    ],
     "banReplacements": {}
   }
 ]

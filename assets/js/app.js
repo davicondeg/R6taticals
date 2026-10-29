@@ -12,6 +12,12 @@ const state = {
   selectedOperators: [],
   operatorSheets: {},
   tactics: [],
+  setupOperator: null,
+  setupMapId: null,
+  setupBombSiteId: null,
+  setupVideo: null,
+  brokenAngleVideos: [],
+  brokenAngleVideoId: null,
 };
 
 const elements = {
@@ -37,6 +43,13 @@ const elements = {
   hero: document.querySelector("#inicio"),
   heroMapTotal: document.querySelector("#hero-map-total"),
   mapsSection: document.querySelector("#mapas"),
+  setupsSection: document.querySelector("#setups"),
+  setupDefenders: document.querySelector("#setup-defenders"),
+  setupMaps: document.querySelector("#setup-maps"),
+  setupBombs: document.querySelector("#setup-bombs"),
+  setupVideos: document.querySelector("#setup-videos"),
+  brokenAngleList: document.querySelector("#broken-angle-list"),
+  brokenAnglePlayer: document.querySelector("#broken-angle-player"),
   search: document.querySelector("#map-search"),
   skipLink: document.querySelector(".skip-link"),
   sideMapCode: document.querySelector("#side-map-code"),
@@ -50,6 +63,8 @@ const elements = {
 let bombSiteFlowsReady;
 let operatorsReady;
 let tacticsReady;
+let mapsReady;
+let brokenAngleReady;
 let operatorViewVersion = 0;
 
 const sideLabels = {
@@ -66,6 +81,404 @@ function normalizeText(value) {
     .replace(/[\u0300-\u036f]/g, "")
     .toLocaleLowerCase("pt-BR")
     .trim();
+}
+
+function getSetupCatalog() {
+  const entries = [];
+  const seen = new Set();
+
+  state.tactics.filter((tactic) => tactic.side === "defense").forEach((tactic) => {
+    Object.entries(tactic.operatorVideos || {}).forEach(([operator, videos]) => {
+      const options = (Array.isArray(videos) ? videos : [videos]).map((option) => typeof option === "string" ? { video: option, title: operator } : option);
+      options.forEach((option, index) => tactic.bombSiteIds.filter((siteId) => siteId !== "*").forEach((bombSiteId) => {
+        const key = [operator, tactic.mapId, bombSiteId, option.video].join("|");
+        if (seen.has(key)) return;
+        seen.add(key);
+        const map = state.maps.find((item) => item.id === tactic.mapId);
+        const site = state.bombSiteFlows[tactic.mapId]?.sites.find((item) => item.id === bombSiteId);
+        entries.push({ operator, mapId: tactic.mapId, mapName: map?.name || tactic.mapId, bombSiteId, bombSiteName: site?.name || bombSiteId, bombSiteImage: site?.image || map?.image || "", bombSiteImageAlt: site?.imageAlt || site?.name || bombSiteId, tacticName: tactic.name, video: option.video, videoTitle: option.title || `Setup ${index + 1}` });
+      }));
+    });
+  });
+
+  return entries;
+}
+
+function createSetupOption(label, meta, selected, onClick) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "setup-option";
+  button.setAttribute("aria-pressed", String(selected));
+  const title = document.createElement("strong");
+  title.textContent = label;
+  const detail = document.createElement("span");
+  detail.textContent = meta;
+  button.append(title, detail);
+  button.addEventListener("click", onClick);
+  return button;
+}
+
+function renderSetupOperators() {
+  const catalog = getSetupCatalog();
+  const operatorStage = document.querySelector("#setup-operator-stage");
+  const bombStage = document.querySelector("#setup-bomb-stage");
+  const videoStage = document.querySelector("#setup-video-stage");
+  operatorStage.hidden = !state.setupBombSiteId;
+  bombStage.hidden = Boolean(state.setupBombSiteId);
+  videoStage.hidden = true;
+  if (!state.setupBombSiteId) return;
+
+  const entries = catalog.filter((entry) => entry.mapId === state.setupMapId && entry.bombSiteId === state.setupBombSiteId);
+  const availableOperators = new Set(entries.map((entry) => entry.operator));
+  document.querySelector("#setup-selected-bomb").textContent = entries[0]?.bombSiteName || state.setupBombSiteId;
+
+  [["defense", elements.setupDefenders]].forEach(([side, grid]) => {
+    const sheet = state.operatorSheets[side];
+    if (!sheet) return;
+    grid.style.setProperty("--portrait-sheet", `url("${new URL(sheet.image, document.baseURI).href}")`);
+    grid.style.setProperty("--portrait-size", (sheet.width / 110 * 100) + "% " + (sheet.height / 184 * 100) + "%");
+    const cards = [];
+    sheet.rows.forEach((names, row) => names.forEach((operator, column) => {
+      const available = availableOperators.has(operator);
+      if (!available) return;
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "setup-operator-card";
+      button.setAttribute("aria-pressed", String(state.setupOperator === operator));
+      button.setAttribute("aria-label", `Selecionar ${operator}`);
+      button.title = operator;
+      button.style.setProperty("--portrait-x", ((sheet.x[row] + column * 120) / (sheet.width - 110) * 100) + "%");
+      button.style.setProperty("--portrait-y", (sheet.y[row] / (sheet.height - 184) * 100) + "%");
+      const portrait = document.createElement("span");
+      portrait.className = "operator-portrait";
+      portrait.setAttribute("aria-hidden", "true");
+      const name = document.createElement("strong");
+      name.textContent = operator;
+      button.append(portrait, name);
+      button.addEventListener("click", () => {
+        state.setupOperator = operator;
+        state.setupVideo = null;
+        renderSetupVideos();
+      });
+      cards.push(button);
+    }));
+    grid.replaceChildren(...cards);
+  });
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  document.querySelector("#setup-operator-title").focus({ preventScroll: true });
+}
+
+function renderSetupMaps() {
+  const catalog = getSetupCatalog();
+  document.querySelector("#setups-video-total").textContent = String(new Set(catalog.map((entry) => entry.video)).size).padStart(2, "0");
+  const entries = catalog;
+  const maps = [...new Map(entries.map((entry) => [entry.mapId, state.maps.find((map) => map.id === entry.mapId)])).values()].filter(Boolean);
+  elements.setupMaps.replaceChildren(...maps.map((map) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "setup-map-card";
+    button.setAttribute("aria-pressed", String(state.setupMapId === map.id));
+    const image = document.createElement("img");
+    image.src = map.image;
+    image.alt = "";
+    image.decoding = "async";
+    const overlay = document.createElement("span");
+    overlay.className = "setup-map-card__overlay";
+    const label = document.createElement("small");
+    label.textContent = "Selecionar mapa";
+    const name = document.createElement("strong");
+    name.textContent = map.name;
+    overlay.append(label, name);
+    button.append(image, overlay);
+    button.addEventListener("click", () => {
+      state.setupMapId = map.id;
+      state.setupBombSiteId = null;
+      state.setupVideo = null;
+      renderSetupBombs();
+    });
+    return button;
+  }));
+}
+
+function showSetupMaps() {
+  state.setupMapId = null;
+  state.setupBombSiteId = null;
+  state.setupOperator = null;
+  state.setupVideo = null;
+  document.querySelector("#setup-bomb-stage").hidden = true;
+  document.querySelector("#setup-operator-stage").hidden = true;
+  document.querySelector("#setup-video-stage").hidden = true;
+  document.querySelector("#setup-broken-angle-stage").hidden = true;
+  document.querySelector("#setup-map-view").hidden = false;
+  renderSetupMaps();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  document.querySelector("#setups-title").focus({ preventScroll: true });
+}
+
+function showSetupBombSites() {
+  state.setupBombSiteId = null;
+  state.setupOperator = null;
+  state.setupVideo = null;
+  elements.setupVideos.querySelectorAll("video").forEach((video) => {
+    video.pause();
+  });
+  document.querySelector("#setup-operator-stage").hidden = true;
+  document.querySelector("#setup-video-stage").hidden = true;
+  renderSetupBombs();
+}
+
+function showSetupOperators() {
+  state.setupOperator = null;
+  state.setupVideo = null;
+  elements.setupVideos.querySelectorAll("video").forEach((video) => {
+    video.pause();
+  });
+  renderSetupOperators();
+}
+
+function renderSetupBombs() {
+  const mapView = document.querySelector("#setup-map-view");
+  const stage = document.querySelector("#setup-bomb-stage");
+  const operatorStage = document.querySelector("#setup-operator-stage");
+  const videoStage = document.querySelector("#setup-video-stage");
+  stage.hidden = !state.setupMapId;
+  mapView.hidden = Boolean(state.setupMapId);
+  operatorStage.hidden = true;
+  videoStage.hidden = true;
+  if (!state.setupMapId) return;
+  const selectedMap = state.maps.find((map) => map.id === state.setupMapId);
+  document.querySelector("#setup-selected-map").textContent = selectedMap?.name || state.setupMapId;
+  const entries = getSetupCatalog().filter((entry) => entry.mapId === state.setupMapId);
+  const bombs = [...new Map(entries.map((entry) => [entry.bombSiteId, entry])).values()];
+  elements.setupBombs.replaceChildren(...bombs.map((bomb) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "setup-bomb-card";
+    button.setAttribute("aria-pressed", String(state.setupBombSiteId === bomb.bombSiteId));
+    const image = document.createElement("img");
+    image.src = bomb.bombSiteImage;
+    image.alt = bomb.bombSiteImageAlt;
+    image.decoding = "async";
+    const overlay = document.createElement("span");
+    overlay.className = "setup-bomb-card__overlay";
+    const label = document.createElement("small");
+    label.textContent = "Selecionar bombsite";
+    const name = document.createElement("strong");
+    name.textContent = bomb.bombSiteName;
+    overlay.append(label, name);
+    button.append(image, overlay);
+    button.addEventListener("click", () => {
+      state.setupBombSiteId = bomb.bombSiteId;
+      state.setupOperator = null;
+      state.setupVideo = null;
+      renderSetupOperators();
+    });
+    return button;
+  }));
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  document.querySelector("#setup-bomb-title").focus({ preventScroll: true });
+}
+
+function renderSetupVideos() {
+  const stage = document.querySelector("#setup-video-stage");
+  const operatorStage = document.querySelector("#setup-operator-stage");
+  const entries = getSetupCatalog().filter((entry) => entry.operator === state.setupOperator && entry.mapId === state.setupMapId && entry.bombSiteId === state.setupBombSiteId);
+  stage.hidden = entries.length === 0;
+  if (!entries.length) return;
+  operatorStage.hidden = true;
+  document.querySelector("#setup-video-context").textContent = `${state.setupOperator} · ${entries[0].mapName} · ${entries[0].bombSiteName}`;
+  const selectedEntry = entries.find((entry) => entry.video === state.setupVideo);
+
+  if (entries.length > 1 && !selectedEntry) {
+    document.querySelector("#setup-video-title").textContent = "Escolha o setup";
+    elements.setupVideos.replaceChildren(...entries.map((entry, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "setup-video-option";
+      const number = document.createElement("span");
+      number.className = "setup-video-option__number";
+      number.textContent = String(index + 1).padStart(2, "0");
+      const title = document.createElement("strong");
+      title.textContent = entry.videoTitle || `Setup ${index + 1}`;
+      const description = document.createElement("span");
+      description.textContent = "Selecionar e assistir";
+      button.append(number, title, description);
+      button.addEventListener("click", () => {
+        state.setupVideo = entry.video;
+        renderSetupVideos();
+      });
+      return button;
+    }));
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    document.querySelector("#setup-video-title").focus({ preventScroll: true });
+    return;
+  }
+
+  const entry = selectedEntry || entries[0];
+  document.querySelector("#setup-video-title").textContent = entry.videoTitle || "Assistir setup";
+  const content = [];
+  if (entries.length > 1) {
+    const backToOptions = document.createElement("button");
+    backToOptions.type = "button";
+    backToOptions.className = "side-selection__back setup-video__back";
+    backToOptions.textContent = "← Voltar às opções";
+    backToOptions.addEventListener("click", () => {
+      elements.setupVideos.querySelector("video")?.pause();
+      state.setupVideo = null;
+      renderSetupVideos();
+    });
+    content.push(backToOptions);
+  }
+
+  const article = (() => {
+    const article = document.createElement("article");
+    article.className = "setup-video";
+    const video = document.createElement("video");
+    video.controls = true;
+    video.preload = "metadata";
+    video.src = entry.video;
+    video.setAttribute("playsinline", "");
+    const caption = document.createElement("div");
+    caption.className = "setup-video__caption";
+    const title = document.createElement("strong");
+    title.textContent = entry.videoTitle || entry.operator;
+    const tactic = document.createElement("span");
+    tactic.textContent = entry.tacticName;
+    const speedControl = document.createElement("div");
+    speedControl.className = "setup-video__speed";
+    const speedLabel = document.createElement("span");
+    speedLabel.textContent = "Velocidade";
+    const speedButtons = document.createElement("span");
+    speedButtons.className = "setup-video__speed-buttons";
+    [0.5, 1, 1.25, 1.5, 2].forEach((rate) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = `${String(rate).replace(".", ",")}×`;
+      button.setAttribute("aria-label", `Reproduzir em ${button.textContent}`);
+      button.setAttribute("aria-pressed", String(rate === 1));
+      button.addEventListener("click", () => {
+        video.playbackRate = rate;
+        speedButtons.querySelectorAll("button").forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+      });
+      speedButtons.append(button);
+    });
+    speedControl.append(speedLabel, speedButtons);
+    const details = document.createElement("span");
+    details.className = "setup-video__details";
+    details.append(title, tactic);
+    caption.append(details, speedControl);
+    article.append(video, caption);
+    return article;
+  })();
+  content.push(article);
+  elements.setupVideos.replaceChildren(...content);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  document.querySelector("#setup-video-title").focus({ preventScroll: true });
+}
+
+function showSetupVideoOptions() {
+  elements.setupVideos.querySelector("video")?.pause();
+  state.setupVideo = null;
+  renderSetupVideos();
+}
+
+function renderBrokenAnglePlaylist() {
+  const videos = state.brokenAngleVideos;
+  document.querySelector("#broken-angle-total").textContent = String(videos.length).padStart(2, "0");
+  if (!videos.length) {
+    elements.brokenAngleList.replaceChildren();
+    elements.brokenAnglePlayer.textContent = "Nenhum vídeo cadastrado.";
+    return;
+  }
+
+  if (!videos.some((item) => item.id === state.brokenAngleVideoId)) {
+    state.brokenAngleVideoId = videos[0].id;
+  }
+  const selected = videos.find((item) => item.id === state.brokenAngleVideoId);
+  elements.brokenAngleList.replaceChildren(...videos.map((item, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "setup-video-option";
+    button.setAttribute("aria-pressed", String(item.id === selected.id));
+    const number = document.createElement("span");
+    number.className = "setup-video-option__number";
+    number.textContent = String(index + 1).padStart(2, "0");
+    const title = document.createElement("strong");
+    title.textContent = item.title;
+    const description = document.createElement("span");
+    description.textContent = item.description;
+    button.append(number, title, description);
+    button.addEventListener("click", () => {
+      elements.brokenAnglePlayer.querySelector("video")?.pause();
+      state.brokenAngleVideoId = item.id;
+      renderBrokenAnglePlaylist();
+    });
+    return button;
+  }));
+
+  const article = document.createElement("article");
+  article.className = "setup-video broken-angle-video";
+  const video = document.createElement("video");
+  video.controls = true;
+  video.preload = "metadata";
+  video.src = selected.video;
+  video.setAttribute("playsinline", "");
+  const caption = document.createElement("div");
+  caption.className = "setup-video__caption";
+  const details = document.createElement("span");
+  details.className = "setup-video__details";
+  const title = document.createElement("strong");
+  title.textContent = selected.title;
+  const description = document.createElement("span");
+  description.textContent = selected.description;
+  details.append(title, description);
+  caption.append(details);
+  article.append(video, caption);
+  elements.brokenAnglePlayer.replaceChildren(article);
+}
+
+async function openBrokenAnglePlaylist() {
+  await brokenAngleReady;
+  [elements.hero, elements.mapsSection, elements.sideSection, elements.bombSection, elements.tacticsSection, elements.tacticDetailSection, elements.operatorSection].forEach((section) => { section.hidden = true; });
+  elements.body.classList.remove("is-bomb-view");
+  elements.setupsSection.hidden = false;
+  document.querySelector("#setup-map-view").hidden = true;
+  document.querySelector("#setup-bomb-stage").hidden = true;
+  document.querySelector("#setup-operator-stage").hidden = true;
+  document.querySelector("#setup-video-stage").hidden = true;
+  document.querySelector("#setup-broken-angle-stage").hidden = false;
+  elements.skipLink.href = "#setup-broken-angle-stage";
+  elements.skipLink.textContent = "Ir para Broken Angle";
+  document.title = "Broken Angle | R6 Hub";
+  renderBrokenAnglePlaylist();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  document.querySelector("#broken-angle-title").focus({ preventScroll: true });
+}
+
+function closeBrokenAnglePlaylist() {
+  elements.brokenAnglePlayer.querySelector("video")?.pause();
+  document.querySelector("#setup-broken-angle-stage").hidden = true;
+  showMapSelection();
+}
+
+async function openSetups() {
+  await Promise.all([mapsReady, tacticsReady, bombSiteFlowsReady, operatorsReady, brokenAngleReady]);
+  [elements.hero, elements.mapsSection, elements.sideSection, elements.bombSection, elements.tacticsSection, elements.tacticDetailSection, elements.operatorSection].forEach((section) => { section.hidden = true; });
+  elements.body.classList.remove("is-bomb-view");
+  elements.setupsSection.hidden = false;
+  state.setupOperator = null;
+  state.setupMapId = null;
+  state.setupBombSiteId = null;
+  state.setupVideo = null;
+  renderSetupMaps();
+  document.querySelector("#setup-bomb-stage").hidden = true;
+  document.querySelector("#setup-operator-stage").hidden = true;
+  document.querySelector("#setup-video-stage").hidden = true;
+  elements.skipLink.href = "#setups";
+  elements.skipLink.textContent = "Ir para os setups";
+  document.title = "Setups de operadores | R6 Hub";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  document.querySelector("#setups-title").focus({ preventScroll: true });
 }
 
 function getVisibleMaps() {
@@ -313,7 +726,7 @@ function selectBombSite(bombSiteId) {
 }
 
 async function showTacticSelection() {
-  await tacticsReady;
+  await Promise.all([tacticsReady, operatorsReady]);
   const map = state.maps.find((item) => item.id === state.selectedMapId);
   const site = state.bombSiteFlows[state.selectedMapId]?.sites.find((item) => item.id === state.selectedBombSiteId);
   if (!map || !site) return;
@@ -333,7 +746,48 @@ async function showTacticSelection() {
     button.type = "button";
     button.className = "tactic-card";
     button.dataset.tacticId = tactic.id;
-    button.innerHTML = `<span class="tactic-card__number">TÁTICA ${String(index + 1).padStart(2, "0")}</span><strong>${tactic.name}</strong><span class="tactic-card__meta">${sideLabels[tactic.side]} · ${tactic.groupSize} jogadores</span><span class="tactic-card__action">Abrir plano <span aria-hidden="true">↗</span></span>`;
+    const number = document.createElement("span");
+    number.className = "tactic-card__number";
+    number.textContent = `TÁTICA ${String(index + 1).padStart(2, "0")}`;
+    const title = document.createElement("strong");
+    title.className = "tactic-card__title";
+    title.textContent = tactic.name;
+    const meta = document.createElement("span");
+    meta.className = "tactic-card__meta";
+    meta.textContent = `${sideLabels[tactic.side]} · ${tactic.groupSize} jogadores`;
+    const lineup = document.createElement("span");
+    lineup.className = "tactic-card__lineup";
+    lineup.setAttribute("aria-label", "Composição: " + tactic.operators.map((operator) => operator.name).join(", "));
+    const sheet = state.operatorSheets[tactic.side];
+    if (sheet) {
+      lineup.style.setProperty("--portrait-sheet", `url("${new URL(sheet.image, document.baseURI).href}")`);
+      lineup.style.setProperty("--portrait-size", (sheet.width / 110 * 100) + "% " + (sheet.height / 184 * 100) + "%");
+    }
+    tactic.operators.forEach((operator) => {
+      const item = document.createElement("span");
+      item.className = "tactic-card__operator";
+      const portrait = document.createElement("span");
+      portrait.className = "operator-portrait";
+      portrait.setAttribute("aria-hidden", "true");
+      const position = sheet?.rows.flatMap((names, row) => names.map((name, column) => ({ name, row, column }))).find((entry) => entry.name === operator.name);
+      if (sheet && position) {
+        item.style.setProperty("--portrait-x", ((sheet.x[position.row] + position.column * 120) / (sheet.width - 110) * 100) + "%");
+        item.style.setProperty("--portrait-y", (sheet.y[position.row] / (sheet.height - 184) * 100) + "%");
+      }
+      const name = document.createElement("span");
+      name.className = "tactic-card__operator-name";
+      name.textContent = operator.name;
+      item.append(portrait, name);
+      lineup.append(item);
+    });
+    const action = document.createElement("span");
+    action.className = "tactic-card__action";
+    action.append("Abrir plano ");
+    const arrow = document.createElement("span");
+    arrow.setAttribute("aria-hidden", "true");
+    arrow.textContent = "↗";
+    action.append(arrow);
+    button.append(number, title, meta, lineup, action);
     button.addEventListener("click", () => showTacticDetail(tactic.id));
     return button;
   }));
@@ -416,7 +870,9 @@ function renderTacticLineup(tactic) {
   }
   const displayedOperators = getDisplayedTacticOperators(tactic);
   operatorGrid.replaceChildren(...displayedOperators.map((operator, index) => {
-    const video = tactic.operatorVideos?.[operator.name];
+    const videoOptions = tactic.operatorVideos?.[operator.name];
+    const firstVideo = Array.isArray(videoOptions) ? videoOptions[0] : videoOptions;
+    const video = typeof firstVideo === "string" ? firstVideo : firstVideo?.video;
     const card = document.createElement("button");
     card.type = "button";
     card.className = "tactic-operator";
@@ -659,6 +1115,7 @@ function showMapSelection() {
   const selectedMapId = state.selectedMapId;
   elements.sideSection.hidden = true;
   elements.bombSection.hidden = true;
+  elements.setupsSection.hidden = true;
   elements.hero.hidden = false;
   elements.mapsSection.hidden = false;
   elements.body.classList.remove("is-bomb-view");
@@ -680,6 +1137,13 @@ function clearSearch() {
 }
 
 function bindEvents() {
+  document.querySelector("#open-setups").addEventListener("click", openSetups);
+  document.querySelector("#open-broken-angle").addEventListener("click", openBrokenAnglePlaylist);
+  document.querySelector("#back-from-broken-angle").addEventListener("click", closeBrokenAnglePlaylist);
+  document.querySelector("#back-from-setups").addEventListener("click", showMapSelection);
+  document.querySelector("#back-to-setup-maps").addEventListener("click", showSetupMaps);
+  document.querySelector("#back-to-setup-bombs").addEventListener("click", showSetupBombSites);
+  document.querySelector("#back-to-setup-operators").addEventListener("click", showSetupOperators);
   document.querySelector("#back-to-bombs").addEventListener("click", backToBombSites);
   document.querySelector("#back-to-bomb-sites").addEventListener("click", backToBombSites);
   document.querySelector("#back-to-tactics").addEventListener("click", showTacticSelection);
@@ -713,6 +1177,16 @@ function bindEvents() {
 
     if (event.key === "Escape" && document.activeElement === elements.search && elements.search.value) {
       clearSearch();
+    }
+
+    if (event.key === "Escape" && !elements.setupsSection.hidden) {
+      if (!document.querySelector("#setup-broken-angle-stage").hidden) closeBrokenAnglePlaylist();
+      else if (!document.querySelector("#setup-video-stage").hidden && state.setupVideo) showSetupVideoOptions();
+      else if (!document.querySelector("#setup-video-stage").hidden) showSetupOperators();
+      else if (!document.querySelector("#setup-operator-stage").hidden) showSetupBombSites();
+      else if (!document.querySelector("#setup-bomb-stage").hidden) showSetupMaps();
+      else showMapSelection();
+      return;
     }
 
     if (event.key === "Escape" && !elements.operatorSection.hidden) {
@@ -797,8 +1271,20 @@ async function loadTactics() {
   }
 }
 
+async function loadBrokenAnglePlaylist() {
+  try {
+    const response = await fetch("./data/broken-angle.json?v=playlist-1", { cache: "no-store" });
+    if (!response.ok) throw new Error("Falha ao carregar a playlist Broken Angle: " + response.status);
+    state.brokenAngleVideos = await response.json();
+  } catch (error) {
+    console.error(error);
+    state.brokenAngleVideos = [];
+  }
+}
+
 bindEvents();
 operatorsReady = loadOperators();
 tacticsReady = loadTactics();
 bombSiteFlowsReady = loadBombSiteFlows();
-loadMaps();
+mapsReady = loadMaps();
+brokenAngleReady = loadBrokenAnglePlaylist();

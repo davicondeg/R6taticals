@@ -43,12 +43,16 @@
 
 .tactics-site { margin-top: 28px; color: var(--muted); font: 700 .7rem ui-monospace, "Cascadia Code", monospace; letter-spacing: .1em; text-transform: uppercase; }
 .tactics-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 24px; }
-.tactic-card { position: relative; display: flex; min-height: 250px; padding: 28px; flex-direction: column; align-items: flex-start; border: 1px solid var(--line-strong); border-radius: var(--radius); background: linear-gradient(145deg, rgba(215,255,53,.07), transparent 58%), var(--surface); color: var(--text); text-align: left; cursor: pointer; transition: border-color 160ms ease, transform 160ms ease; }
+.tactic-card { position: relative; display: flex; min-height: 390px; padding: 28px; flex-direction: column; align-items: flex-start; border: 1px solid var(--line-strong); border-radius: var(--radius); background: linear-gradient(145deg, rgba(215,255,53,.07), transparent 58%), var(--surface); color: var(--text); text-align: left; cursor: pointer; transition: border-color 160ms ease, transform 160ms ease; }
 .tactic-card:hover { border-color: var(--accent); transform: translateY(-3px); }
 .tactic-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .tactic-card__number { color: var(--accent); font: 800 .68rem ui-monospace, "Cascadia Code", monospace; letter-spacing: .12em; }
-.tactic-card strong { margin-top: 32px; font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; letter-spacing: -.05em; line-height: .95; text-transform: uppercase; }
+.tactic-card__title { margin-top: 26px; font-family: var(--font-display); font-size: clamp(1.8rem, 3.2vw, 2.7rem); font-weight: 900; letter-spacing: -.05em; line-height: .95; text-transform: uppercase; }
 .tactic-card__meta { margin-top: 12px; color: var(--muted); font-size: .78rem; }
+.tactic-card__lineup { display: grid; width: 100%; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 7px; margin-top: 22px; }
+.tactic-card__operator { min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 3px; background: #0b0d10; }
+.tactic-card__operator .operator-portrait { width: 100%; aspect-ratio: 110 / 184; }
+.tactic-card__operator-name { display: block; min-height: 27px; padding: 6px 2px; overflow: hidden; border-top: 1px solid var(--line); color: var(--text); font-size: clamp(.44rem, .75vw, .58rem); font-weight: 800; line-height: 1.15; text-align: center; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
 .tactic-card__action { display: flex; width: 100%; margin-top: auto; padding-top: 18px; border-top: 1px solid var(--line); justify-content: space-between; color: var(--text); font-size: .66rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
 .tactic-card__action span { color: var(--accent); font-size: 1rem; }
 .tactic-description { position: relative; margin-top: 28px; padding: 26px 28px 28px; overflow: hidden; border: 1px solid rgba(215,255,53,.38); border-left: 3px solid var(--accent); border-radius: var(--radius); background: linear-gradient(135deg, rgba(215,255,53,.09), transparent 62%), var(--surface); }
@@ -99,4 +103,4 @@
 .tactic-overview__heading h3 { margin: 7px 0 0; font-family: var(--font-display); font-size: clamp(1.6rem, 4vw, 2.4rem); text-transform: uppercase; }
 .tactic-overview__heading p { margin: 9px 0 0; color: var(--muted); line-height: 1.6; }
 .tactic-overview img { display: block; width: 100%; height: auto; margin-top: 22px; border: 1px solid var(--line-strong); border-radius: var(--radius); background: #edf2f5; }
-@media (max-width: 640px) { .tactics-list { grid-template-columns: 1fr; } .tactic-card { min-height: 220px; } .tactic-lineup-heading { display: block; } .tactic-lineup-heading p { margin-top: 10px; text-align: left; } }
+@media (max-width: 640px) { .tactics-list { grid-template-columns: 1fr; } .tactic-card { min-height: 370px; } .tactic-lineup-heading { display: block; } .tactic-lineup-heading p { margin-top: 10px; text-align: left; } }
