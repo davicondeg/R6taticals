@@ -7,6 +7,16 @@
     "groupSize": 4,
     "bombSiteIds": ["sala-vigilancia-sala-cofre"],
     "status": "draft",
+    "operatorVideos": {
+      "Melusi": {
+        "video": "assets/videos/tactics/clubhouse/melusi-vigilancia-cofre.mp4",
+        "title": "Melusi",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/Cos6ONzJHgM"
+        }
+      }
+    },
     "operators": [
       { "name": "Castle", "assignment": "Função a definir" },
       { "name": "Azami", "assignment": "Função a definir" },
@@ -47,6 +57,16 @@
     "status": "draft",
     "overviewImage": "assets/images/tactics/clubhouse/quarto-academia-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no andar de Academia e Quarto do Clubhouse.",
+    "operatorVideos": {
+      "Mira": {
+        "video": "assets/videos/tactics/clubhouse/mira-academia-quarto.mp4",
+        "title": "Mira",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/hu7TELCvqjw"
+        }
+      }
+    },
     "overviewVariants": [
       {
         "operators": ["Castle", "Thorn", "Kaid", "Melusi", "Mira"],
@@ -86,6 +106,40 @@
     "status": "draft",
     "overviewImage": "assets/images/tactics/consulado/garagem-cafeteria-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Garagem e Cafeteria do Consulado.",
+    "operatorVideos": {
+      "Azami": {
+        "video": "assets/videos/tactics/consulado/azami-garagem-cafeteria.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/2yDVTkbhAq4"
+        }
+      },
+      "Valkyrie": {
+        "video": "assets/videos/tactics/consulado/valkyrie-garagem-cafeteria.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/DE1JTZOmQik"
+        }
+      },
+      "Mute": {
+        "video": "assets/videos/tactics/consulado/mute-garagem-cafeteria.mp4",
+        "title": "Mute",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/eKe1mNdyoWE"
+        }
+      },
+      "Denari": {
+        "video": "assets/videos/tactics/consulado/denari-garagem-cafeteria.mp4",
+        "title": "Denari",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/-ud7PF8DsEc"
+        }
+      }
+    },
     "operators": [
       { "name": "Kaid", "assignment": "Função a definir" },
       { "name": "Tubarão", "assignment": "Função a definir" },
@@ -159,6 +213,16 @@
     "status": "draft",
     "overviewImage": "assets/images/tactics/cafe/cozinha-servico-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Cozinha e Serviço do Café.",
+    "operatorVideos": {
+      "Melusi": {
+        "video": "assets/videos/tactics/cafe/melusi-cozinha-servico.mp4",
+        "title": "Melusi",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/nVFnqzL3E2E"
+        }
+      }
+    },
     "operators": [
       { "name": "Warden", "assignment": "Função a definir" },
       { "name": "Jäger", "assignment": "Função a definir" },
@@ -179,7 +243,46 @@
     "overviewImage": "assets/images/tactics/cafe/bar-coqueteis-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Bar e Lounge de Coquetéis do Café.",
     "operatorVideos": {
-      "Thorn": "assets/videos/tactics/cafe/thorn-bar-coqueteis.mp4"
+      "Thorn": {
+        "video": "assets/videos/tactics/cafe/thorn-bar-coqueteis.mp4",
+        "title": "Thorn",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/alXS22VDE4w"
+        }
+      },
+      "Mira": {
+        "video": "assets/videos/tactics/cafe/mira-bar-coqueteis.mp4",
+        "title": "Mira",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/CQMbZnwK3F8"
+        }
+      },
+      "Goyo": {
+        "video": "assets/videos/tactics/cafe/goyo-bar-coqueteis.mp4",
+        "title": "Goyo",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/DuLZFc97XFg"
+        }
+      },
+      "Valkyrie": {
+        "video": "assets/videos/tactics/cafe/valkyrie-bar-coqueteis.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/uyfcT3j3R3c"
+        }
+      },
+      "Azami": {
+        "video": "assets/videos/tactics/cafe/azami-bar-coqueteis.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/_tuzXuLM514"
+        }
+      }
     },
     "operators": [
       { "name": "Mira", "assignment": "Função a definir" },
@@ -243,7 +346,23 @@
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Armários e Vigilância do Banco.",
     "operatorVideos": {
       "Maestro": "assets/videos/tactics/banco/maestro-armarios-vigilancia.mp4",
-      "Denari": "assets/videos/tactics/banco/denari-armarios-vigilancia.mp4"
+      "Denari": "assets/videos/tactics/banco/denari-armarios-vigilancia.mp4",
+      "Fenrir": {
+        "video": "assets/videos/tactics/banco/fenrir-armarios-vigilancia.mp4",
+        "title": "Fenrir",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/imXytVu2bLs"
+        }
+      },
+      "Valkyrie": {
+        "video": "assets/videos/tactics/banco/valkyrie-armarios-vigilancia.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/W9aqUKlESBQ"
+        }
+      }
     },
     "overviewVariants": [
       {
@@ -275,7 +394,22 @@
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Sala do CEO e Lounge do Banco.",
     "operatorVideos": {
       "Castle": "assets/videos/tactics/banco/castle-sala-ceo-lounge.mp4",
-      "Thorn": "assets/videos/tactics/banco/thorn-sala-ceo-lounge.mp4"
+      "Thorn": {
+        "video": "assets/videos/tactics/banco/thorn-sala-ceo-lounge.mp4",
+        "title": "Thorn",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/imkJ_LhOhFw"
+        }
+      },
+      "Mute": {
+        "video": "assets/videos/tactics/banco/mute-sala-ceo-lounge.mp4",
+        "title": "Mute",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/EKbeMF1bv70"
+        }
+      }
     },
     "operators": [
       { "name": "Azami", "assignment": "Função a definir" },
@@ -303,7 +437,23 @@
       "Denari": "assets/videos/tactics/chale/denari-adega-garagem.mp4",
       "Goyo": "assets/videos/tactics/chale/goyo-adega-garagem.mp4",
       "Thorn": "assets/videos/tactics/chale/thorn-adega-garagem.mp4",
-      "Kaid": "assets/videos/tactics/chale/kaid-adega-garagem.mp4"
+      "Kaid": "assets/videos/tactics/chale/kaid-adega-garagem.mp4",
+      "Mute": {
+        "video": "assets/videos/tactics/chale/mute-adega-garagem.mp4",
+        "title": "Mute",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/eiip4NkuUWk"
+        }
+      },
+      "Valkyrie": {
+        "video": "assets/videos/tactics/chale/valkyrie-adega-snowmobile.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/ZG3hhnmJ2ek"
+        }
+      }
     },
     "operators": [
       { "name": "Kaid", "assignment": "Função a definir" },
@@ -417,6 +567,24 @@
     "description": "Kaid defende o Paredão. Azami e Thorn defendem o Servidor. Melusi prepara seu setup e joga de dentro do bombsite. Maestro também prepara seu setup e joga de dentro do bombsite.",
     "overviewImage": "assets/images/tactics/fronteira/defesa-arsenal-arquivos-overview.png",
     "overviewAlt": "Planta do segundo andar da Fronteira com a distribuição dos operadores e equipamentos da defesa de Arsenal e Arquivos.",
+    "operatorVideos": {
+      "Fenrir": {
+        "video": "assets/videos/tactics/fronteira/fenrir-arsenal-arquivos.mp4",
+        "title": "Fenrir",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/aBRIkoGU2JM"
+        }
+      },
+      "Mira": {
+        "video": "assets/videos/tactics/fronteira/mira-arsenal-arquivos.mp4",
+        "title": "Mira",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/2mpuju2CIbA"
+        }
+      }
+    },
     "operators": [
       { "name": "Azami", "assignment": "Função a definir" },
       { "name": "Thorn", "assignment": "Função a definir" },
@@ -437,7 +605,23 @@
     "status": "draft",
     "description": "Maestro prepara os Evil Eyes para negar o plant na defesa do Radar.",
     "operatorVideos": {
-      "Maestro": "assets/videos/tactics/kanal/maestro-servidores-radar.mp4"
+      "Maestro": "assets/videos/tactics/kanal/maestro-servidores-radar.mp4",
+      "Valkyrie": {
+        "video": "assets/videos/tactics/kanal/valkyrie-servidores-radar.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/D5N5BL9ABvk"
+        }
+      },
+      "Azami": {
+        "video": "assets/videos/tactics/kanal/azami-servidores-radar.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/HRkEQKqIpRc"
+        }
+      }
     },
     "operators": [
       { "name": "Maestro", "assignment": "Posicionar os Evil Eyes para negar o plant no Radar" }
@@ -454,7 +638,15 @@
     "status": "draft",
     "description": "Thorn prepara o setup defensivo do Dormitório e do Quarto Infantil.",
     "operatorVideos": {
-      "Thorn": "assets/videos/tactics/oregon/thorn-dormitorio-quarto-infantil.mp4"
+      "Thorn": "assets/videos/tactics/oregon/thorn-dormitorio-quarto-infantil.mp4",
+      "Castle": {
+        "video": "assets/videos/tactics/oregon/castle-dormitorio-quarto-infantil.mp4",
+        "title": "Castle",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/ao6RrwM9jY4"
+        }
+      }
     },
     "operators": [
       { "name": "Thorn", "assignment": "Preparar as armadilhas do setup no bombsite" }
@@ -471,7 +663,23 @@
     "status": "draft",
     "description": "Thorn prepara o setup defensivo da Capela e da Sala de Armas.",
     "operatorVideos": {
-      "Thorn": "assets/videos/tactics/clubhouse/thorn-capela-sala-armas.mp4"
+      "Thorn": "assets/videos/tactics/clubhouse/thorn-capela-sala-armas.mp4",
+      "Fenrir": {
+        "video": "assets/videos/tactics/clubhouse/fenrir-capela-sala-armas.mp4",
+        "title": "Fenrir",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/FaIa1jqWPuU"
+        }
+      },
+      "Azami": {
+        "video": "assets/videos/tactics/clubhouse/azami-capela-sala-armas.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/Goq02i3X09I"
+        }
+      }
     },
     "operators": [
       { "name": "Thorn", "assignment": "Preparar as armadilhas do setup no subsolo" }
@@ -488,10 +696,185 @@
     "status": "draft",
     "description": "Thorn prepara o setup defensivo da Sala de Charutos e do Bilhar.",
     "operatorVideos": {
-      "Thorn": "assets/videos/tactics/cassino-calypso/thorn-charutos-bilhar.mp4"
+      "Thorn": {
+        "video": "assets/videos/tactics/cassino-calypso/thorn-charutos-bilhar.mp4",
+        "title": "Thorn",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/UUTE0Z5ypTI"
+        }
+      },
+      "Fenrir": {
+        "video": "assets/videos/tactics/cassino-calypso/fenrir-charutos-bilhar.mp4",
+        "title": "Fenrir",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/Ie94yWMKEsw"
+        }
+      },
+      "Melusi": {
+        "video": "assets/videos/tactics/cassino-calypso/melusi-charutos-bilhar.mp4",
+        "title": "Melusi",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/xJNfa_3E1ZU"
+        }
+      }
     },
     "operators": [
       { "name": "Thorn", "assignment": "Preparar as armadilhas do setup no segundo andar" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "laboratorio-defesa-centro-comando-servidores",
+    "name": "Centro de Comando / Servidores",
+    "mapId": "laboratorio",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["centro-de-comando-servidores"],
+    "status": "draft",
+    "description": "Denari prepara o setup defensivo do Centro de Comando e dos Servidores.",
+    "operatorVideos": {
+      "Denari": {
+        "video": "assets/videos/tactics/laboratorio/denari-centro-comando-servidores.mp4",
+        "title": "Denari",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/9IAavevFqjA"
+        }
+      },
+      "Melusi": {
+        "video": "assets/videos/tactics/laboratorio/melusi-centro-comando-servidores.mp4",
+        "title": "Melusi",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/9m7gk_JgWHU"
+        }
+      }
+    },
+    "operators": [
+      { "name": "Denari", "assignment": "Preparar o setup no segundo andar" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "parque-defesa-iniciacao-escritorio",
+    "name": "Iniciação / Escritório",
+    "mapId": "parque",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["iniciacao-escritorio"],
+    "status": "draft",
+    "description": "Fenrir prepara o setup defensivo da Iniciação e do Escritório.",
+    "operatorVideos": {
+      "Fenrir": {
+        "video": "assets/videos/tactics/parque/fenrir-iniciacao-escritorio.mp4",
+        "title": "Fenrir",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/n79oLidg2p8"
+        }
+      },
+      "Castle": {
+        "video": "assets/videos/tactics/parque/castle-iniciacao-escritorio.mp4",
+        "title": "Castle",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/A4CwuVuNVj8"
+        }
+      }
+    },
+    "operators": [
+      { "name": "Fenrir", "assignment": "Preparar o setup no segundo andar" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "parque-defesa-trono-arsenal",
+    "name": "Sala do Trono / Arsenal",
+    "mapId": "parque",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["sala-do-trono-arsenal"],
+    "status": "draft",
+    "description": "Azami prepara o setup defensivo da Sala do Trono e do Arsenal.",
+    "operatorVideos": {
+      "Azami": {
+        "video": "assets/videos/tactics/parque/azami-trono-arsenal.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/odVGp2v772s"
+        }
+      }
+    },
+    "operators": [
+      { "name": "Azami", "assignment": "Preparar as barreiras Kiba no primeiro andar" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "oregon-defesa-lavanderia-suprimentos",
+    "name": "Lavanderia / Suprimentos",
+    "mapId": "oregon",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["lavanderia-suprimentos"],
+    "status": "draft",
+    "description": "Goyo prepara o setup defensivo da Lavanderia e dos Suprimentos.",
+    "operatorVideos": {
+      "Goyo": {
+        "video": "assets/videos/tactics/oregon/goyo-lavanderia-suprimentos.mp4",
+        "title": "Goyo",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/ho-htJoRQFw"
+        }
+      },
+      "Mira": {
+        "video": "assets/videos/tactics/oregon/mira-lavanderia-suprimentos.mp4",
+        "title": "Mira",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/tMHC1BUZY2k"
+        }
+      },
+      "Fenrir": {
+        "video": "assets/videos/tactics/oregon/fenrir-lavanderia-suprimentos.mp4",
+        "title": "Fenrir",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/P0AdBrFHPVI"
+        }
+      }
+    },
+    "operators": [
+      { "name": "Goyo", "assignment": "Preparar os dispositivos no subsolo" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "litoral-defesa-cozinha-servico",
+    "name": "Cozinha / Entrada de Serviço",
+    "mapId": "litoral",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["cozinha-entrada-de-servico"],
+    "status": "draft",
+    "description": "Fenrir prepara o setup defensivo da Cozinha e da Entrada de Serviço.",
+    "operatorVideos": {
+      "Fenrir": {
+        "video": "assets/videos/tactics/litoral/fenrir-cozinha-servico.mp4",
+        "title": "Fenrir",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/smzeVenoG9M"
+        }
+      }
+    },
+    "operators": [
+      { "name": "Fenrir", "assignment": "Preparar as minas no primeiro andar" }
     ],
     "banReplacements": {}
   }
