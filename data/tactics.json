@@ -8,12 +8,60 @@
     "bombSiteIds": ["sala-vigilancia-sala-cofre"],
     "status": "draft",
     "operatorVideos": {
+      "Azami": {
+        "video": "assets/videos/tactics/clubhouse/azami-vigilancia-cofre.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=ibGuF5KGSOk"
+        }
+      },
       "Melusi": {
         "video": "assets/videos/tactics/clubhouse/melusi-vigilancia-cofre.mp4",
         "title": "Melusi",
         "metadata": {
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/shorts/Cos6ONzJHgM"
+        }
+      },
+      "Castle": {
+        "video": "assets/videos/tactics/clubhouse/castle-vigilancia-cofre.mp4",
+        "title": "Castle",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/1pDcuIcZPVw"
+        }
+      },
+      "Valkyrie": {
+        "video": "assets/videos/tactics/clubhouse/valkyrie-vigilancia-cofre.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/1Z3HjOGC1og"
+        }
+      },
+      "Fenrir": {
+        "video": "assets/videos/tactics/clubhouse/fenrir-vigilancia-cofre.mp4",
+        "title": "Fenrir",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/9dUEKpBk4ws"
+        }
+      },
+      "Mute": {
+        "video": "assets/videos/tactics/clubhouse/mute-vigilancia-cofre.mp4",
+        "title": "Mute",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/G5xat_CcpL4"
+        }
+      },
+      "Thorn": {
+        "video": "assets/videos/tactics/clubhouse/thorn-vigilancia-cofre.mp4",
+        "title": "Thorn",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/C0F1eCa1o6w"
         }
       }
     },
@@ -58,12 +106,60 @@
     "overviewImage": "assets/images/tactics/clubhouse/quarto-academia-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no andar de Academia e Quarto do Clubhouse.",
     "operatorVideos": {
+      "Frost": {
+        "video": "assets/videos/tactics/clubhouse/frost-academia-quarto.mp4",
+        "title": "Frost",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=6zvQh0oN66I"
+        }
+      },
+      "Thorn": {
+        "video": "assets/videos/tactics/clubhouse/thorn-academia-quarto.mp4",
+        "title": "Thorn",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=V6HG2N4CmRo"
+        }
+      },
       "Mira": {
         "video": "assets/videos/tactics/clubhouse/mira-academia-quarto.mp4",
         "title": "Mira",
         "metadata": {
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/shorts/hu7TELCvqjw"
+        }
+      },
+      "Maestro": {
+        "video": "assets/videos/tactics/clubhouse/maestro-academia-quarto.mp4",
+        "title": "Maestro",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/E8qy3NKHOnE"
+        }
+      },
+      "Fenrir": {
+        "video": "assets/videos/tactics/clubhouse/fenrir-academia-quarto.mp4",
+        "title": "Fenrir",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/rFftUXpxzoU"
+        }
+      },
+      "Azami": {
+        "video": "assets/videos/tactics/clubhouse/azami-academia-quarto.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/BZJ719MkvwQ"
+        }
+      },
+      "Castle": {
+        "video": "assets/videos/tactics/clubhouse/castle-academia-quarto.mp4",
+        "title": "Castle",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/JsQCbbZrygU"
         }
       }
     },
@@ -138,6 +234,22 @@
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/shorts/-ud7PF8DsEc"
         }
+      },
+      "Mira": {
+        "video": "assets/videos/tactics/consulado/mira-garagem-cafeteria.mp4",
+        "title": "Mira",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/2GWwk8mOZ9s"
+        }
+      },
+      "Fenrir": {
+        "video": "assets/videos/tactics/consulado/fenrir-garagem-cafeteria.mp4",
+        "title": "Fenrir",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/EaZ902PcXIo"
+        }
       }
     },
     "operators": [
@@ -161,7 +273,47 @@
     "overviewImage": "assets/images/tactics/mansao/aviacao-jogos-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Sala de Aviação e Sala de Jogos da Mansão.",
     "operatorVideos": {
-      "Azami": "assets/videos/tactics/mansao/azami-aviacao-jogos.mp4"
+      "Thorn": {
+        "video": "assets/videos/tactics/mansao/thorn-aviacao-jogos.mp4",
+        "title": "Thorn",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=g7iyGFXoXPU"
+        }
+      },
+      "Azami": "assets/videos/tactics/mansao/azami-aviacao-jogos.mp4",
+      "Valkyrie": {
+        "video": "assets/videos/tactics/mansao/valkyrie-aviacao-jogos.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/gFX_f0JNECE"
+        }
+      },
+      "Fenrir": {
+        "video": "assets/videos/tactics/mansao/fenrir-aviacao-jogos.mp4",
+        "title": "Fenrir",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/FyKhByx4C5U"
+        }
+      },
+      "Mira": {
+        "video": "assets/videos/tactics/mansao/mira-aviacao-jogos.mp4",
+        "title": "Mira",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/Es-Tx0zkOsE"
+        }
+      },
+      "Mute": {
+        "video": "assets/videos/tactics/mansao/mute-aviacao-jogos.mp4",
+        "title": "Mute",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/lav5KPwbWBQ"
+        }
+      }
     },
     "overviewVariants": [
       {
@@ -214,12 +366,76 @@
     "overviewImage": "assets/images/tactics/cafe/cozinha-servico-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Cozinha e Serviço do Café.",
     "operatorVideos": {
+      "Frost": {
+        "video": "assets/videos/tactics/cafe/frost-cozinha-servico.mp4",
+        "title": "Frost",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=3xogyskuFQM"
+        }
+      },
+      "Thorn": {
+        "video": "assets/videos/tactics/cafe/thorn-cozinha-servico.mp4",
+        "title": "Thorn",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=uCGdzqviOhM"
+        }
+      },
+      "Valkyrie": {
+        "video": "assets/videos/tactics/cafe/valkyrie-cozinha-servico.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=9mkctWjJtMk"
+        }
+      },
+      "Mira": {
+        "video": "assets/videos/tactics/cafe/mira-cozinha-servico.mp4",
+        "title": "Mira",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=s0ACABxvvMA"
+        }
+      },
       "Melusi": {
         "video": "assets/videos/tactics/cafe/melusi-cozinha-servico.mp4",
         "title": "Melusi",
         "metadata": {
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/shorts/nVFnqzL3E2E"
+        }
+      },
+      "Mute": {
+        "video": "assets/videos/tactics/cafe/mute-cozinha-servico.mp4",
+        "title": "Mute",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/3gn9tT6sG24"
+        }
+      },
+      "Fenrir": {
+        "video": "assets/videos/tactics/cafe/fenrir-cozinha-servico.mp4",
+        "title": "Fenrir",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/alUbmC1DIuI"
+        }
+      },
+      "Maestro": {
+        "video": "assets/videos/tactics/cafe/maestro-cozinha-servico.mp4",
+        "title": "Maestro",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/uQgaWmIpVpo"
+        }
+      },
+      "Azami": {
+        "video": "assets/videos/tactics/cafe/azami-cozinha-servico.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/XzlnB4x6Af0"
         }
       }
     },
@@ -243,6 +459,14 @@
     "overviewImage": "assets/images/tactics/cafe/bar-coqueteis-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Bar e Lounge de Coquetéis do Café.",
     "operatorVideos": {
+      "Maestro": {
+        "video": "assets/videos/tactics/cafe/maestro-bar-coqueteis.mp4",
+        "title": "Maestro",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=T6NEyytq9jY"
+        }
+      },
       "Thorn": {
         "video": "assets/videos/tactics/cafe/thorn-bar-coqueteis.mp4",
         "title": "Thorn",
@@ -282,6 +506,30 @@
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/shorts/_tuzXuLM514"
         }
+      },
+      "Melusi": {
+        "video": "assets/videos/tactics/cafe/melusi-bar-coqueteis.mp4",
+        "title": "Melusi",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/aL3Jw-iRUxw"
+        }
+      },
+      "Castle": {
+        "video": "assets/videos/tactics/cafe/castle-bar-coqueteis.mp4",
+        "title": "Castle",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/4n7tQPcY0AM"
+        }
+      },
+      "Mute": {
+        "video": "assets/videos/tactics/cafe/mute-bar-coqueteis.mp4",
+        "title": "Mute",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/MABK0AAp0gw"
+        }
       }
     },
     "operators": [
@@ -304,8 +552,64 @@
     "overviewImage": "assets/images/tactics/litoral/narguile-bilhar-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Lounge de Narguilé e Sala de Bilhar do Litoral.",
     "operatorVideos": {
+      "Frost": {
+        "video": "assets/videos/tactics/litoral/frost-narguile-bilhar.mp4",
+        "title": "Frost",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=S3oVCJGO5ew"
+        }
+      },
+      "Thorn": {
+        "video": "assets/videos/tactics/litoral/thorn-narguile-bilhar.mp4",
+        "title": "Thorn",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=VOKFZMD5u7c"
+        }
+      },
+      "Mira": {
+        "video": "assets/videos/tactics/litoral/mira-narguile-bilhar.mp4",
+        "title": "Mira",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=4gvo22i1qY8"
+        }
+      },
       "Maestro": "assets/videos/tactics/litoral/maestro-relax-sala-jogos.mp4",
-      "Azami": "assets/videos/tactics/litoral/azami-relax-sala-jogos.mp4"
+      "Azami": "assets/videos/tactics/litoral/azami-relax-sala-jogos.mp4",
+      "Valkyrie": {
+        "video": "assets/videos/tactics/litoral/valkyrie-narguile-bilhar.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/n5WySpbA6zg"
+        }
+      },
+      "Melusi": {
+        "video": "assets/videos/tactics/litoral/melusi-narguile-bilhar.mp4",
+        "title": "Melusi",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/BP2UsNczi2k"
+        }
+      },
+      "Fenrir": {
+        "video": "assets/videos/tactics/litoral/fenrir-narguile-bilhar.mp4",
+        "title": "Fenrir",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/kYr4ql8fVo8"
+        }
+      },
+      "Mute": {
+        "video": "assets/videos/tactics/litoral/mute-narguile-bilhar.mp4",
+        "title": "Mute",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/C0qepEBvNC8"
+        }
+      }
     },
     "operators": [
       { "name": "Maestro", "assignment": "Função a definir" },
@@ -345,6 +649,22 @@
     "overviewImage": "assets/images/tactics/banco/armarios-vigilancia-overview-v2.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Armários e Vigilância do Banco.",
     "operatorVideos": {
+      "Frost": {
+        "video": "assets/videos/tactics/banco/frost-armarios-vigilancia.mp4",
+        "title": "Frost",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=tD6hyLwwDps"
+        }
+      },
+      "Azami": {
+        "video": "assets/videos/tactics/banco/azami-armarios-vigilancia.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=4ONwl2NV5eg"
+        }
+      },
       "Maestro": "assets/videos/tactics/banco/maestro-armarios-vigilancia.mp4",
       "Denari": "assets/videos/tactics/banco/denari-armarios-vigilancia.mp4",
       "Fenrir": {
@@ -361,6 +681,30 @@
         "metadata": {
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/shorts/W9aqUKlESBQ"
+        }
+      },
+      "Melusi": {
+        "video": "assets/videos/tactics/banco/melusi-armarios-vigilancia.mp4",
+        "title": "Melusi",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/DRlTxjyuHNw"
+        }
+      },
+      "Mira": {
+        "video": "assets/videos/tactics/banco/mira-armarios-vigilancia.mp4",
+        "title": "Mira",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/o80BoqcMkHY"
+        }
+      },
+      "Mute": {
+        "video": "assets/videos/tactics/banco/mute-armarios-vigilancia.mp4",
+        "title": "Mute",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/E8YJBOrRxMY"
         }
       }
     },
@@ -393,6 +737,14 @@
     "overviewImage": "assets/images/tactics/banco/sala-ceo-lounge-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Sala do CEO e Lounge do Banco.",
     "operatorVideos": {
+      "Maestro": {
+        "video": "assets/videos/tactics/banco/maestro-sala-ceo-lounge.mp4",
+        "title": "Maestro",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=LYXX24oAiG8"
+        }
+      },
       "Castle": "assets/videos/tactics/banco/castle-sala-ceo-lounge.mp4",
       "Thorn": {
         "video": "assets/videos/tactics/banco/thorn-sala-ceo-lounge.mp4",
@@ -408,6 +760,38 @@
         "metadata": {
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/shorts/EKbeMF1bv70"
+        }
+      },
+      "Azami": {
+        "video": "assets/videos/tactics/banco/azami-sala-ceo-lounge.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/iQQLc6yTJsw"
+        }
+      },
+      "Fenrir": {
+        "video": "assets/videos/tactics/banco/fenrir-sala-ceo-lounge.mp4",
+        "title": "Fenrir",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/jFx3H8cBFVI"
+        }
+      },
+      "Valkyrie": {
+        "video": "assets/videos/tactics/banco/valkyrie-sala-ceo-lounge.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/Lf8WwgTq1xU"
+        }
+      },
+      "Melusi": {
+        "video": "assets/videos/tactics/banco/melusi-sala-ceo-lounge.mp4",
+        "title": "Melusi",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/_g3HZmYpCdc"
         }
       }
     },
@@ -453,6 +837,14 @@
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/shorts/ZG3hhnmJ2ek"
         }
+      },
+      "Mira": {
+        "video": "assets/videos/tactics/chale/mira-adega-garagem.mp4",
+        "title": "Mira",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/ZSXKfPJS0qI"
+        }
       }
     },
     "operators": [
@@ -479,6 +871,46 @@
     "overviewImage": "assets/images/tactics/chale/quarto-principal-escritorio-overview.png",
     "overviewAlt": "Planta do segundo andar do Chalé com a distribuição dos operadores e equipamentos da defesa de Quarto Principal e Escritório.",
     "operatorVideos": {
+      "Frost": {
+        "video": "assets/videos/tactics/chale/frost-quarto-principal-escritorio.mp4",
+        "title": "Frost",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=l2RM9dEzXXs"
+        }
+      },
+      "Thorn": {
+        "video": "assets/videos/tactics/chale/thorn-quarto-principal-escritorio.mp4",
+        "title": "Thorn",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=6X8ANxzug68"
+        }
+      },
+      "Maestro": {
+        "video": "assets/videos/tactics/chale/maestro-quarto-principal-escritorio.mp4",
+        "title": "Maestro",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=ZEdPalLNNQw"
+        }
+      },
+      "Valkyrie": {
+        "video": "assets/videos/tactics/chale/valkyrie-quarto-principal-escritorio.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=3ZB2V4PT0Xo"
+        }
+      },
+      "Azami": {
+        "video": "assets/videos/tactics/chale/azami-quarto-principal-escritorio.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=Z8VQ_IXXpNo"
+        }
+      },
       "Denari": [
         {
           "title": "Setup 1",
@@ -490,7 +922,31 @@
         }
       ],
       "Melusi": "assets/videos/tactics/chale/melusi-quarto-escritorio.mp4",
-      "Kaid": "assets/videos/tactics/chale/kaid-quarto-escritorio.mp4"
+      "Kaid": "assets/videos/tactics/chale/kaid-quarto-escritorio.mp4",
+      "Fenrir": {
+        "video": "assets/videos/tactics/chale/fenrir-quarto-principal-escritorio.mp4",
+        "title": "Fenrir",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/_3wDJxHFMWU"
+        }
+      },
+      "Castle": {
+        "video": "assets/videos/tactics/chale/castle-quarto-principal-escritorio.mp4",
+        "title": "Castle",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/qpOSNXcVxHg"
+        }
+      },
+      "Goyo": {
+        "video": "assets/videos/tactics/chale/goyo-quarto-principal-escritorio.mp4",
+        "title": "Goyo",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/0nLdg-R0Kgc"
+        }
+      }
     },
     "operators": [
       { "name": "Denari", "assignment": "Função a definir" },
@@ -583,6 +1039,54 @@
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/shorts/2mpuju2CIbA"
         }
+      },
+      "Valkyrie": {
+        "video": "assets/videos/tactics/fronteira/valkyrie-arsenal-arquivos.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/U8cNNrnYMjo"
+        }
+      },
+      "Mute": {
+        "video": "assets/videos/tactics/fronteira/mute-arsenal-arquivos.mp4",
+        "title": "Mute",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/nqpTo3t9jmw"
+        }
+      },
+      "Melusi": {
+        "video": "assets/videos/tactics/fronteira/melusi-arsenal-arquivos.mp4",
+        "title": "Melusi",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/hQMPFDnUVwA"
+        }
+      },
+      "Castle": {
+        "video": "assets/videos/tactics/fronteira/castle-arsenal-arquivos.mp4",
+        "title": "Castle",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/jRU9F0ionkU"
+        }
+      },
+      "Azami": {
+        "video": "assets/videos/tactics/fronteira/azami-arsenal-arquivos.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/ZO3VxxrVC7c"
+        }
+      },
+      "Kapkan": {
+        "video": "assets/videos/tactics/fronteira/kapkan-arsenal-arquivos.mp4",
+        "title": "Kapkan",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/R7EKbsE2P8Y"
+        }
       }
     },
     "operators": [
@@ -605,6 +1109,14 @@
     "status": "draft",
     "description": "Maestro prepara os Evil Eyes para negar o plant na defesa do Radar.",
     "operatorVideos": {
+      "Mira": {
+        "video": "assets/videos/tactics/kanal/mira-servidores-radar.mp4",
+        "title": "Mira",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=qAKB6cPPt9w"
+        }
+      },
       "Maestro": "assets/videos/tactics/kanal/maestro-servidores-radar.mp4",
       "Valkyrie": {
         "video": "assets/videos/tactics/kanal/valkyrie-servidores-radar.mp4",
@@ -638,6 +1150,14 @@
     "status": "draft",
     "description": "Thorn prepara o setup defensivo do Dormitório e do Quarto Infantil.",
     "operatorVideos": {
+      "Maestro": {
+        "video": "assets/videos/tactics/oregon/maestro-dormitorio-quarto-infantil.mp4",
+        "title": "Maestro",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=OkXqTrNFHRY"
+        }
+      },
       "Thorn": "assets/videos/tactics/oregon/thorn-dormitorio-quarto-infantil.mp4",
       "Castle": {
         "video": "assets/videos/tactics/oregon/castle-dormitorio-quarto-infantil.mp4",
@@ -645,6 +1165,70 @@
         "metadata": {
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/shorts/ao6RrwM9jY4"
+        }
+      },
+      "Melusi": {
+        "video": "assets/videos/tactics/oregon/melusi-dormitorio-quarto-infantil.mp4",
+        "title": "Melusi",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/pqfMoyzrolw"
+        }
+      },
+      "Frost": {
+        "video": "assets/videos/tactics/oregon/frost-dormitorio-quarto-infantil.mp4",
+        "title": "Frost",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/H-66beI6-hU"
+        }
+      },
+      "Azami": {
+        "video": "assets/videos/tactics/oregon/azami-dormitorio-quarto-infantil.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/NChK1CvqLNw"
+        }
+      },
+      "Goyo": {
+        "video": "assets/videos/tactics/oregon/goyo-dormitorio-quarto-infantil.mp4",
+        "title": "Goyo",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/TfApEv_-lXc"
+        }
+      },
+      "Fenrir": {
+        "video": "assets/videos/tactics/oregon/fenrir-dormitorio-quarto-infantil.mp4",
+        "title": "Fenrir",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/lyyDVMnEQ4k"
+        }
+      },
+      "Valkyrie": {
+        "video": "assets/videos/tactics/oregon/valkyrie-dormitorio-quarto-infantil.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/7-yqZ7XQb7E"
+        }
+      },
+      "Mira": {
+        "video": "assets/videos/tactics/oregon/mira-dormitorio-quarto-infantil.mp4",
+        "title": "Mira",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/bcDRlLfqpy4"
+        }
+      },
+      "Mute": {
+        "video": "assets/videos/tactics/oregon/mute-dormitorio-quarto-infantil.mp4",
+        "title": "Mute",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/PN0A0oBP6Yg"
         }
       }
     },
@@ -663,6 +1247,30 @@
     "status": "draft",
     "description": "Thorn prepara o setup defensivo da Capela e da Sala de Armas.",
     "operatorVideos": {
+      "Maestro": {
+        "video": "assets/videos/tactics/clubhouse/maestro-capela-sala-armas.mp4",
+        "title": "Maestro",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=XQ1hpB6tAt0"
+        }
+      },
+      "Valkyrie": {
+        "video": "assets/videos/tactics/clubhouse/valkyrie-capela-sala-armas.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=-HgeGufkhLA"
+        }
+      },
+      "Mira": {
+        "video": "assets/videos/tactics/clubhouse/mira-capela-sala-armas.mp4",
+        "title": "Mira",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=Fd4u36beuis"
+        }
+      },
       "Thorn": "assets/videos/tactics/clubhouse/thorn-capela-sala-armas.mp4",
       "Fenrir": {
         "video": "assets/videos/tactics/clubhouse/fenrir-capela-sala-armas.mp4",
@@ -678,6 +1286,38 @@
         "metadata": {
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/shorts/Goq02i3X09I"
+        }
+      },
+      "Mute": {
+        "video": "assets/videos/tactics/clubhouse/mute-capela-sala-armas.mp4",
+        "title": "Mute",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/4vv-IWl3zYw"
+        }
+      },
+      "Frost": {
+        "video": "assets/videos/tactics/clubhouse/frost-capela-sala-armas.mp4",
+        "title": "Frost",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/KqFFQrRnVv0"
+        }
+      },
+      "Melusi": {
+        "video": "assets/videos/tactics/clubhouse/melusi-capela-sala-armas.mp4",
+        "title": "Melusi",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/12QdkGUKTYc"
+        }
+      },
+      "Castle": {
+        "video": "assets/videos/tactics/clubhouse/castle-capela-sala-armas.mp4",
+        "title": "Castle",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/35y6M6rleuQ"
         }
       }
     },
@@ -696,6 +1336,22 @@
     "status": "draft",
     "description": "Thorn prepara o setup defensivo da Sala de Charutos e do Bilhar.",
     "operatorVideos": {
+      "Maestro": {
+        "video": "assets/videos/tactics/cassino-calypso/maestro-charutos-bilhar.mp4",
+        "title": "Maestro",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=MR4AufrO6Lk"
+        }
+      },
+      "Valkyrie": {
+        "video": "assets/videos/tactics/cassino-calypso/valkyrie-charutos-bilhar.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=VthoayL-4IY"
+        }
+      },
       "Thorn": {
         "video": "assets/videos/tactics/cassino-calypso/thorn-charutos-bilhar.mp4",
         "title": "Thorn",
@@ -719,6 +1375,14 @@
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/shorts/xJNfa_3E1ZU"
         }
+      },
+      "Azami": {
+        "video": "assets/videos/tactics/cassino-calypso/azami-charutos-bilhar.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/coZ1WMsBey0"
+        }
       }
     },
     "operators": [
@@ -736,6 +1400,14 @@
     "status": "draft",
     "description": "Denari prepara o setup defensivo do Centro de Comando e dos Servidores.",
     "operatorVideos": {
+      "Mira": {
+        "video": "assets/videos/tactics/laboratorio/mira-centro-comando-servidores.mp4",
+        "title": "Mira",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=FxyoNVyriqo"
+        }
+      },
       "Denari": {
         "video": "assets/videos/tactics/laboratorio/denari-centro-comando-servidores.mp4",
         "title": "Denari",
@@ -750,6 +1422,22 @@
         "metadata": {
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/shorts/9m7gk_JgWHU"
+        }
+      },
+      "Azami": {
+        "video": "assets/videos/tactics/laboratorio/azami-centro-comando-servidores.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/1UuQUS0JX1I"
+        }
+      },
+      "Valkyrie": {
+        "video": "assets/videos/tactics/laboratorio/valkyrie-centro-comando-servidores.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/du1nxc7yjg4"
         }
       }
     },
@@ -768,6 +1456,14 @@
     "status": "draft",
     "description": "Fenrir prepara o setup defensivo da Iniciação e do Escritório.",
     "operatorVideos": {
+      "Azami": {
+        "video": "assets/videos/tactics/parque/azami-iniciacao-escritorio.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=htT7pAhgyz0"
+        }
+      },
       "Fenrir": {
         "video": "assets/videos/tactics/parque/fenrir-iniciacao-escritorio.mp4",
         "title": "Fenrir",
@@ -782,6 +1478,22 @@
         "metadata": {
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/shorts/A4CwuVuNVj8"
+        }
+      },
+      "Valkyrie": {
+        "video": "assets/videos/tactics/parque/valkyrie-iniciacao-escritorio.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/mhWHSQoohpw"
+        }
+      },
+      "Mira": {
+        "video": "assets/videos/tactics/parque/mira-iniciacao-escritorio.mp4",
+        "title": "Mira",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/S1qd_7SWus4"
         }
       }
     },
@@ -800,6 +1512,38 @@
     "status": "draft",
     "description": "Azami prepara o setup defensivo da Sala do Trono e do Arsenal.",
     "operatorVideos": {
+      "Frost": {
+        "video": "assets/videos/tactics/parque/frost-trono-arsenal.mp4",
+        "title": "Frost",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=aGEO_zyYt8M"
+        }
+      },
+      "Thorn": {
+        "video": "assets/videos/tactics/parque/thorn-trono-arsenal.mp4",
+        "title": "Thorn",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=M3o1JcfX4XQ"
+        }
+      },
+      "Maestro": {
+        "video": "assets/videos/tactics/parque/maestro-trono-arsenal.mp4",
+        "title": "Maestro",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=ol1fGs7SmRI"
+        }
+      },
+      "Valkyrie": {
+        "video": "assets/videos/tactics/parque/valkyrie-trono-arsenal.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=96A7FJJiq50"
+        }
+      },
       "Azami": {
         "video": "assets/videos/tactics/parque/azami-trono-arsenal.mp4",
         "title": "Azami",
@@ -824,6 +1568,22 @@
     "status": "draft",
     "description": "Goyo prepara o setup defensivo da Lavanderia e dos Suprimentos.",
     "operatorVideos": {
+      "Frost": {
+        "video": "assets/videos/tactics/oregon/frost-lavanderia-suprimentos.mp4",
+        "title": "Frost",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=9z4pLY_SBD8"
+        }
+      },
+      "Thorn": {
+        "video": "assets/videos/tactics/oregon/thorn-lavanderia-suprimentos.mp4",
+        "title": "Thorn",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=ipgVI6sfDJM"
+        }
+      },
       "Goyo": {
         "video": "assets/videos/tactics/oregon/goyo-lavanderia-suprimentos.mp4",
         "title": "Goyo",
@@ -847,6 +1607,46 @@
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/shorts/P0AdBrFHPVI"
         }
+      },
+      "Denari": {
+        "video": "assets/videos/tactics/oregon/denari-lavanderia-suprimentos.mp4",
+        "title": "Denari",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/Rq5Npym8AWk"
+        }
+      },
+      "Azami": {
+        "video": "assets/videos/tactics/oregon/azami-lavanderia-suprimentos.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/vXYj1Vv_KgY"
+        }
+      },
+      "Valkyrie": {
+        "video": "assets/videos/tactics/oregon/valkyrie-lavanderia-suprimentos.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/ve-_1-rzA7U"
+        }
+      },
+      "Mute": {
+        "video": "assets/videos/tactics/oregon/mute-lavanderia-suprimentos.mp4",
+        "title": "Mute",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/psdJGCOQESE"
+        }
+      },
+      "Melusi": {
+        "video": "assets/videos/tactics/oregon/melusi-lavanderia-suprimentos.mp4",
+        "title": "Melusi",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/V5K6qAoX24E"
+        }
       }
     },
     "operators": [
@@ -864,6 +1664,14 @@
     "status": "draft",
     "description": "Fenrir prepara o setup defensivo da Cozinha e da Entrada de Serviço.",
     "operatorVideos": {
+      "Thorn": {
+        "video": "assets/videos/tactics/litoral/thorn-cozinha-servico.mp4",
+        "title": "Thorn",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=9QW-olrpgWg"
+        }
+      },
       "Fenrir": {
         "video": "assets/videos/tactics/litoral/fenrir-cozinha-servico.mp4",
         "title": "Fenrir",
@@ -871,10 +1679,499 @@
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/shorts/smzeVenoG9M"
         }
+      },
+      "Mute": {
+        "video": "assets/videos/tactics/litoral/mute-cozinha-servico.mp4",
+        "title": "Mute",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/_q2kY6GIkMM"
+        }
+      },
+      "Melusi": {
+        "video": "assets/videos/tactics/litoral/melusi-cozinha-servico.mp4",
+        "title": "Melusi",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/itjWLxmZJmM"
+        }
+      },
+      "Azami": {
+        "video": "assets/videos/tactics/litoral/azami-cozinha-servico.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/RBZRWEJ9OoQ"
+        }
+      },
+      "Maestro": {
+        "video": "assets/videos/tactics/litoral/maestro-cozinha-servico.mp4",
+        "title": "Maestro",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/Op3IIjYS2FQ"
+        }
+      },
+      "Mira": {
+        "video": "assets/videos/tactics/litoral/mira-cozinha-servico.mp4",
+        "title": "Mira",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/BeP02fPjW3Y"
+        }
       }
     },
     "operators": [
       { "name": "Fenrir", "assignment": "Preparar as minas no primeiro andar" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "mansao-defesa-trofeus-estatuas",
+    "name": "Sala de Troféus / Sala de Estátuas",
+    "mapId": "mansao",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["sala-de-trofeus-sala-de-estatuas"],
+    "status": "draft",
+    "description": "Setups defensivos para a Sala de Troféus e a Sala de Estátuas.",
+    "operatorVideos": {
+      "Frost": {
+        "video": "assets/videos/tactics/mansao/frost-trofeus-estatuas.mp4",
+        "title": "Frost",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=4uCU2PIr_Jo"
+        }
+      },
+      "Thorn": {
+        "video": "assets/videos/tactics/mansao/thorn-trofeus-estatuas.mp4",
+        "title": "Thorn",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=VsCCuTW1ZBQ"
+        }
+      },
+      "Maestro": {
+        "video": "assets/videos/tactics/mansao/maestro-trofeus-estatuas.mp4",
+        "title": "Maestro",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=KRKYSmJCUW0"
+        }
+      },
+      "Valkyrie": {
+        "video": "assets/videos/tactics/mansao/valkyrie-trofeus-estatuas.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=s-pDsr42Rfg"
+        }
+      },
+      "Azami": {
+        "video": "assets/videos/tactics/mansao/azami-trofeus-estatuas.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=YnVupCkiNPQ"
+        }
+      },
+      "Mira": {
+        "video": "assets/videos/tactics/mansao/mira-trofeus-estatuas.mp4",
+        "title": "Mira",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=rK9Hmc4_gM0"
+        }
+      },
+      "Goyo": {
+        "video": "assets/videos/tactics/mansao/goyo-trofeus-estatuas.mp4",
+        "title": "Goyo",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/VODz9xhq-Yw"
+        }
+      },
+      "Melusi": {
+        "video": "assets/videos/tactics/mansao/melusi-trofeus-estatuas.mp4",
+        "title": "Melusi",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/T0KVIwhIvbk"
+        }
+      }
+    },
+    "operators": [
+      { "name": "Goyo", "assignment": "Preparar os dispositivos no segundo andar" },
+      { "name": "Melusi", "assignment": "Distribuir as Banshees no entorno do bombsite" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "cafe-defesa-leitura-lareira",
+    "name": "Sala de Leitura / Sala de Lareira",
+    "mapId": "cafe",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["sala-de-leitura-sala-de-lareira"],
+    "status": "draft",
+    "description": "Setup defensivo de Maestro para a Sala de Leitura e a Sala de Lareira.",
+    "operatorVideos": {
+      "Azami": {
+        "video": "assets/videos/tactics/cafe/azami-leitura-lareira.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=yylgQJBm9gk"
+        }
+      },
+      "Mira": {
+        "video": "assets/videos/tactics/cafe/mira-leitura-lareira.mp4",
+        "title": "Mira",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=gVFistDieqo"
+        }
+      },
+      "Maestro": {
+        "video": "assets/videos/tactics/cafe/maestro-leitura-lareira.mp4",
+        "title": "Maestro",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/zX_G5Mur81Y"
+        }
+      },
+      "Valkyrie": {
+        "video": "assets/videos/tactics/cafe/valkyrie-leitura-lareira.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/D_JZjxvF0Yk"
+        }
+      }
+    },
+    "operators": [
+      { "name": "Maestro", "assignment": "Posicionar os Evil Eyes no segundo andar" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "laboratorio-defesa-deposito-controle",
+    "name": "Depósito / Sala de Controle",
+    "mapId": "laboratorio",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["deposito-sala-de-controle"],
+    "status": "draft",
+    "description": "Setup defensivo de Fenrir para Depósito e Sala de Controle.",
+    "operatorVideos": {
+      "Thorn": {
+        "video": "assets/videos/tactics/laboratorio/thorn-deposito-controle.mp4",
+        "title": "Thorn",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=4CiS_ujb_wM"
+        }
+      },
+      "Maestro": {
+        "video": "assets/videos/tactics/laboratorio/maestro-deposito-controle.mp4",
+        "title": "Maestro",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=ejdDayBJIIY"
+        }
+      },
+      "Valkyrie": {
+        "video": "assets/videos/tactics/laboratorio/valkyrie-deposito-controle.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=aiQBXFD0AUs"
+        }
+      },
+      "Mira": {
+        "video": "assets/videos/tactics/laboratorio/mira-deposito-controle.mp4",
+        "title": "Mira",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=ujtYyiKCFcQ"
+        }
+      },
+      "Fenrir": {
+        "video": "assets/videos/tactics/laboratorio/fenrir-deposito-controle.mp4",
+        "title": "Fenrir",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/wHKOVXPIrUI"
+        }
+      }
+    },
+    "operators": [
+      { "name": "Fenrir", "assignment": "Preparar as minas no primeiro andar" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "laboratorio-defesa-cozinha-cafeteria",
+    "name": "Cozinha / Cafeteria",
+    "mapId": "laboratorio",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["cozinha-cafeteria"],
+    "status": "draft",
+    "description": "Setup defensivo de Fenrir para Cozinha e Cafeteria.",
+    "operatorVideos": {
+      "Azami": {
+        "video": "assets/videos/tactics/laboratorio/azami-cozinha-cafeteria.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=EHOIbQtxnS4"
+        }
+      },
+      "Fenrir": {
+        "video": "assets/videos/tactics/laboratorio/fenrir-cozinha-cafeteria.mp4",
+        "title": "Fenrir",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/oVj-LdghAN4"
+        }
+      }
+    },
+    "operators": [
+      { "name": "Fenrir", "assignment": "Preparar as minas no primeiro andar" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "cafe-defesa-mineracao-lareira",
+    "name": "Sala de Mineração / Sala de Lareira",
+    "mapId": "cafe",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["sala-de-mineracao-sala-de-lareira"],
+    "status": "draft",
+    "description": "Setup defensivo de Fenrir para a Sala de Mineração e a Sala de Lareira.",
+    "operatorVideos": {
+      "Valkyrie": {
+        "video": "assets/videos/tactics/cafe/valkyrie-mineracao-lareira.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=idz31JqtDuU"
+        }
+      },
+      "Azami": {
+        "video": "assets/videos/tactics/cafe/azami-mineracao-lareira.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=28XiW4srF-k"
+        }
+      },
+      "Mira": {
+        "video": "assets/videos/tactics/cafe/mira-mineracao-lareira.mp4",
+        "title": "Mira",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=Y8aXzP_LSgY"
+        }
+      },
+      "Fenrir": {
+        "video": "assets/videos/tactics/cafe/fenrir-mineracao-lareira.mp4",
+        "title": "Fenrir",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/BqGZZk15ETA"
+        }
+      }
+    },
+    "operators": [
+      { "name": "Fenrir", "assignment": "Preparar as minas no segundo andar" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "kanal-defesa-seguranca-mapas",
+    "name": "Segurança / Sala de Mapas",
+    "mapId": "kanal",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["seguranca-sala-de-mapas"],
+    "status": "draft",
+    "description": "Setup defensivo de Melusi para Segurança e Sala de Mapas.",
+    "operatorVideos": {
+      "Frost": {
+        "video": "assets/videos/tactics/kanal/frost-seguranca-mapas.mp4",
+        "title": "Frost",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=W379-W8NdbM"
+        }
+      },
+      "Melusi": {
+        "video": "assets/videos/tactics/kanal/melusi-seguranca-mapas.mp4",
+        "title": "Melusi",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/Cl8gWSaTj-0"
+        }
+      }
+    },
+    "operators": [
+      { "name": "Melusi", "assignment": "Distribuir as Banshees no primeiro andar" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "consulado-defesa-exposicao-piano",
+    "name": "Exposição / Piano",
+    "mapId": "consulado",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["exposicao-piano"],
+    "status": "draft",
+    "description": "Setup defensivo de Castle para Exposição e Piano.",
+    "operatorVideos": {
+      "Castle": {
+        "video": "assets/videos/tactics/consulado/castle-exposicao-piano.mp4",
+        "title": "Castle",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/QgdiPyHXFZE"
+        }
+      }
+    },
+    "operators": [
+      { "name": "Castle", "assignment": "Preparar as barricadas no primeiro andar" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "kanal-defesa-caiaques-suprimentos",
+    "name": "Caiaques / Suprimentos",
+    "mapId": "kanal",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["caiaques-suprimentos"],
+    "status": "draft",
+    "description": "Setup defensivo de Fenrir para Caiaques e Suprimentos.",
+    "operatorVideos": {
+      "Valkyrie": {
+        "video": "assets/videos/tactics/kanal/valkyrie-caiaques-suprimentos.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=3v2j20J7Fj0"
+        }
+      },
+      "Azami": {
+        "video": "assets/videos/tactics/kanal/azami-caiaques-suprimentos.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=EqtKp4z0y_c"
+        }
+      },
+      "Fenrir": {
+        "video": "assets/videos/tactics/kanal/fenrir-caiaques-suprimentos.mp4",
+        "title": "Fenrir",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/RZ4z5MPlpgo"
+        }
+      }
+    },
+    "operators": [
+      { "name": "Fenrir", "assignment": "Preparar as minas no subsolo" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "consulado-defesa-consul-reunioes",
+    "name": "Escritório do Cônsul / Sala de Reuniões",
+    "mapId": "consulado",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["escritorio-do-consul-sala-de-reunioes"],
+    "status": "draft",
+    "description": "Setup defensivo de Thorn para o Escritório do Cônsul e a Sala de Reuniões.",
+    "operatorVideos": {
+      "Frost": {
+        "video": "assets/videos/tactics/consulado/frost-consul-reunioes.mp4",
+        "title": "Frost",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=WVQ_qcx0tlo"
+        }
+      },
+      "Maestro": {
+        "video": "assets/videos/tactics/consulado/maestro-consul-reunioes.mp4",
+        "title": "Maestro",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=OT_eYNUDbcU"
+        }
+      },
+      "Valkyrie": {
+        "video": "assets/videos/tactics/consulado/valkyrie-consul-reunioes.mp4",
+        "title": "Valkyrie",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=ZOmIJKfpYm0"
+        }
+      },
+      "Azami": {
+        "video": "assets/videos/tactics/consulado/azami-consul-reunioes.mp4",
+        "title": "Azami",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=VDO_wdQhMIo"
+        }
+      },
+      "Mira": {
+        "video": "assets/videos/tactics/consulado/mira-consul-reunioes.mp4",
+        "title": "Mira",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=CpI_eOXTg1o"
+        }
+      },
+      "Thorn": {
+        "video": "assets/videos/tactics/consulado/thorn-consul-reunioes.mp4",
+        "title": "Thorn",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/GvscdGTP7zQ"
+        }
+      },
+      "Goyo": {
+        "video": "assets/videos/tactics/consulado/goyo-consul-reunioes.mp4",
+        "title": "Goyo",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/wWWAzp60qjc"
+        }
+      },
+      "Melusi": {
+        "video": "assets/videos/tactics/consulado/melusi-consul-reunioes.mp4",
+        "title": "Melusi",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/P0YGpEE7jzg"
+        }
+      },
+      "Fenrir": {
+        "video": "assets/videos/tactics/consulado/fenrir-consul-reunioes.mp4",
+        "title": "Fenrir",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/FlzavGvQrGc"
+        }
+      }
+    },
+    "operators": [
+      { "name": "Thorn", "assignment": "Preparar as armadilhas no segundo andar" }
     ],
     "banReplacements": {}
   }

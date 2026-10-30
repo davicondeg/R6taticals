@@ -335,9 +335,15 @@ function renderSetupVideos() {
     article.className = "setup-video";
     const video = document.createElement("video");
     video.controls = true;
-    video.preload = "metadata";
+    video.autoplay = true;
+    video.muted = true;
+    video.defaultMuted = true;
+    video.preload = "auto";
     video.src = entry.video;
     video.setAttribute("playsinline", "");
+    video.addEventListener("canplay", () => {
+      video.play().catch(() => {});
+    }, { once: true });
     const caption = document.createElement("div");
     caption.className = "setup-video__caption";
     const title = document.createElement("strong");
@@ -372,6 +378,7 @@ function renderSetupVideos() {
   })();
   content.push(article);
   elements.setupVideos.replaceChildren(...content);
+  elements.setupVideos.querySelector("video")?.play().catch(() => {});
   window.scrollTo({ top: 0, behavior: "smooth" });
   document.querySelector("#setup-video-title").focus({ preventScroll: true });
 }
@@ -740,6 +747,7 @@ async function showTacticSelection() {
   const available = state.tactics.filter((tactic) => tactic.mapId === state.selectedMapId
     && tactic.side === state.selectedSide
     && tactic.groupSize === state.selectedGroupSize
+    && tactic.operators.length === tactic.groupSize
     && (tactic.bombSiteIds.includes("*") || tactic.bombSiteIds.includes(state.selectedBombSiteId)));
   elements.tacticsList.replaceChildren(...available.map((tactic, index) => {
     const button = document.createElement("button");
