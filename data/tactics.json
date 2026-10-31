@@ -8,6 +8,14 @@
     "bombSiteIds": ["sala-vigilancia-sala-cofre"],
     "status": "draft",
     "operatorVideos": {
+      "Kapkan": {
+        "video": "assets/videos/tactics/clubhouse/kapkan-vigilancia-cofre.mp4",
+        "title": "Kapkan",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=3vovErY1DwY"
+        }
+      },
       "Azami": {
         "video": "assets/videos/tactics/clubhouse/azami-vigilancia-cofre.mp4",
         "title": "Azami",
@@ -106,6 +114,14 @@
     "overviewImage": "assets/images/tactics/clubhouse/quarto-academia-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no andar de Academia e Quarto do Clubhouse.",
     "operatorVideos": {
+      "Mute": {
+        "video": "assets/videos/tactics/clubhouse/mute-academia-quarto.mp4",
+        "title": "Mute",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=Ib7PIt-kg4s"
+        }
+      },
       "Frost": {
         "video": "assets/videos/tactics/clubhouse/frost-academia-quarto.mp4",
         "title": "Frost",
@@ -161,6 +177,14 @@
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/shorts/JsQCbbZrygU"
         }
+      },
+      "Kaid": {
+        "video": "assets/videos/tactics/clubhouse/kaid-academia-quarto.mp4",
+        "title": "Kaid",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=tk1UqAJP2CE"
+        }
       }
     },
     "overviewVariants": [
@@ -203,6 +227,30 @@
     "overviewImage": "assets/images/tactics/consulado/garagem-cafeteria-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Garagem e Cafeteria do Consulado.",
     "operatorVideos": {
+      "Kapkan": {
+        "video": "assets/videos/tactics/consulado/kapkan-garagem-cafeteria.mp4",
+        "title": "Kapkan",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=odsXf9eBHqo"
+        }
+      },
+      "Goyo": {
+        "video": "assets/videos/tactics/consulado/goyo-garagem-cafeteria.mp4",
+        "title": "Goyo",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=-R6n5Knadh0"
+        }
+      },
+      "Castle": {
+        "video": "assets/videos/tactics/consulado/castle-garagem-cafeteria.mp4",
+        "title": "Castle",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=jl4gT0ESv1o"
+        }
+      },
       "Azami": {
         "video": "assets/videos/tactics/consulado/azami-garagem-cafeteria.mp4",
         "title": "Azami",
@@ -273,12 +321,12 @@
     "overviewImage": "assets/images/tactics/mansao/aviacao-jogos-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Sala de Aviação e Sala de Jogos da Mansão.",
     "operatorVideos": {
-      "Thorn": {
-        "video": "assets/videos/tactics/mansao/thorn-aviacao-jogos.mp4",
-        "title": "Thorn",
+      "Goyo": {
+        "video": "assets/videos/tactics/mansao/goyo-aviacao-jogos.mp4",
+        "title": "Goyo",
         "metadata": {
           "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=g7iyGFXoXPU"
+          "sourceUrl": "https://youtube.com/watch?v=B9CYJGrvx9o"
         }
       },
       "Azami": "assets/videos/tactics/mansao/azami-aviacao-jogos.mp4",
@@ -366,6 +414,14 @@
     "overviewImage": "assets/images/tactics/cafe/cozinha-servico-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Cozinha e Serviço do Café.",
     "operatorVideos": {
+      "Castle": {
+        "video": "assets/videos/tactics/cafe/castle-cozinha-servico.mp4",
+        "title": "Castle",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=qe9ZLymXVFc"
+        }
+      },
       "Frost": {
         "video": "assets/videos/tactics/cafe/frost-cozinha-servico.mp4",
         "title": "Frost",
@@ -552,6 +608,14 @@
     "overviewImage": "assets/images/tactics/litoral/narguile-bilhar-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Lounge de Narguilé e Sala de Bilhar do Litoral.",
     "operatorVideos": {
+      "Goyo": {
+        "video": "assets/videos/tactics/litoral/goyo-narguile-bilhar.mp4",
+        "title": "Goyo",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=l-QzFmFNPZo"
+        }
+      },
       "Frost": {
         "video": "assets/videos/tactics/litoral/frost-narguile-bilhar.mp4",
         "title": "Frost",
@@ -649,6 +713,30 @@
     "overviewImage": "assets/images/tactics/banco/armarios-vigilancia-overview-v2.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Armários e Vigilância do Banco.",
     "operatorVideos": {
+      "Kapkan": {
+        "video": "assets/videos/tactics/banco/kapkan-armarios-vigilancia.mp4",
+        "title": "Kapkan",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=pJxq-wJEsDk"
+        }
+      },
+      "Kaid": {
+        "video": "assets/videos/tactics/banco/kaid-armarios-vigilancia.mp4",
+        "title": "Kaid",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=L5KMWU3hhCU"
+        }
+      },
+      "Castle": {
+        "video": "assets/videos/tactics/banco/castle-armarios-vigilancia.mp4",
+        "title": "Castle",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=RXduHys2Y_w"
+        }
+      },
       "Frost": {
         "video": "assets/videos/tactics/banco/frost-armarios-vigilancia.mp4",
         "title": "Frost",
@@ -737,6 +825,22 @@
     "overviewImage": "assets/images/tactics/banco/sala-ceo-lounge-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Sala do CEO e Lounge do Banco.",
     "operatorVideos": {
+      "Denari": {
+        "video": "assets/videos/tactics/banco/denari-sala-ceo-lounge.mp4",
+        "title": "Denari",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=GJ7j8-_ayi4"
+        }
+      },
+      "Goyo": {
+        "video": "assets/videos/tactics/banco/goyo-sala-ceo-lounge.mp4",
+        "title": "Goyo",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=xnG7AHw3QS4"
+        }
+      },
       "Maestro": {
         "video": "assets/videos/tactics/banco/maestro-sala-ceo-lounge.mp4",
         "title": "Maestro",
@@ -816,6 +920,14 @@
     "overviewImage": "assets/images/tactics/chale/adega-garagem-overview.png",
     "overviewAlt": "Planta do subsolo do Chalé com a distribuição dos operadores e equipamentos da defesa de Adega e Garagem de Snowmobile.",
     "operatorVideos": {
+      "Castle": {
+        "video": "assets/videos/tactics/chale/castle-adega-garagem.mp4",
+        "title": "Castle",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=koWNWOUc9Zg"
+        }
+      },
       "Azami": "assets/videos/tactics/chale/azami-adega-garagem.mp4",
       "Maestro": "assets/videos/tactics/chale/maestro-adega-garagem.mp4",
       "Denari": "assets/videos/tactics/chale/denari-adega-garagem.mp4",
@@ -871,6 +983,22 @@
     "overviewImage": "assets/images/tactics/chale/quarto-principal-escritorio-overview.png",
     "overviewAlt": "Planta do segundo andar do Chalé com a distribuição dos operadores e equipamentos da defesa de Quarto Principal e Escritório.",
     "operatorVideos": {
+      "Mute": {
+        "video": "assets/videos/tactics/chale/mute-quarto-principal-escritorio.mp4",
+        "title": "Mute",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=8otfIscD6k4"
+        }
+      },
+      "Kapkan": {
+        "video": "assets/videos/tactics/chale/kapkan-quarto-principal-escritorio.mp4",
+        "title": "Kapkan",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=OZd50R1JvIk"
+        }
+      },
       "Frost": {
         "video": "assets/videos/tactics/chale/frost-quarto-principal-escritorio.mp4",
         "title": "Frost",
@@ -1109,6 +1237,14 @@
     "status": "draft",
     "description": "Maestro prepara os Evil Eyes para negar o plant na defesa do Radar.",
     "operatorVideos": {
+      "Kaid": {
+        "video": "assets/videos/tactics/kanal/kaid-servidores-radar.mp4",
+        "title": "Kaid",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=sCLc0jW14SQ"
+        }
+      },
       "Mira": {
         "video": "assets/videos/tactics/kanal/mira-servidores-radar.mp4",
         "title": "Mira",
@@ -1150,6 +1286,14 @@
     "status": "draft",
     "description": "Thorn prepara o setup defensivo do Dormitório e do Quarto Infantil.",
     "operatorVideos": {
+      "Denari": {
+        "video": "assets/videos/tactics/oregon/denari-dormitorio-quarto-infantil.mp4",
+        "title": "Denari",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=GZgfcnhKAEM"
+        }
+      },
       "Maestro": {
         "video": "assets/videos/tactics/oregon/maestro-dormitorio-quarto-infantil.mp4",
         "title": "Maestro",
@@ -1230,6 +1374,14 @@
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/shorts/PN0A0oBP6Yg"
         }
+      },
+      "Kaid": {
+        "video": "assets/videos/tactics/oregon/kaid-dormitorio-quarto-infantil.mp4",
+        "title": "Kaid",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=yvkm_HOgqkk"
+        }
       }
     },
     "operators": [
@@ -1247,6 +1399,30 @@
     "status": "draft",
     "description": "Thorn prepara o setup defensivo da Capela e da Sala de Armas.",
     "operatorVideos": {
+      "Denari": {
+        "video": "assets/videos/tactics/clubhouse/denari-capela-sala-armas.mp4",
+        "title": "Denari",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=d8KY0xKdRIE"
+        }
+      },
+      "Goyo": {
+        "video": "assets/videos/tactics/clubhouse/goyo-capela-sala-armas.mp4",
+        "title": "Goyo",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=yRrCsAvTIgY"
+        }
+      },
+      "Kaid": {
+        "video": "assets/videos/tactics/clubhouse/kaid-capela-sala-armas.mp4",
+        "title": "Kaid",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=gcVO9tRQk_E"
+        }
+      },
       "Maestro": {
         "video": "assets/videos/tactics/clubhouse/maestro-capela-sala-armas.mp4",
         "title": "Maestro",
@@ -1336,6 +1512,22 @@
     "status": "draft",
     "description": "Thorn prepara o setup defensivo da Sala de Charutos e do Bilhar.",
     "operatorVideos": {
+      "Kapkan": {
+        "video": "assets/videos/tactics/cassino-calypso/kapkan-charutos-bilhar.mp4",
+        "title": "Kapkan",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=IeR9WxxRJPk"
+        }
+      },
+      "Goyo": {
+        "video": "assets/videos/tactics/cassino-calypso/goyo-charutos-bilhar.mp4",
+        "title": "Goyo",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=cmnNT_IPO9M"
+        }
+      },
       "Maestro": {
         "video": "assets/videos/tactics/cassino-calypso/maestro-charutos-bilhar.mp4",
         "title": "Maestro",
@@ -1400,6 +1592,14 @@
     "status": "draft",
     "description": "Denari prepara o setup defensivo do Centro de Comando e dos Servidores.",
     "operatorVideos": {
+      "Kaid": {
+        "video": "assets/videos/tactics/laboratorio/kaid-centro-comando-servidores.mp4",
+        "title": "Kaid",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=axAn0Ty8S8o"
+        }
+      },
       "Mira": {
         "video": "assets/videos/tactics/laboratorio/mira-centro-comando-servidores.mp4",
         "title": "Mira",
@@ -1512,6 +1712,46 @@
     "status": "draft",
     "description": "Azami prepara o setup defensivo da Sala do Trono e do Arsenal.",
     "operatorVideos": {
+      "Mute": {
+        "video": "assets/videos/tactics/parque/mute-trono-arsenal.mp4",
+        "title": "Mute",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=JjbdzJu8oxM"
+        }
+      },
+      "Denari": {
+        "video": "assets/videos/tactics/parque/denari-trono-arsenal.mp4",
+        "title": "Denari",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=6AzJwC8ebmw"
+        }
+      },
+      "Kapkan": {
+        "video": "assets/videos/tactics/parque/kapkan-trono-arsenal.mp4",
+        "title": "Kapkan",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=H_mnsgfeW24"
+        }
+      },
+      "Kaid": {
+        "video": "assets/videos/tactics/parque/kaid-trono-arsenal.mp4",
+        "title": "Kaid",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=qNl-OrJVCwQ"
+        }
+      },
+      "Castle": {
+        "video": "assets/videos/tactics/parque/castle-trono-arsenal.mp4",
+        "title": "Castle",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=FCPMxrtIXKc"
+        }
+      },
       "Frost": {
         "video": "assets/videos/tactics/parque/frost-trono-arsenal.mp4",
         "title": "Frost",
@@ -1568,6 +1808,30 @@
     "status": "draft",
     "description": "Goyo prepara o setup defensivo da Lavanderia e dos Suprimentos.",
     "operatorVideos": {
+      "Kapkan": {
+        "video": "assets/videos/tactics/oregon/kapkan-lavanderia-suprimentos.mp4",
+        "title": "Kapkan",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=RMyiZjrqLcI"
+        }
+      },
+      "Kaid": {
+        "video": "assets/videos/tactics/oregon/kaid-lavanderia-suprimentos.mp4",
+        "title": "Kaid",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=-xs9kLThJPQ"
+        }
+      },
+      "Castle": {
+        "video": "assets/videos/tactics/oregon/castle-lavanderia-suprimentos.mp4",
+        "title": "Castle",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=j_maVr41Fmc"
+        }
+      },
       "Frost": {
         "video": "assets/videos/tactics/oregon/frost-lavanderia-suprimentos.mp4",
         "title": "Frost",
@@ -1664,6 +1928,30 @@
     "status": "draft",
     "description": "Fenrir prepara o setup defensivo da Cozinha e da Entrada de Serviço.",
     "operatorVideos": {
+      "Denari": {
+        "video": "assets/videos/tactics/litoral/denari-cozinha-servico.mp4",
+        "title": "Denari",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=9Qb8ukgjCTs"
+        }
+      },
+      "Kaid": {
+        "video": "assets/videos/tactics/litoral/kaid-cozinha-servico.mp4",
+        "title": "Kaid",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=YVbf5eI-S_o"
+        }
+      },
+      "Castle": {
+        "video": "assets/videos/tactics/litoral/castle-cozinha-servico.mp4",
+        "title": "Castle",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=gJFbLGOdyHk"
+        }
+      },
       "Thorn": {
         "video": "assets/videos/tactics/litoral/thorn-cozinha-servico.mp4",
         "title": "Thorn",
@@ -1736,6 +2024,38 @@
     "status": "draft",
     "description": "Setups defensivos para a Sala de Troféus e a Sala de Estátuas.",
     "operatorVideos": {
+      "Mute": {
+        "video": "assets/videos/tactics/mansao/mute-trofeus-estatuas-2.mp4",
+        "title": "Mute",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=8SaZpWBalro"
+        }
+      },
+      "Kapkan": {
+        "video": "assets/videos/tactics/mansao/kapkan-trofeus-estatuas.mp4",
+        "title": "Kapkan",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=4RX7ZwbG5HY"
+        }
+      },
+      "Kaid": {
+        "video": "assets/videos/tactics/mansao/kaid-trofeus-estatuas.mp4",
+        "title": "Kaid",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=xpbI2LsP1Dg"
+        }
+      },
+      "Castle": {
+        "video": "assets/videos/tactics/mansao/castle-trofeus-estatuas.mp4",
+        "title": "Castle",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=hz-zL5mzWMc"
+        }
+      },
       "Frost": {
         "video": "assets/videos/tactics/mansao/frost-trofeus-estatuas.mp4",
         "title": "Frost",
@@ -1776,14 +2096,6 @@
           "sourceUrl": "https://youtube.com/watch?v=YnVupCkiNPQ"
         }
       },
-      "Mira": {
-        "video": "assets/videos/tactics/mansao/mira-trofeus-estatuas.mp4",
-        "title": "Mira",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=rK9Hmc4_gM0"
-        }
-      },
       "Goyo": {
         "video": "assets/videos/tactics/mansao/goyo-trofeus-estatuas.mp4",
         "title": "Goyo",
@@ -1817,6 +2129,30 @@
     "status": "draft",
     "description": "Setup defensivo de Maestro para a Sala de Leitura e a Sala de Lareira.",
     "operatorVideos": {
+      "Mute": {
+        "video": "assets/videos/tactics/cafe/mute-leitura-lareira.mp4",
+        "title": "Mute",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=jKtuE8N8J7c"
+        }
+      },
+      "Denari": {
+        "video": "assets/videos/tactics/cafe/denari-leitura-lareira.mp4",
+        "title": "Denari",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=4cWwrDRu89M"
+        }
+      },
+      "Goyo": {
+        "video": "assets/videos/tactics/cafe/goyo-leitura-lareira.mp4",
+        "title": "Goyo",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=IllSfwe_ROc"
+        }
+      },
       "Azami": {
         "video": "assets/videos/tactics/cafe/azami-leitura-lareira.mp4",
         "title": "Azami",
@@ -1865,6 +2201,38 @@
     "status": "draft",
     "description": "Setup defensivo de Fenrir para Depósito e Sala de Controle.",
     "operatorVideos": {
+      "Denari": {
+        "video": "assets/videos/tactics/laboratorio/denari-deposito-controle.mp4",
+        "title": "Denari",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=XfacJpJn_WA"
+        }
+      },
+      "Kapkan": {
+        "video": "assets/videos/tactics/laboratorio/kapkan-deposito-controle.mp4",
+        "title": "Kapkan",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=ZowtaE-i_Zg"
+        }
+      },
+      "Goyo": {
+        "video": "assets/videos/tactics/laboratorio/goyo-deposito-controle.mp4",
+        "title": "Goyo",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=ik4mYkIHZyw"
+        }
+      },
+      "Castle": {
+        "video": "assets/videos/tactics/laboratorio/castle-deposito-controle.mp4",
+        "title": "Castle",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=Qsv9r1NBcCk"
+        }
+      },
       "Thorn": {
         "video": "assets/videos/tactics/laboratorio/thorn-deposito-controle.mp4",
         "title": "Thorn",
@@ -1953,6 +2321,22 @@
     "status": "draft",
     "description": "Setup defensivo de Fenrir para a Sala de Mineração e a Sala de Lareira.",
     "operatorVideos": {
+      "Mute": {
+        "video": "assets/videos/tactics/cafe/mute-mineracao-lareira.mp4",
+        "title": "Mute",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=u34hy7C5A88"
+        }
+      },
+      "Kaid": {
+        "video": "assets/videos/tactics/cafe/kaid-mineracao-lareira.mp4",
+        "title": "Kaid",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=W-gHNZFdt1Y"
+        }
+      },
       "Valkyrie": {
         "video": "assets/videos/tactics/cafe/valkyrie-mineracao-lareira.mp4",
         "title": "Valkyrie",
@@ -1967,14 +2351,6 @@
         "metadata": {
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/watch?v=28XiW4srF-k"
-        }
-      },
-      "Mira": {
-        "video": "assets/videos/tactics/cafe/mira-mineracao-lareira.mp4",
-        "title": "Mira",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=Y8aXzP_LSgY"
         }
       },
       "Fenrir": {
@@ -2001,6 +2377,38 @@
     "status": "draft",
     "description": "Setup defensivo de Melusi para Segurança e Sala de Mapas.",
     "operatorVideos": {
+      "Mute": {
+        "video": "assets/videos/tactics/kanal/mute-seguranca-mapas.mp4",
+        "title": "Mute",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=DTsXr2avFrE"
+        }
+      },
+      "Denari": {
+        "video": "assets/videos/tactics/kanal/denari-seguranca-mapas.mp4",
+        "title": "Denari",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=O8LGWxsDuB4"
+        }
+      },
+      "Kapkan": {
+        "video": "assets/videos/tactics/kanal/kapkan-seguranca-mapas.mp4",
+        "title": "Kapkan",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=6H6iRMV7Ff4"
+        }
+      },
+      "Castle": {
+        "video": "assets/videos/tactics/kanal/castle-seguranca-mapas.mp4",
+        "title": "Castle",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=JUqdDW84z4E"
+        }
+      },
       "Frost": {
         "video": "assets/videos/tactics/kanal/frost-seguranca-mapas.mp4",
         "title": "Frost",
@@ -2080,6 +2488,14 @@
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/shorts/RZ4z5MPlpgo"
         }
+      },
+      "Mira": {
+        "video": "assets/videos/tactics/kanal/mira-caiaques-suprimentos.mp4",
+        "title": "Mira",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=LOCaFePNyrM"
+        }
       }
     },
     "operators": [
@@ -2097,6 +2513,30 @@
     "status": "draft",
     "description": "Setup defensivo de Thorn para o Escritório do Cônsul e a Sala de Reuniões.",
     "operatorVideos": {
+      "Mute": {
+        "video": "assets/videos/tactics/consulado/mute-consul-reunioes.mp4",
+        "title": "Mute",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=scp7oVr1O_g"
+        }
+      },
+      "Denari": {
+        "video": "assets/videos/tactics/consulado/denari-consul-reunioes.mp4",
+        "title": "Denari",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=NyXstbYaXmQ"
+        }
+      },
+      "Kaid": {
+        "video": "assets/videos/tactics/consulado/kaid-consul-reunioes.mp4",
+        "title": "Kaid",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=9VsNXLXoZak"
+        }
+      },
       "Frost": {
         "video": "assets/videos/tactics/consulado/frost-consul-reunioes.mp4",
         "title": "Frost",
@@ -2127,14 +2567,6 @@
         "metadata": {
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/watch?v=VDO_wdQhMIo"
-        }
-      },
-      "Mira": {
-        "video": "assets/videos/tactics/consulado/mira-consul-reunioes.mp4",
-        "title": "Mira",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=CpI_eOXTg1o"
         }
       },
       "Thorn": {

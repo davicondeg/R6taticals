@@ -1,9 +1,12 @@
 [
   {
-    "id": "broken-angle-01",
-    "title": "Broken Angle 01",
-    "description": "MOST BROKEN ANGLES IN SIEGE — Parte 3",
+    "id": "clubhouse-garagem-angle-01",
+    "mapId": "clubhouse",
+    "format": "short",
+    "title": "Ângulo da Garagem",
+    "description": "Linha de visão incomum na Garagem do Clubhouse.",
     "video": "assets/videos/broken-angle/broken-angle-01.mp4",
-    "source": "https://youtube.com/shorts/gJc46AZqeUw"
+    "source": "https://youtube.com/shorts/gJc46AZqeUw",
+    "creator": "Fonte original"
   }
 ]

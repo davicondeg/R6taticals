@@ -18,6 +18,7 @@ const state = {
   setupVideo: null,
   brokenAngleVideos: [],
   brokenAngleVideoId: null,
+  brokenAngleMapId: null,
 };
 
 const elements = {
@@ -50,6 +51,7 @@ const elements = {
   setupVideos: document.querySelector("#setup-videos"),
   brokenAngleList: document.querySelector("#broken-angle-list"),
   brokenAnglePlayer: document.querySelector("#broken-angle-player"),
+  brokenAngleMaps: document.querySelector("#broken-angle-maps"),
   search: document.querySelector("#map-search"),
   skipLink: document.querySelector(".skip-link"),
   sideMapCode: document.querySelector("#side-map-code"),
@@ -66,6 +68,13 @@ let tacticsReady;
 let mapsReady;
 let brokenAngleReady;
 let operatorViewVersion = 0;
+let heroMapRotationTimer = null;
+let heroMapRotationIndex = -1;
+let heroMapFrontVisible = true;
+let heroMapRotationPaused = false;
+let mapEntryTransitionActive = false;
+
+const heroMapRotationDelay = 3000;
 
 const sideLabels = {
   attack: "Ataque",
@@ -81,6 +90,146 @@ function normalizeText(value) {
     .replace(/[\u0300-\u036f]/g, "")
     .toLocaleLowerCase("pt-BR")
     .trim();
+}
+
+async function enterMap(mapId, originElement) {
+  const map = state.maps.find((item) => item.id === mapId);
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!map || mapEntryTransitionActive) return;
+  if (!originElement || reduceMotion) {
+    selectMap(mapId);
+    return;
+  }
+
+  mapEntryTransitionActive = true;
+  window.clearTimeout(heroMapRotationTimer);
+  const rect = originElement.getBoundingClientRect();
+  const overlay = document.createElement("div");
+  overlay.className = "map-entry-transition";
+  overlay.setAttribute("aria-hidden", "true");
+  Object.assign(overlay.style, {
+    top: `${rect.top}px`,
+    left: `${rect.left}px`,
+    width: `${rect.width}px`,
+    height: `${rect.height}px`,
+  });
+  const image = document.createElement("img");
+  image.src = map.image;
+  image.alt = "";
+  const shade = document.createElement("span");
+  shade.className = "map-entry-transition__shade";
+  const copy = document.createElement("span");
+  copy.className = "map-entry-transition__copy";
+  const eyebrow = document.createElement("small");
+  eyebrow.textContent = "ENTRANDO NO MAPA";
+  const name = document.createElement("strong");
+  name.textContent = map.name;
+  copy.append(eyebrow, name);
+  const scan = document.createElement("span");
+  scan.className = "map-entry-transition__scan";
+  overlay.append(image, shade, copy, scan);
+  document.body.append(overlay);
+  elements.body.classList.add("is-map-entering");
+
+  try {
+    const expansion = overlay.animate([
+      { top: `${rect.top}px`, left: `${rect.left}px`, width: `${rect.width}px`, height: `${rect.height}px`, borderRadius: "4px" },
+      { offset: .72, top: "0px", left: "0px", width: "100vw", height: "100vh", borderRadius: "0px" },
+      { top: "0px", left: "0px", width: "100vw", height: "100vh", borderRadius: "0px" },
+    ], { duration: 760, easing: "cubic-bezier(.2,.76,.18,1)", fill: "forwards" });
+    image.animate([
+      { transform: "scale(1)" },
+      { transform: "scale(1.14)" },
+    ], { duration: 900, easing: "cubic-bezier(.2,.7,.2,1)", fill: "forwards" });
+    copy.animate([
+      { opacity: 0, transform: "translateY(18px)" },
+      { offset: .42, opacity: 0, transform: "translateY(18px)" },
+      { opacity: 1, transform: "translateY(0)" },
+    ], { duration: 650, easing: "ease-out", fill: "forwards" });
+    await expansion.finished;
+    selectMap(mapId);
+    await overlay.animate([
+      { opacity: 1 },
+      { opacity: 0 },
+    ], { duration: 220, easing: "ease-out", fill: "forwards" }).finished;
+  } finally {
+    overlay.remove();
+    elements.body.classList.remove("is-map-entering");
+    mapEntryTransitionActive = false;
+  }
+}
+
+function renderHeroMapFace(face, map) {
+  face.classList.add("hero__panel-face--map");
+  face.style.setProperty("--hero-map-image", `url("${new URL(map.image, document.baseURI).href}")`);
+  face.replaceChildren();
+  const top = document.createElement("span");
+  top.className = "hero__panel-top";
+  const mode = document.createElement("span");
+  mode.textContent = `ROTAÇÃO / ${map.mode}`;
+  const code = document.createElement("span");
+  code.className = "hero__panel-code";
+  code.textContent = `MAP-${String(map.order).padStart(2, "0")}`;
+  top.append(mode, code);
+  const name = document.createElement("strong");
+  name.className = "hero__panel-map-name";
+  name.textContent = map.name;
+  const action = document.createElement("span");
+  action.className = "hero__panel-map-action";
+  action.textContent = "Explorar este mapa";
+  face.append(top, name, action);
+}
+
+function scheduleHeroMapRotation() {
+  window.clearTimeout(heroMapRotationTimer);
+  if (heroMapRotationPaused || !state.maps.length || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  heroMapRotationTimer = window.setTimeout(rotateHeroMap, heroMapRotationDelay);
+}
+
+function animateHeroMapFace(face, from, to) {
+  face.getAnimations().forEach((animation) => animation.cancel());
+  face.style.transform = from;
+  const animation = face.animate(
+    [{ transform: from }, { transform: to }],
+    { duration: 820, easing: "cubic-bezier(.2,.72,.18,1)", fill: "forwards" },
+  );
+  animation.addEventListener("finish", () => {
+    face.style.transform = to;
+    animation.cancel();
+  }, { once: true });
+}
+
+function rotateHeroMap() {
+  const panel = document.querySelector("#hero-map-rotator");
+  if (!panel || heroMapRotationPaused || !state.maps.length) return;
+  heroMapRotationIndex = (heroMapRotationIndex + 1) % state.maps.length;
+  const map = state.maps[heroMapRotationIndex];
+  const currentFace = panel.querySelector(heroMapFrontVisible ? ".hero__panel-face--front" : ".hero__panel-face--back");
+  const nextFace = panel.querySelector(heroMapFrontVisible ? ".hero__panel-face--back" : ".hero__panel-face--front");
+  renderHeroMapFace(nextFace, map);
+  animateHeroMapFace(currentFace, "rotateY(0deg)", "rotateY(-180deg)");
+  animateHeroMapFace(nextFace, "rotateY(180deg)", "rotateY(0deg)");
+  heroMapFrontVisible = !heroMapFrontVisible;
+  panel.dataset.mapId = map.id;
+  panel.setAttribute("aria-disabled", "false");
+  panel.setAttribute("aria-label", `Explorar o mapa ${map.name}`);
+  panel.querySelectorAll(".hero__panel-face").forEach((face) => face.setAttribute("aria-hidden", String(face !== nextFace)));
+  scheduleHeroMapRotation();
+}
+
+function initializeHeroMapRotation() {
+  const panel = document.querySelector("#hero-map-rotator");
+  if (!panel) return;
+  const pause = () => { heroMapRotationPaused = true; window.clearTimeout(heroMapRotationTimer); };
+  const resume = () => { heroMapRotationPaused = false; scheduleHeroMapRotation(); };
+  panel.addEventListener("mouseenter", pause);
+  panel.addEventListener("mouseleave", resume);
+  panel.addEventListener("focus", pause);
+  panel.addEventListener("blur", resume);
+  panel.addEventListener("click", () => {
+    if (panel.dataset.mapId) enterMap(panel.dataset.mapId, panel);
+  });
+  scheduleHeroMapRotation();
 }
 
 function getSetupCatalog() {
@@ -389,20 +538,64 @@ function showSetupVideoOptions() {
   renderSetupVideos();
 }
 
+function openSetupVideoFromTactic(tactic, operatorName, video) {
+  const selectedBombSiteId = state.selectedBombSiteId
+    || tactic.bombSiteIds.find((bombSiteId) => bombSiteId !== "*");
+  if (!selectedBombSiteId) return;
+
+  [elements.hero, elements.mapsSection, elements.sideSection, elements.bombSection, elements.tacticsSection, elements.tacticDetailSection, elements.operatorSection]
+    .forEach((section) => { section.hidden = true; });
+  elements.body.classList.remove("is-bomb-view");
+  elements.setupsSection.hidden = false;
+  document.querySelector("#setup-map-view").hidden = true;
+  document.querySelector("#setup-bomb-stage").hidden = true;
+  document.querySelector("#setup-operator-stage").hidden = true;
+  document.querySelector("#setup-broken-angle-stage").hidden = true;
+  state.setupMapId = tactic.mapId;
+  state.setupBombSiteId = selectedBombSiteId;
+  state.setupOperator = operatorName;
+  state.setupVideo = video;
+  elements.skipLink.href = "#setup-video-stage";
+  elements.skipLink.textContent = "Ir para o vídeo do setup";
+  renderSetupVideos();
+}
+
 function renderBrokenAnglePlaylist() {
   const videos = state.brokenAngleVideos;
   document.querySelector("#broken-angle-total").textContent = String(videos.length).padStart(2, "0");
   if (!videos.length) {
+    elements.brokenAngleMaps.replaceChildren();
     elements.brokenAngleList.replaceChildren();
     elements.brokenAnglePlayer.textContent = "Nenhum vídeo cadastrado.";
     return;
   }
 
-  if (!videos.some((item) => item.id === state.brokenAngleVideoId)) {
-    state.brokenAngleVideoId = videos[0].id;
+  const availableMaps = state.maps.filter((map) => videos.some((item) => item.mapId === map.id));
+  if (!availableMaps.some((map) => map.id === state.brokenAngleMapId)) {
+    state.brokenAngleMapId = availableMaps[0]?.id || videos[0].mapId;
   }
-  const selected = videos.find((item) => item.id === state.brokenAngleVideoId);
-  elements.brokenAngleList.replaceChildren(...videos.map((item, index) => {
+  elements.brokenAngleMaps.replaceChildren(...availableMaps.map((map) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "broken-angle-map";
+    button.setAttribute("aria-pressed", String(map.id === state.brokenAngleMapId));
+    const count = videos.filter((item) => item.mapId === map.id).length;
+    button.textContent = `${map.name} · ${String(count).padStart(2, "0")}`;
+    button.addEventListener("click", () => {
+      elements.brokenAnglePlayer.querySelector("video")?.pause();
+      state.brokenAngleMapId = map.id;
+      state.brokenAngleVideoId = null;
+      renderBrokenAnglePlaylist();
+    });
+    return button;
+  }));
+
+  const mapVideos = videos.filter((item) => item.mapId === state.brokenAngleMapId);
+  if (!mapVideos.some((item) => item.id === state.brokenAngleVideoId)) {
+    state.brokenAngleVideoId = mapVideos[0]?.id || null;
+  }
+  const selected = mapVideos.find((item) => item.id === state.brokenAngleVideoId);
+  elements.brokenAngleList.replaceChildren(...mapVideos.map((item, index) => {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "setup-video-option";
@@ -423,13 +616,34 @@ function renderBrokenAnglePlaylist() {
     return button;
   }));
 
+  if (!selected) {
+    elements.brokenAnglePlayer.textContent = "Nenhum vídeo cadastrado para este mapa.";
+    return;
+  }
   const article = document.createElement("article");
   article.className = "setup-video broken-angle-video";
-  const video = document.createElement("video");
-  video.controls = true;
-  video.preload = "metadata";
-  video.src = selected.video;
-  video.setAttribute("playsinline", "");
+  let media;
+  if (selected.youtubeId) {
+    const iframe = document.createElement("iframe");
+    const parameters = new URLSearchParams({
+      start: String(selected.start || 0),
+      rel: "0",
+    });
+    if (selected.end) parameters.set("end", String(selected.end));
+    iframe.src = `https://www.youtube-nocookie.com/embed/${selected.youtubeId}?${parameters}`;
+    iframe.title = `${selected.title} — ${selected.creator || "YouTube"}`;
+    iframe.loading = "lazy";
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allowFullscreen = true;
+    media = iframe;
+  } else {
+    const video = document.createElement("video");
+    video.controls = true;
+    video.preload = "metadata";
+    video.src = selected.video;
+    video.setAttribute("playsinline", "");
+    media = video;
+  }
   const caption = document.createElement("div");
   caption.className = "setup-video__caption";
   const details = document.createElement("span");
@@ -439,13 +653,22 @@ function renderBrokenAnglePlaylist() {
   const description = document.createElement("span");
   description.textContent = selected.description;
   details.append(title, description);
+  if (selected.source) {
+    const source = document.createElement("a");
+    source.className = "broken-angle-source";
+    source.href = selected.source;
+    source.target = "_blank";
+    source.rel = "noopener noreferrer";
+    source.textContent = `Fonte: ${selected.creator || "vídeo original"} ↗`;
+    details.append(source);
+  }
   caption.append(details);
-  article.append(video, caption);
+  article.append(media, caption);
   elements.brokenAnglePlayer.replaceChildren(article);
 }
 
 async function openBrokenAnglePlaylist() {
-  await brokenAngleReady;
+  await Promise.all([brokenAngleReady, mapsReady]);
   [elements.hero, elements.mapsSection, elements.sideSection, elements.bombSection, elements.tacticsSection, elements.tacticDetailSection, elements.operatorSection].forEach((section) => { section.hidden = true; });
   elements.body.classList.remove("is-bomb-view");
   elements.setupsSection.hidden = false;
@@ -552,7 +775,7 @@ function createMapCard(map, index) {
   content.append(title, action);
   card.append(image, top, content);
 
-  card.addEventListener("click", () => selectMap(map.id));
+  card.addEventListener("click", () => enterMap(map.id, card));
   return card;
 }
 
@@ -916,7 +1139,7 @@ function renderTacticLineup(tactic) {
         selectBannedOperator(tactic, operator);
         return;
       }
-      if (video) window.location.assign(new URL(video, document.baseURI).href);
+      if (video) openSetupVideoFromTactic(tactic, operator.name, video);
     });
     return card;
   }));
@@ -1248,6 +1471,7 @@ async function loadMaps() {
     state.maps = maps.sort((first, second) => first.order - second.order);
     elements.heroMapTotal.textContent = String(state.maps.length).padStart(2, "0");
     renderMaps();
+    initializeHeroMapRotation();
   } catch (error) {
     console.error(error);
     elements.grid.setAttribute("aria-busy", "false");
@@ -1281,9 +1505,10 @@ async function loadTactics() {
 
 async function loadBrokenAnglePlaylist() {
   try {
-    const response = await fetch("./data/broken-angle.json?v=playlist-1", { cache: "no-store" });
+    const response = await fetch("./data/broken-angle.json?v=playlist-3", { cache: "no-store" });
     if (!response.ok) throw new Error("Falha ao carregar a playlist Broken Angle: " + response.status);
-    state.brokenAngleVideos = await response.json();
+    const videos = await response.json();
+    state.brokenAngleVideos = videos.filter((item) => item.format === "short");
   } catch (error) {
     console.error(error);
     state.brokenAngleVideos = [];
