@@ -16,14 +16,6 @@
           "sourceUrl": "https://youtube.com/watch?v=3vovErY1DwY"
         }
       },
-      "Azami": {
-        "video": "assets/videos/tactics/clubhouse/azami-vigilancia-cofre.mp4",
-        "title": "Azami",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=ibGuF5KGSOk"
-        }
-      },
       "Melusi": {
         "video": "assets/videos/tactics/clubhouse/melusi-vigilancia-cofre.mp4",
         "title": "Melusi",
@@ -48,14 +40,6 @@
           "sourceUrl": "https://youtube.com/shorts/1Z3HjOGC1og"
         }
       },
-      "Fenrir": {
-        "video": "assets/videos/tactics/clubhouse/fenrir-vigilancia-cofre.mp4",
-        "title": "Fenrir",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/shorts/9dUEKpBk4ws"
-        }
-      },
       "Mute": {
         "video": "assets/videos/tactics/clubhouse/mute-vigilancia-cofre.mp4",
         "title": "Mute",
@@ -64,12 +48,12 @@
           "sourceUrl": "https://youtube.com/shorts/G5xat_CcpL4"
         }
       },
-      "Thorn": {
-        "video": "assets/videos/tactics/clubhouse/thorn-vigilancia-cofre.mp4",
-        "title": "Thorn",
+      "Frost": {
+        "video": "assets/videos/tactics/clubhouse/frost-capela-sala-armas.mp4",
+        "title": "Frost",
         "metadata": {
           "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/shorts/C0F1eCa1o6w"
+          "sourceUrl": "https://youtube.com/shorts/KqFFQrRnVv0"
         }
       }
     },
@@ -114,14 +98,6 @@
     "overviewImage": "assets/images/tactics/clubhouse/quarto-academia-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no andar de Academia e Quarto do Clubhouse.",
     "operatorVideos": {
-      "Mute": {
-        "video": "assets/videos/tactics/clubhouse/mute-academia-quarto.mp4",
-        "title": "Mute",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=Ib7PIt-kg4s"
-        }
-      },
       "Frost": {
         "video": "assets/videos/tactics/clubhouse/frost-academia-quarto.mp4",
         "title": "Frost",
@@ -131,11 +107,11 @@
         }
       },
       "Thorn": {
-        "video": "assets/videos/tactics/clubhouse/thorn-academia-quarto.mp4",
+        "video": "assets/videos/tactics/clubhouse/thorn-vigilancia-cofre.mp4",
         "title": "Thorn",
         "metadata": {
           "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=V6HG2N4CmRo"
+          "sourceUrl": "https://youtube.com/shorts/C0F1eCa1o6w"
         }
       },
       "Mira": {
@@ -217,6 +193,69 @@
     }
   },
   {
+    "id": "clubhouse-defesa-quarto-controle-janelas",
+    "name": "Controle do Quarto e das Janelas",
+    "mapId": "clubhouse",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["academia-quarto"],
+    "status": "ready",
+    "roleFormat": "operator-briefings",
+    "overviewImage": "assets/images/tactics/clubhouse/quarto-academia-controle-janelas-overview.png",
+    "overviewAlt": "Planta tática da defesa de Academia e Quarto do Clubhouse, com a distribuição dos dispositivos de Mute, Bandit, Wamai, Thorn e Mira.",
+    "operators": [
+      {
+        "name": "Mute",
+        "assignment": "Colocar os bloqueadores de sinal conforme a imagem e jogar de dentro do bombsite."
+      },
+      {
+        "name": "Bandit",
+        "assignment": "Reforçar e eletrificar os paredões à frente do Banheiro e da Sala de Vigilância conforme a imagem. Jogar da área de Obras."
+      },
+      {
+        "name": "Wamai",
+        "assignment": "Colocar os Mag-NETs no teto da Alemanha para impedir granadas na Alemanha e nas janelas do bombsite. Posicionar alarmes na Escada Principal e na Escada Caveira. Jogar pela Mira da Alemanha."
+      },
+      {
+        "name": "Thorn",
+        "assignment": "Defender a Sala de Vigilância e eliminar os oponentes que estiverem nas janelas do bombsite. Preparar o setup de defesa da Vigilância conforme a imagem."
+      },
+      {
+        "name": "Mira",
+        "assignment": "Colocar os Espelhos Negros no Banheiro e na Alemanha conforme o vídeo. Jogar pelo espelho do Banheiro."
+      }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "clubhouse-defesa-vigilancia-duas-plantas",
+    "name": "Controle da Vigilância e do Cofre",
+    "mapId": "clubhouse",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["sala-vigilancia-sala-cofre"],
+    "status": "draft",
+    "roleFormat": "operator-briefings",
+    "overviewImages": [
+      {
+        "image": "assets/images/tactics/clubhouse/vigilancia-cofre-planta-principal.png",
+        "alt": "Planta principal da defesa da Sala de Vigilância e da Sala do Cofre no Clubhouse."
+      },
+      {
+        "image": "assets/images/tactics/clubhouse/vigilancia-cofre-planta-complementar.png",
+        "alt": "Planta complementar da defesa da Sala de Vigilância e da Sala do Cofre no Clubhouse."
+      }
+    ],
+    "operators": [
+      { "name": "Thorn", "assignment": "Função a definir." },
+      { "name": "Kaid", "assignment": "Função a definir." },
+      { "name": "Castle", "assignment": "Função a definir." },
+      { "name": "Azami", "assignment": "Função a definir." },
+      { "name": "Mute", "assignment": "Função a definir." }
+    ],
+    "banReplacements": {}
+  },
+  {
     "id": "consulado-garagem-cafeteria",
     "name": "Garagem / Cafeteria",
     "mapId": "consulado",
@@ -227,30 +266,6 @@
     "overviewImage": "assets/images/tactics/consulado/garagem-cafeteria-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Garagem e Cafeteria do Consulado.",
     "operatorVideos": {
-      "Kapkan": {
-        "video": "assets/videos/tactics/consulado/kapkan-garagem-cafeteria.mp4",
-        "title": "Kapkan",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=odsXf9eBHqo"
-        }
-      },
-      "Goyo": {
-        "video": "assets/videos/tactics/consulado/goyo-garagem-cafeteria.mp4",
-        "title": "Goyo",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=-R6n5Knadh0"
-        }
-      },
-      "Castle": {
-        "video": "assets/videos/tactics/consulado/castle-garagem-cafeteria.mp4",
-        "title": "Castle",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=jl4gT0ESv1o"
-        }
-      },
       "Azami": {
         "video": "assets/videos/tactics/consulado/azami-garagem-cafeteria.mp4",
         "title": "Azami",
@@ -322,11 +337,11 @@
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Sala de Aviação e Sala de Jogos da Mansão.",
     "operatorVideos": {
       "Goyo": {
-        "video": "assets/videos/tactics/mansao/goyo-aviacao-jogos.mp4",
+        "video": "assets/videos/tactics/mansao/goyo-trofeus-estatuas.mp4",
         "title": "Goyo",
         "metadata": {
           "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=B9CYJGrvx9o"
+          "sourceUrl": "https://youtube.com/shorts/VODz9xhq-Yw"
         }
       },
       "Azami": "assets/videos/tactics/mansao/azami-aviacao-jogos.mp4",
@@ -354,14 +369,24 @@
           "sourceUrl": "https://youtube.com/shorts/Es-Tx0zkOsE"
         }
       },
-      "Mute": {
-        "video": "assets/videos/tactics/mansao/mute-aviacao-jogos.mp4",
-        "title": "Mute",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/shorts/lav5KPwbWBQ"
+      "Mute": [
+        {
+          "video": "assets/videos/tactics/mansao/mute-aviacao-jogos.mp4",
+          "title": "Setup 1",
+          "metadata": {
+            "addedAutonomously": true,
+            "sourceUrl": "https://youtube.com/shorts/lav5KPwbWBQ"
+          }
+        },
+        {
+          "video": "assets/videos/tactics/mansao/mute-trofeus-estatuas-2.mp4",
+          "title": "Setup 2",
+          "metadata": {
+            "addedAutonomously": true,
+            "sourceUrl": "https://youtube.com/watch?v=8SaZpWBalro"
+          }
         }
-      }
+      ]
     },
     "overviewVariants": [
       {
@@ -422,30 +447,24 @@
           "sourceUrl": "https://youtube.com/watch?v=qe9ZLymXVFc"
         }
       },
-      "Frost": {
-        "video": "assets/videos/tactics/cafe/frost-cozinha-servico.mp4",
-        "title": "Frost",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=3xogyskuFQM"
+      "Valkyrie": [
+        {
+          "video": "assets/videos/tactics/cafe/valkyrie-cozinha-servico.mp4",
+          "title": "Setup 1",
+          "metadata": {
+            "addedAutonomously": true,
+            "sourceUrl": "https://youtube.com/watch?v=9mkctWjJtMk"
+          }
+        },
+        {
+          "video": "assets/videos/tactics/cafe/valkyrie-leitura-lareira.mp4",
+          "title": "Setup 2",
+          "metadata": {
+            "addedAutonomously": true,
+            "sourceUrl": "https://youtube.com/shorts/D_JZjxvF0Yk"
+          }
         }
-      },
-      "Thorn": {
-        "video": "assets/videos/tactics/cafe/thorn-cozinha-servico.mp4",
-        "title": "Thorn",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=uCGdzqviOhM"
-        }
-      },
-      "Valkyrie": {
-        "video": "assets/videos/tactics/cafe/valkyrie-cozinha-servico.mp4",
-        "title": "Valkyrie",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=9mkctWjJtMk"
-        }
-      },
+      ],
       "Mira": {
         "video": "assets/videos/tactics/cafe/mira-cozinha-servico.mp4",
         "title": "Mira",
@@ -515,14 +534,6 @@
     "overviewImage": "assets/images/tactics/cafe/bar-coqueteis-overview.png",
     "overviewAlt": "Visão geral da distribuição dos operadores e equipamentos no bomb site Bar e Lounge de Coquetéis do Café.",
     "operatorVideos": {
-      "Maestro": {
-        "video": "assets/videos/tactics/cafe/maestro-bar-coqueteis.mp4",
-        "title": "Maestro",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=T6NEyytq9jY"
-        }
-      },
       "Thorn": {
         "video": "assets/videos/tactics/cafe/thorn-bar-coqueteis.mp4",
         "title": "Thorn",
@@ -585,6 +596,14 @@
         "metadata": {
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/shorts/MABK0AAp0gw"
+        }
+      },
+      "Fenrir": {
+        "video": "assets/videos/tactics/cafe/fenrir-mineracao-lareira.mp4",
+        "title": "Fenrir",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/shorts/BqGZZk15ETA"
         }
       }
     },
@@ -737,14 +756,6 @@
           "sourceUrl": "https://youtube.com/watch?v=RXduHys2Y_w"
         }
       },
-      "Frost": {
-        "video": "assets/videos/tactics/banco/frost-armarios-vigilancia.mp4",
-        "title": "Frost",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=tD6hyLwwDps"
-        }
-      },
       "Azami": {
         "video": "assets/videos/tactics/banco/azami-armarios-vigilancia.mp4",
         "title": "Azami",
@@ -753,7 +764,20 @@
           "sourceUrl": "https://youtube.com/watch?v=4ONwl2NV5eg"
         }
       },
-      "Maestro": "assets/videos/tactics/banco/maestro-armarios-vigilancia.mp4",
+      "Maestro": [
+        {
+          "video": "assets/videos/tactics/banco/maestro-armarios-vigilancia.mp4",
+          "title": "Setup 1"
+        },
+        {
+          "video": "assets/videos/tactics/banco/maestro-sala-ceo-lounge.mp4",
+          "title": "Setup 2",
+          "metadata": {
+            "addedAutonomously": true,
+            "sourceUrl": "https://youtube.com/watch?v=LYXX24oAiG8"
+          }
+        }
+      ],
       "Denari": "assets/videos/tactics/banco/denari-armarios-vigilancia.mp4",
       "Fenrir": {
         "video": "assets/videos/tactics/banco/fenrir-armarios-vigilancia.mp4",
@@ -833,20 +857,12 @@
           "sourceUrl": "https://youtube.com/watch?v=GJ7j8-_ayi4"
         }
       },
-      "Goyo": {
-        "video": "assets/videos/tactics/banco/goyo-sala-ceo-lounge.mp4",
-        "title": "Goyo",
+      "Frost": {
+        "video": "assets/videos/tactics/banco/frost-armarios-vigilancia.mp4",
+        "title": "Frost",
         "metadata": {
           "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=xnG7AHw3QS4"
-        }
-      },
-      "Maestro": {
-        "video": "assets/videos/tactics/banco/maestro-sala-ceo-lounge.mp4",
-        "title": "Maestro",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=LYXX24oAiG8"
+          "sourceUrl": "https://youtube.com/watch?v=tD6hyLwwDps"
         }
       },
       "Castle": "assets/videos/tactics/banco/castle-sala-ceo-lounge.mp4",
@@ -920,14 +936,6 @@
     "overviewImage": "assets/images/tactics/chale/adega-garagem-overview.png",
     "overviewAlt": "Planta do subsolo do Chalé com a distribuição dos operadores e equipamentos da defesa de Adega e Garagem de Snowmobile.",
     "operatorVideos": {
-      "Castle": {
-        "video": "assets/videos/tactics/chale/castle-adega-garagem.mp4",
-        "title": "Castle",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=koWNWOUc9Zg"
-        }
-      },
       "Azami": "assets/videos/tactics/chale/azami-adega-garagem.mp4",
       "Maestro": "assets/videos/tactics/chale/maestro-adega-garagem.mp4",
       "Denari": "assets/videos/tactics/chale/denari-adega-garagem.mp4",
@@ -970,6 +978,31 @@
     "banReplacements": {
       "Kaid": "Bandit"
     }
+  },
+  {
+    "id": "chale-defesa-bar-sala-jogos",
+    "name": "Bar / Sala de Jogos",
+    "mapId": "chale",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["bar-sala-de-jogos"],
+    "status": "draft",
+    "description": "Mira e Wamai controlam as janelas do bombsite e da Biblioteca. Thorn e Denari defendem a região da Escada Animal e do Piano nos dois andares, enquanto Castle ancora no Bar, ajuda a Mira e passa as informações para o time.",
+    "overviewImages": [
+      {
+        "image": "assets/images/tactics/chale/bar-sala-jogos-primeiro-andar.png",
+        "alt": "Planta tática do primeiro andar para a defesa do Bar e da Sala de Jogos no Chalé."
+      }
+    ],
+    "operatorVideos": {},
+    "operators": [
+      { "name": "Mira", "assignment": "Posicionar os dois Espelhos Negros e jogar pelo espelho de dentro do bombsite, defendendo principalmente a janela da Sala de Jogos." },
+      { "name": "Wamai", "assignment": "Preparar o setup para defender a janela da Escada Animal, as janelas da Biblioteca, a janela da Sala de Jogos e, se possível, a entrada Principal. Jogar pelo Espelho Negro da Biblioteca." },
+      { "name": "Thorn", "assignment": "Preparar o setup para ajudar a defender o corredor da Principal, a parte inferior da Escada Animal, a entrada Principal e o janelão da Varandinha. Jogar pelo escudo do Denari na Escada Animal, defendendo os dois andares." },
+      { "name": "Denari", "assignment": "Preparar o setup no Piano, colocar o escudo para a Thorn na Escada Animal e jogar do Piano, defendendo a entrada Solar, o Piano e o janelão da Varandinha." },
+      { "name": "Castle", "assignment": "Preparar o setup conforme a imagem e jogar de dentro do Bar, ajudando a Mira e passando as informações para o time." }
+    ],
+    "banReplacements": {}
   },
   {
     "id": "chale-quarto-principal-escritorio",
@@ -1390,6 +1423,31 @@
     "banReplacements": {}
   },
   {
+    "id": "oregon-defesa-dormitorio-controle",
+    "name": "Controle do Dormitório",
+    "mapId": "oregon",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["dormitorio-quarto-infantil"],
+    "status": "draft",
+    "description": "Defesa do Dormitório e do Quarto Infantil com Kaid, Mute, Azami, Castle e Goyo.",
+    "operatorVideos": {
+      "Kaid": "assets/videos/tactics/oregon/kaid-dormitorio-quarto-infantil.mp4",
+      "Mute": "assets/videos/tactics/oregon/mute-dormitorio-quarto-infantil.mp4",
+      "Azami": "assets/videos/tactics/oregon/azami-dormitorio-quarto-infantil.mp4",
+      "Castle": "assets/videos/tactics/oregon/castle-dormitorio-quarto-infantil.mp4",
+      "Goyo": "assets/videos/tactics/oregon/goyo-dormitorio-quarto-infantil.mp4"
+    },
+    "operators": [
+      { "name": "Kaid", "assignment": "Função a definir" },
+      { "name": "Mute", "assignment": "Função a definir" },
+      { "name": "Azami", "assignment": "Função a definir" },
+      { "name": "Castle", "assignment": "Função a definir" },
+      { "name": "Goyo", "assignment": "Função a definir" }
+    ],
+    "banReplacements": {}
+  },
+  {
     "id": "clubhouse-defesa-capela-sala-armas",
     "name": "Capela / Sala de Armas",
     "mapId": "clubhouse",
@@ -1405,14 +1463,6 @@
         "metadata": {
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/watch?v=d8KY0xKdRIE"
-        }
-      },
-      "Goyo": {
-        "video": "assets/videos/tactics/clubhouse/goyo-capela-sala-armas.mp4",
-        "title": "Goyo",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=yRrCsAvTIgY"
         }
       },
       "Kaid": {
@@ -1448,14 +1498,24 @@
         }
       },
       "Thorn": "assets/videos/tactics/clubhouse/thorn-capela-sala-armas.mp4",
-      "Fenrir": {
-        "video": "assets/videos/tactics/clubhouse/fenrir-capela-sala-armas.mp4",
-        "title": "Fenrir",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/shorts/FaIa1jqWPuU"
+      "Fenrir": [
+        {
+          "video": "assets/videos/tactics/clubhouse/fenrir-capela-sala-armas.mp4",
+          "title": "Setup 1",
+          "metadata": {
+            "addedAutonomously": true,
+            "sourceUrl": "https://youtube.com/shorts/FaIa1jqWPuU"
+          }
+        },
+        {
+          "video": "assets/videos/tactics/clubhouse/fenrir-vigilancia-cofre.mp4",
+          "title": "Setup 2",
+          "metadata": {
+            "addedAutonomously": true,
+            "sourceUrl": "https://youtube.com/shorts/9dUEKpBk4ws"
+          }
         }
-      },
+      ],
       "Azami": {
         "video": "assets/videos/tactics/clubhouse/azami-capela-sala-armas.mp4",
         "title": "Azami",
@@ -1470,14 +1530,6 @@
         "metadata": {
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/shorts/4vv-IWl3zYw"
-        }
-      },
-      "Frost": {
-        "video": "assets/videos/tactics/clubhouse/frost-capela-sala-armas.mp4",
-        "title": "Frost",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/shorts/KqFFQrRnVv0"
         }
       },
       "Melusi": {
@@ -1936,28 +1988,12 @@
           "sourceUrl": "https://youtube.com/watch?v=9Qb8ukgjCTs"
         }
       },
-      "Kaid": {
-        "video": "assets/videos/tactics/litoral/kaid-cozinha-servico.mp4",
-        "title": "Kaid",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=YVbf5eI-S_o"
-        }
-      },
       "Castle": {
         "video": "assets/videos/tactics/litoral/castle-cozinha-servico.mp4",
         "title": "Castle",
         "metadata": {
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/watch?v=gJFbLGOdyHk"
-        }
-      },
-      "Thorn": {
-        "video": "assets/videos/tactics/litoral/thorn-cozinha-servico.mp4",
-        "title": "Thorn",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=9QW-olrpgWg"
         }
       },
       "Fenrir": {
@@ -2015,6 +2051,54 @@
     "banReplacements": {}
   },
   {
+    "id": "litoral-defesa-cobertura-teatro",
+    "name": "Cobertura / Teatro",
+    "mapId": "litoral",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["cobertura-teatro"],
+    "status": "draft",
+    "description": "Kaid prepara o setup defensivo da Cobertura e do Teatro.",
+    "operatorVideos": {
+      "Kaid": {
+        "video": "assets/videos/tactics/litoral/kaid-cozinha-servico.mp4",
+        "title": "Kaid",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=YVbf5eI-S_o"
+        }
+      }
+    },
+    "operators": [
+      { "name": "Kaid", "assignment": "Preparar os dispositivos no segundo andar" }
+    ],
+    "banReplacements": {}
+  },
+  {
+    "id": "litoral-defesa-bar-azul-amanhecer",
+    "name": "Bar Azul / Bar do Amanhecer",
+    "mapId": "litoral",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["bar-azul-bar-do-amanhecer"],
+    "status": "draft",
+    "description": "Thorn prepara o setup defensivo do Bar Azul e do Bar do Amanhecer.",
+    "operatorVideos": {
+      "Thorn": {
+        "video": "assets/videos/tactics/litoral/thorn-cozinha-servico.mp4",
+        "title": "Thorn",
+        "metadata": {
+          "addedAutonomously": true,
+          "sourceUrl": "https://youtube.com/watch?v=9QW-olrpgWg"
+        }
+      }
+    },
+    "operators": [
+      { "name": "Thorn", "assignment": "Preparar as armadilhas no primeiro andar" }
+    ],
+    "banReplacements": {}
+  },
+  {
     "id": "mansao-defesa-trofeus-estatuas",
     "name": "Sala de Troféus / Sala de Estátuas",
     "mapId": "mansao",
@@ -2024,14 +2108,6 @@
     "status": "draft",
     "description": "Setups defensivos para a Sala de Troféus e a Sala de Estátuas.",
     "operatorVideos": {
-      "Mute": {
-        "video": "assets/videos/tactics/mansao/mute-trofeus-estatuas-2.mp4",
-        "title": "Mute",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=8SaZpWBalro"
-        }
-      },
       "Kapkan": {
         "video": "assets/videos/tactics/mansao/kapkan-trofeus-estatuas.mp4",
         "title": "Kapkan",
@@ -2054,14 +2130,6 @@
         "metadata": {
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/watch?v=hz-zL5mzWMc"
-        }
-      },
-      "Frost": {
-        "video": "assets/videos/tactics/mansao/frost-trofeus-estatuas.mp4",
-        "title": "Frost",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=4uCU2PIr_Jo"
         }
       },
       "Thorn": {
@@ -2096,14 +2164,6 @@
           "sourceUrl": "https://youtube.com/watch?v=YnVupCkiNPQ"
         }
       },
-      "Goyo": {
-        "video": "assets/videos/tactics/mansao/goyo-trofeus-estatuas.mp4",
-        "title": "Goyo",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/shorts/VODz9xhq-Yw"
-        }
-      },
       "Melusi": {
         "video": "assets/videos/tactics/mansao/melusi-trofeus-estatuas.mp4",
         "title": "Melusi",
@@ -2120,6 +2180,28 @@
     "banReplacements": {}
   },
   {
+    "id": "mansao-defesa-trofeus-controle",
+    "name": "Controle de Troféus e Estátuas",
+    "mapId": "mansao",
+    "side": "defense",
+    "groupSize": 5,
+    "bombSiteIds": ["sala-de-trofeus-sala-de-estatuas"],
+    "status": "ready",
+    "roleFormat": "operator-briefings",
+    "description": "Defesa da Sala de Troféus e da Sala de Estátuas com Castle e Thorn protegendo o Quarto, Wamai controlando a Astronomia, Melusi cobrindo os principais acessos e Azami atrasando o avanço pelo Corredor L.",
+    "overviewImage": "assets/images/tactics/mansao/trofeus-estatuas-controle-overview.png",
+    "overviewAlt": "Planta tática da defesa de Troféus e Estátuas na Mansão, com a distribuição dos operadores e dispositivos de Azami, Thorn, Castle, Wamai e Melusi.",
+    "operators": [
+      { "name": "Azami", "assignment": "Jogar pelo Corredor L para atrasar o avanço dos inimigos pelos dois lados. Depois, recuar para jogar de dentro do bombsite." },
+      { "name": "Thorn", "assignment": "Fazer o setup conforme a imagem e jogar de dentro do Closet, usando o escudo do Wamai para defender o Quarto." },
+      { "name": "Castle", "assignment": "Fazer o setup conforme a imagem e jogar de dentro do bombsite, ajudando a Thorn a defender o Quarto." },
+      { "name": "Wamai", "assignment": "Fazer inicialmente o setup conforme a imagem e depois jogar da Astronomia." },
+      { "name": "Melusi", "assignment": "Colocar uma Banshee na Escada da Astronomia, uma na Janela do Veado, uma na subida da Escada Vermelha e uma próxima ao corredor para apoiar a Azami." }
+    ],
+    "recommendedBans": ["Brava"],
+    "banReplacements": {}
+  },
+  {
     "id": "cafe-defesa-leitura-lareira",
     "name": "Sala de Leitura / Sala de Lareira",
     "mapId": "cafe",
@@ -2129,60 +2211,12 @@
     "status": "draft",
     "description": "Setup defensivo de Maestro para a Sala de Leitura e a Sala de Lareira.",
     "operatorVideos": {
-      "Mute": {
-        "video": "assets/videos/tactics/cafe/mute-leitura-lareira.mp4",
-        "title": "Mute",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=jKtuE8N8J7c"
-        }
-      },
-      "Denari": {
-        "video": "assets/videos/tactics/cafe/denari-leitura-lareira.mp4",
-        "title": "Denari",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=4cWwrDRu89M"
-        }
-      },
-      "Goyo": {
-        "video": "assets/videos/tactics/cafe/goyo-leitura-lareira.mp4",
-        "title": "Goyo",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=IllSfwe_ROc"
-        }
-      },
-      "Azami": {
-        "video": "assets/videos/tactics/cafe/azami-leitura-lareira.mp4",
-        "title": "Azami",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=yylgQJBm9gk"
-        }
-      },
       "Mira": {
         "video": "assets/videos/tactics/cafe/mira-leitura-lareira.mp4",
         "title": "Mira",
         "metadata": {
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/watch?v=gVFistDieqo"
-        }
-      },
-      "Maestro": {
-        "video": "assets/videos/tactics/cafe/maestro-leitura-lareira.mp4",
-        "title": "Maestro",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/shorts/zX_G5Mur81Y"
-        }
-      },
-      "Valkyrie": {
-        "video": "assets/videos/tactics/cafe/valkyrie-leitura-lareira.mp4",
-        "title": "Valkyrie",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/shorts/D_JZjxvF0Yk"
         }
       }
     },
@@ -2343,22 +2377,6 @@
         "metadata": {
           "addedAutonomously": true,
           "sourceUrl": "https://youtube.com/watch?v=idz31JqtDuU"
-        }
-      },
-      "Azami": {
-        "video": "assets/videos/tactics/cafe/azami-mineracao-lareira.mp4",
-        "title": "Azami",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/watch?v=28XiW4srF-k"
-        }
-      },
-      "Fenrir": {
-        "video": "assets/videos/tactics/cafe/fenrir-mineracao-lareira.mp4",
-        "title": "Fenrir",
-        "metadata": {
-          "addedAutonomously": true,
-          "sourceUrl": "https://youtube.com/shorts/BqGZZk15ETA"
         }
       }
     },

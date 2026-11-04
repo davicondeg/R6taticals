@@ -9,9 +9,9 @@
     />
     <meta name="theme-color" content="#090a0c" />
     <title>R6 Hub — Mapas</title>
-    <link rel="stylesheet" href="./assets/css/styles.css?v=map-entry-transition-1" />
-    <link rel="stylesheet" href="./assets/css/operators.css?v=tactic-lineup-1" />
-    <script src="./assets/js/app.js?v=broken-angle-shorts-1" defer></script>
+    <link rel="stylesheet" href="./assets/css/styles.css?v=borderless-selected-map-1" />
+    <link rel="stylesheet" href="./assets/css/operators.css?v=clubhouse-borderless-bomb-hover-1" />
+    <script src="./assets/js/app.js?v=setup-seek-fix-3" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#mapas">Ir para os mapas</a>
@@ -253,7 +253,7 @@
               <p>Defina como seu squad começará a rodada para abrir o plano correto.</p>
             </div>
 
-            <div class="side-selection__map" aria-label="Mapa selecionado">
+            <div class="side-selection__map side-selection__map--visual" id="selected-map-card" aria-label="Mapa selecionado">
               <span>Mapa selecionado</span>
               <strong id="side-map-name">—</strong>
               <span id="side-map-code">R6H / MAPA —</span>
@@ -264,12 +264,8 @@
             <button class="side-option side-option--attack" type="button" data-side="attack" aria-pressed="false">
               <span class="side-option__number" aria-hidden="true">01</span>
               <span class="side-option__icon" aria-hidden="true">
-                <svg viewBox="0 0 120 120">
-                  <path d="m25 18 13 3 46 46-17 17-46-46-3-13 7-7Z" />
-                  <path d="m74 77 18 18m-9-9 10-10m-17 17 10-10" />
-                  <path d="m95 18-13 3-46 46 17 17 46-46 3-13-7-7Z" />
-                  <path d="M46 77 28 95m9-9L27 76m17 17L34 83" />
-                </svg>
+                <img class="side-option__emblem" src="./assets/images/ui/r6-attacker-game-icon.png" alt="" />
+                <span class="side-option__role-mark">ATK</span>
               </span>
               <span class="side-option__content">
                 <small>Pressione o ataque</small>
@@ -287,10 +283,8 @@
             <button class="side-option side-option--defense" type="button" data-side="defense" aria-pressed="false">
               <span class="side-option__number" aria-hidden="true">02</span>
               <span class="side-option__icon" aria-hidden="true">
-                <svg viewBox="0 0 120 120">
-                  <path d="M30 20v26l12 8-8 48h52l-8-48 12-8V20H75v17H67V20H53v17h-8V20H30Z" />
-                  <path d="M42 54h36M34 102h52" />
-                </svg>
+                <img class="side-option__emblem" src="./assets/images/ui/r6-defender-game-icon.png" alt="" />
+                <span class="side-option__role-mark">DEF</span>
               </span>
               <span class="side-option__content">
                 <small>Proteja o objetivo</small>
@@ -320,7 +314,6 @@
             <div><p class="section-index">03 / BOMB SITE</p><h2 id="bomb-site-title" tabindex="-1">Escolha o bomb site</h2><p>Defina onde seu squad vai jogar esta rodada.</p></div>
             <div class="side-selection__map"><span>Seu plano</span><strong id="bomb-map-name">—</strong><span id="bomb-side-context">—</span></div>
           </div>
-          <div class="site-overview"><img id="site-map-image" alt="" /><span>Objetivo / Bomba</span></div>
           <div class="site-options" id="bomb-site-list" role="group" aria-labelledby="bomb-site-title"></div>
           <div class="site-image-credit" id="site-image-credit" aria-label="Fontes das imagens" hidden></div>
           <p class="side-selection__status" id="bomb-selection-status" role="status" aria-live="polite"></p>
@@ -378,7 +371,7 @@
               <span>Composição</span>
               <strong id="tactic-operator-count">—</strong>
             </div>
-            <p>As funções serão detalhadas individualmente nas próximas etapas.</p>
+            <p id="tactic-lineup-description">As funções serão detalhadas individualmente nas próximas etapas.</p>
           </div>
           <div class="tactic-ban-controls">
             <button id="tactic-ban-toggle" type="button">Banir operador</button>
@@ -396,9 +389,9 @@
               <h3 id="tactic-overview-title">Posicionamento da tática</h3>
               <p>Distribuição dos operadores e equipamentos pelo bomb site.</p>
             </div>
-            <img id="tactic-overview-image" alt="" />
+            <div class="tactic-overview__images" id="tactic-overview-images"></div>
           </section>
-          <div class="tactic-draft">
+          <div class="tactic-draft" id="tactic-draft">
             <span>Rascunho</span>
             <strong>Funções em construção</strong>
             <p>A composição está definida. O próximo passo é cadastrar o que cada operador fará.</p>

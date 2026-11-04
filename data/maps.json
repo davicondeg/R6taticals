@@ -3,35 +3,35 @@
     "id": "banco",
     "name": "Banco",
     "mode": "Ranked",
-    "image": "assets/images/maps/bank.avif",
+    "image": "assets/images/maps/banco-ai-v2.webp",
     "order": 1
   },
   {
     "id": "cafe",
     "name": "Café Dostoyevsky",
     "mode": "Ranked",
-    "image": "assets/images/maps/cafe.avif",
+    "image": "assets/images/maps/cafe-ai-v2.webp",
     "order": 2
   },
   {
     "id": "cassino-calypso",
     "name": "Cassino Calypso",
     "mode": "Ranked",
-    "image": "assets/images/maps/cassino-calypso.avif",
+    "image": "assets/images/maps/cassino-calypso-ai-v2.webp",
     "order": 3
   },
   {
     "id": "chale",
     "name": "Chalé",
     "mode": "Ranked",
-    "image": "assets/images/maps/chale.avif",
+    "image": "assets/images/maps/chale-ai-v2.webp",
     "order": 4
   },
   {
     "id": "clubhouse",
     "name": "Clubhouse",
     "mode": "Ranked",
-    "image": "assets/images/maps/clubhouse.avif",
+    "image": "assets/images/maps/clubhouse-ai-v2.webp",
     "order": 5
   },
   {
@@ -45,49 +45,70 @@
     "id": "fronteira",
     "name": "Fronteira",
     "mode": "Ranked",
-    "image": "assets/images/maps/fronteira.avif",
+    "image": "assets/images/maps/fronteira-ai-v2.webp",
     "order": 7
   },
   {
     "id": "kanal",
     "name": "Kanal",
     "mode": "Ranked",
-    "image": "assets/images/maps/kanal.avif",
+    "image": "assets/images/maps/kanal-ai-v3.webp",
     "order": 8
   },
   {
     "id": "laboratorio",
     "name": "Laboratórios Nighthaven",
     "mode": "Ranked",
-    "image": "assets/images/maps/laboratorio.avif",
+    "image": "assets/images/maps/laboratorio-ai-v2.webp",
     "order": 9
   },
   {
     "id": "mansao",
     "name": "Mansão",
     "mode": "Ranked",
-    "image": "assets/images/maps/mansao.avif",
+    "image": "assets/images/maps/mansao-ai-v2.webp",
     "order": 10
   },
   {
     "id": "oregon",
     "name": "Oregon",
     "mode": "Ranked",
-    "image": "assets/images/maps/oregon.avif",
+    "image": "assets/images/maps/oregon-ai-v2.webp",
     "order": 11
   },
   {
     "id": "parque",
     "name": "Parque Temático",
     "mode": "Ranked",
-    "image": "assets/images/maps/parque.avif",
+    "image": "assets/images/maps/parque-ai-v2.webp",
     "order": 12
   },
   {
     "id": "litoral",
     "name": "Litoral",
     "mode": "Ranked",
-    "image": "assets/images/maps/litoral.jpg",
+    "image": "assets/images/maps/litoral-ai-v2.webp",
     "order": 13
+  },
+  {
+    "id": "fortaleza",
+    "name": "Fortaleza",
+    "mode": "Ranked",
+    "image": "assets/images/maps/fortaleza-ai-v1.webp",
+    "order": 14
+  },
+  {
+    "id": "covil",
+    "name": "Covil",
+    "mode": "Ranked",
+    "image": "assets/images/maps/covil-ai-v1.webp",
+    "order": 15
+  },
+  {
+    "id": "outback",
+    "name": "Outback",
+    "mode": "Ranked",
+    "image": "assets/images/maps/outback-ai-v1.webp",
+    "order": 16
   }
 ]

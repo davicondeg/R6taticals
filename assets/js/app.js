@@ -16,6 +16,7 @@ const state = {
   setupMapId: null,
   setupBombSiteId: null,
   setupVideo: null,
+  setupVideoOrigin: null,
   brokenAngleVideos: [],
   brokenAngleVideoId: null,
   brokenAngleMapId: null,
@@ -75,6 +76,7 @@ let heroMapRotationPaused = false;
 let mapEntryTransitionActive = false;
 
 const heroMapRotationDelay = 3000;
+const heroMapInitialDelay = 1500;
 
 const sideLabels = {
   attack: "Ataque",
@@ -107,15 +109,25 @@ async function enterMap(mapId, originElement) {
   const overlay = document.createElement("div");
   overlay.className = "map-entry-transition";
   overlay.setAttribute("aria-hidden", "true");
+  const clipTop = Math.max(0, rect.top);
+  const clipRight = Math.max(0, window.innerWidth - rect.right);
+  const clipBottom = Math.max(0, window.innerHeight - rect.bottom);
+  const clipLeft = Math.max(0, rect.left);
+  const focusX = rect.left + (rect.width / 2);
+  const focusY = rect.top + (rect.height / 2);
+  const tiltX = ((.5 - (focusY / window.innerHeight)) * 2.4).toFixed(2);
+  const tiltY = ((((focusX / window.innerWidth) - .5) * -2.4)).toFixed(2);
+  const cardClip = `inset(${clipTop}px ${clipRight}px ${clipBottom}px ${clipLeft}px round 4px)`;
   Object.assign(overlay.style, {
-    top: `${rect.top}px`,
-    left: `${rect.left}px`,
-    width: `${rect.width}px`,
-    height: `${rect.height}px`,
+    inset: "0",
+    transformOrigin: `${focusX}px ${focusY}px`,
   });
   const image = document.createElement("img");
+  image.className = "map-entry-transition__background";
   image.src = map.image;
   image.alt = "";
+  image.decoding = "sync";
+  await image.decode().catch(() => {});
   const shade = document.createElement("span");
   shade.className = "map-entry-transition__shade";
   const copy = document.createElement("span");
@@ -133,25 +145,47 @@ async function enterMap(mapId, originElement) {
 
   try {
     const expansion = overlay.animate([
-      { top: `${rect.top}px`, left: `${rect.left}px`, width: `${rect.width}px`, height: `${rect.height}px`, borderRadius: "4px" },
-      { offset: .72, top: "0px", left: "0px", width: "100vw", height: "100vh", borderRadius: "0px" },
-      { top: "0px", left: "0px", width: "100vw", height: "100vh", borderRadius: "0px" },
-    ], { duration: 760, easing: "cubic-bezier(.2,.76,.18,1)", fill: "forwards" });
-    image.animate([
-      { transform: "scale(1)" },
-      { transform: "scale(1.14)" },
-    ], { duration: 900, easing: "cubic-bezier(.2,.7,.2,1)", fill: "forwards" });
-    copy.animate([
-      { opacity: 0, transform: "translateY(18px)" },
-      { offset: .42, opacity: 0, transform: "translateY(18px)" },
+      {
+        clipPath: cardClip,
+        borderRadius: "4px",
+        transform: `perspective(1400px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(.995)`,
+      },
+      {
+        offset: .72,
+        clipPath: "inset(2vh 2vw round 2px)",
+        borderRadius: "2px",
+        transform: "perspective(1400px) rotateX(0deg) rotateY(0deg) scale(1)",
+      },
+      {
+        clipPath: "inset(0 round 0)",
+        borderRadius: "0px",
+        transform: "perspective(1400px) rotateX(0deg) rotateY(0deg) scale(1)",
+      },
+    ], { duration: 1800, easing: "cubic-bezier(.16,.76,.14,1)", fill: "forwards" });
+    const zoom = image.animate([
+      { transform: "scale(.94)" },
+      { offset: .32, transform: "scale(1)" },
+      { offset: .74, transform: "scale(1.095)" },
+      { transform: "scale(1.15)" },
+    ], { duration: 1800, easing: "cubic-bezier(.18,.72,.16,1)", fill: "forwards" });
+    await Promise.all([expansion.finished, zoom.finished]);
+
+    const scanReveal = scan.animate([
+      { opacity: .95, transform: "translateX(0)" },
+      { offset: .88, opacity: .95, transform: "translateX(90vw)" },
+      { opacity: 0, transform: "translateX(100vw)" },
+    ], { duration: 650, easing: "cubic-bezier(.35,0,.2,1)", fill: "forwards" });
+    const titleReveal = copy.animate([
+      { opacity: 0, transform: "translateY(22px)" },
       { opacity: 1, transform: "translateY(0)" },
-    ], { duration: 650, easing: "ease-out", fill: "forwards" });
-    await expansion.finished;
+    ], { duration: 650, delay: 120, easing: "cubic-bezier(.2,.72,.2,1)", fill: "forwards" });
+    await Promise.all([scanReveal.finished, titleReveal.finished]);
+    await new Promise((resolve) => window.setTimeout(resolve, 350));
     selectMap(mapId);
     await overlay.animate([
       { opacity: 1 },
       { opacity: 0 },
-    ], { duration: 220, easing: "ease-out", fill: "forwards" }).finished;
+    ], { duration: 450, easing: "ease-out", fill: "forwards" }).finished;
   } finally {
     overlay.remove();
     elements.body.classList.remove("is-map-entering");
@@ -161,6 +195,7 @@ async function enterMap(mapId, originElement) {
 
 function renderHeroMapFace(face, map) {
   face.classList.add("hero__panel-face--map");
+  face.dataset.mapId = map.id;
   face.style.setProperty("--hero-map-image", `url("${new URL(map.image, document.baseURI).href}")`);
   face.replaceChildren();
   const top = document.createElement("span");
@@ -180,10 +215,10 @@ function renderHeroMapFace(face, map) {
   face.append(top, name, action);
 }
 
-function scheduleHeroMapRotation() {
+function scheduleHeroMapRotation(delay = heroMapRotationDelay) {
   window.clearTimeout(heroMapRotationTimer);
   if (heroMapRotationPaused || !state.maps.length || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  heroMapRotationTimer = window.setTimeout(rotateHeroMap, heroMapRotationDelay);
+  heroMapRotationTimer = window.setTimeout(rotateHeroMap, delay);
 }
 
 function animateHeroMapFace(face, from, to) {
@@ -229,7 +264,7 @@ function initializeHeroMapRotation() {
   panel.addEventListener("click", () => {
     if (panel.dataset.mapId) enterMap(panel.dataset.mapId, panel);
   });
-  scheduleHeroMapRotation();
+  scheduleHeroMapRotation(heroMapInitialDelay);
 }
 
 function getSetupCatalog() {
@@ -377,6 +412,7 @@ function showSetupBombSites() {
 }
 
 function showSetupOperators() {
+  state.setupVideoOrigin = null;
   state.setupOperator = null;
   state.setupVideo = null;
   elements.setupVideos.querySelectorAll("video").forEach((video) => {
@@ -431,6 +467,7 @@ function renderSetupBombs() {
 function renderSetupVideos() {
   const stage = document.querySelector("#setup-video-stage");
   const operatorStage = document.querySelector("#setup-operator-stage");
+  elements.setupVideos.querySelectorAll("video").forEach(releaseSetupVideoObjectUrl);
   const entries = getSetupCatalog().filter((entry) => entry.operator === state.setupOperator && entry.mapId === state.setupMapId && entry.bombSiteId === state.setupBombSiteId);
   stage.hidden = entries.length === 0;
   if (!entries.length) return;
@@ -490,6 +527,7 @@ function renderSetupVideos() {
     video.preload = "auto";
     video.src = entry.video;
     video.setAttribute("playsinline", "");
+    video.setAttribute("aria-keyshortcuts", "ArrowLeft ArrowRight");
     video.addEventListener("canplay", () => {
       video.play().catch(() => {});
     }, { once: true });
@@ -538,6 +576,23 @@ function showSetupVideoOptions() {
   renderSetupVideos();
 }
 
+function returnFromSetupVideo() {
+  elements.setupVideos.querySelector("video")?.pause();
+  document.querySelector("#setup-video-stage").hidden = true;
+
+  if (state.setupVideoOrigin === "tactic" && state.selectedTacticId) {
+    const tacticId = state.selectedTacticId;
+    state.setupVideoOrigin = null;
+    state.setupVideo = null;
+    state.setupOperator = null;
+    elements.setupsSection.hidden = true;
+    showTacticDetail(tacticId);
+    return;
+  }
+
+  showSetupOperators();
+}
+
 function openSetupVideoFromTactic(tactic, operatorName, video) {
   const selectedBombSiteId = state.selectedBombSiteId
     || tactic.bombSiteIds.find((bombSiteId) => bombSiteId !== "*");
@@ -555,6 +610,8 @@ function openSetupVideoFromTactic(tactic, operatorName, video) {
   state.setupBombSiteId = selectedBombSiteId;
   state.setupOperator = operatorName;
   state.setupVideo = video;
+  state.setupVideoOrigin = "tactic";
+  document.querySelector("#back-to-setup-operators").textContent = "← Voltar à tática";
   elements.skipLink.href = "#setup-video-stage";
   elements.skipLink.textContent = "Ir para o vídeo do setup";
   renderSetupVideos();
@@ -700,6 +757,8 @@ async function openSetups() {
   state.setupMapId = null;
   state.setupBombSiteId = null;
   state.setupVideo = null;
+  state.setupVideoOrigin = null;
+  document.querySelector("#back-to-setup-operators").textContent = "← Voltar aos operadores";
   renderSetupMaps();
   document.querySelector("#setup-bomb-stage").hidden = true;
   document.querySelector("#setup-operator-stage").hidden = true;
@@ -813,6 +872,10 @@ function selectMap(mapId) {
 
   elements.sideMapName.textContent = selectedMap.name;
   elements.sideMapCode.textContent = `R6H / MAPA ${String(selectedMap.order).padStart(2, "0")}`;
+  document.querySelector("#selected-map-card")?.style.setProperty(
+    "--selected-map-image",
+    `url("${new URL(selectedMap.image, document.baseURI).href}")`,
+  );
   elements.sideStatus.textContent = "Escolha ataque ou defesa para continuar.";
   elements.sideOptions.forEach((option) => {
     option.classList.remove("is-selected");
@@ -872,11 +935,13 @@ function openBombSiteSelection(selectedMap, flow) {
   elements.operatorSection.hidden = true;
   elements.bombTitle.textContent = "Escolha o bomb site";
   document.querySelector("#bomb-map-name").textContent = selectedMap.name;
-  document.querySelector("#site-map-image").src = selectedMap.image;
   elements.bombSideContext.textContent = sideLabels[state.selectedSide] + " / " + fullSquadLabel;
   elements.bombStatus.textContent = "Escolha um local de bomba para selecionar os operadores.";
   const floorLabels = { "B": "Subsolo", "1F": "Térreo", "2F": "1º andar", "3F": "2º andar", "1F / B": "Térreo / Subsolo" };
-  elements.bombList.replaceChildren(...flow.sites.map((site, index) => {
+  elements.bombList.className = "site-options";
+  if (selectedMap.id === "clubhouse" && flow.selectionMode === "game-screen") {
+    renderGameScreenBombSelection(flow);
+  } else elements.bombList.replaceChildren(...flow.sites.map((site, index) => {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "site-card";
@@ -925,7 +990,7 @@ function openBombSiteSelection(selectedMap, flow) {
   flow.sites.forEach((site) => {
     if (site.imageSource) sources.set(site.imageSource, site.imageCredit);
   });
-  imageCredit.hidden = sources.size === 0;
+  imageCredit.hidden = flow.selectionMode === "game-screen" || sources.size === 0;
   imageCredit.replaceChildren(...[...sources].map(([url, credit]) => {
     const link = document.createElement("a");
     link.href = url;
@@ -942,6 +1007,98 @@ function openBombSiteSelection(selectedMap, flow) {
   document.title = selectedMap.name + " — Escolha o bomb site | R6 Hub";
   window.scrollTo({ top: 0, behavior: "smooth" });
   elements.bombTitle.focus({ preventScroll: true });
+}
+
+function renderGameScreenBombSelection(flow) {
+  const picker = document.createElement("div");
+  picker.className = "game-bomb-picker";
+  const stage = document.createElement("div");
+  stage.className = "game-bomb-picker__stage";
+  const hotspots = document.createElement("div");
+  hotspots.className = "game-bomb-picker__hotspots";
+  const mobileOptions = document.createElement("div");
+  mobileOptions.className = "game-bomb-picker__mobile-options";
+  const layers = new Map();
+  const controls = [];
+
+  const addLayer = (key, source, alt) => {
+    const layer = document.createElement("img");
+    layer.className = "game-bomb-picker__image";
+    layer.src = source;
+    layer.alt = alt;
+    layer.loading = "eager";
+    layer.decoding = "async";
+    layer.setAttribute("aria-hidden", "true");
+    stage.append(layer);
+    layers.set(key, layer);
+    return layer;
+  };
+
+  const neutralLayer = addLayer(
+    "neutral",
+    flow.selectionImage,
+    "Vista aérea do Clubhouse sem bombsite selecionado",
+  );
+  neutralLayer.classList.add("is-active");
+  neutralLayer.setAttribute("aria-hidden", "false");
+
+  const showLayer = (key) => {
+    layers.forEach((layer, layerKey) => {
+      const isActive = layerKey === key;
+      layer.classList.toggle("is-active", isActive);
+      layer.setAttribute("aria-hidden", String(!isActive));
+    });
+  };
+  const showSite = (site) => {
+    showLayer(site.id);
+    elements.bombStatus.textContent = `${site.name} em evidência. Clique para selecionar.`;
+  };
+  const showNeutral = () => {
+    showLayer("neutral");
+    elements.bombStatus.textContent = "Passe o cursor sobre um bombsite para visualizar sua posição no mapa.";
+  };
+
+  flow.sites.forEach((site, index) => {
+    addLayer(
+      site.id,
+      site.selectionImage || flow.selectionImage,
+      `Vista aérea do Clubhouse com ${site.name} em evidência`,
+    );
+    const hotspot = document.createElement("button");
+    hotspot.type = "button";
+    hotspot.className = "game-bomb-picker__hotspot";
+    hotspot.disabled = true;
+    hotspot.style.setProperty("--site-row", index);
+    hotspot.setAttribute("aria-label", `Selecionar ${site.name}`);
+    hotspot.addEventListener("pointerenter", () => showSite(site));
+    hotspot.addEventListener("focus", () => showSite(site));
+    hotspot.addEventListener("click", () => selectBombSite(site.id));
+    hotspots.append(hotspot);
+
+    const option = document.createElement("button");
+    option.type = "button";
+    option.className = "game-bomb-picker__mobile-option";
+    option.disabled = true;
+    option.innerHTML = `<span>${site.floor}</span><strong>${site.name}</strong>`;
+    option.addEventListener("pointerenter", () => showSite(site));
+    option.addEventListener("focus", () => showSite(site));
+    option.addEventListener("click", () => selectBombSite(site.id));
+    mobileOptions.append(option);
+    controls.push(hotspot, option);
+  });
+
+  stage.addEventListener("pointerleave", showNeutral);
+  stage.append(hotspots);
+  picker.append(stage, mobileOptions);
+  elements.bombList.classList.add("site-options--game-screen");
+  elements.bombList.replaceChildren(picker);
+  elements.bombStatus.textContent = "Carregando visualizações dos bombsites…";
+
+  Promise.all([...layers.values()].map((layer) => layer.decode().catch(() => null))).then(() => {
+    controls.forEach((control) => { control.disabled = false; });
+    picker.classList.add("is-ready");
+    showNeutral();
+  });
 }
 
 function selectBombSite(bombSiteId) {
@@ -1044,6 +1201,11 @@ async function showTacticDetail(tacticId) {
   document.querySelector("#tactic-detail-context").textContent = sideLabels[state.selectedSide] + " / " + fullSquadLabel;
   document.querySelector("#tactic-detail-site").textContent = "Bombsite · " + site.name;
   document.querySelector("#tactic-operator-count").textContent = tactic.operators.length + " operadores";
+  const usesOperatorBriefings = tactic.roleFormat === "operator-briefings";
+  document.querySelector("#tactic-lineup-description").textContent = usesOperatorBriefings
+    ? "Leia a função de cada operador antes de iniciar a rodada."
+    : "As funções serão detalhadas individualmente nas próximas etapas.";
+  document.querySelector("#tactic-draft").hidden = tactic.status !== "draft";
   const description = document.querySelector("#tactic-description");
   const descriptionText = tactic.description || tactic.defenseDescription || "";
   description.hidden = !descriptionText;
@@ -1077,19 +1239,26 @@ function getDisplayedTacticOperators(tactic) {
 
 function renderTacticOverview(tactic) {
   const overview = document.querySelector("#tactic-overview");
-  const overviewImage = document.querySelector("#tactic-overview-image");
+  const overviewImages = document.querySelector("#tactic-overview-images");
   const lineup = getDisplayedTacticOperators(tactic).map((operator) => operator.name).sort().join("|");
   const variant = tactic.overviewVariants?.find((item) => [...item.operators].sort().join("|") === lineup);
-  const image = variant?.image || tactic.overviewImage;
-  const alt = variant?.alt || tactic.overviewAlt;
-  overview.hidden = !image;
-  if (image) {
-    overviewImage.src = image;
-    overviewImage.alt = alt || "Visão geral da tática " + tactic.name;
-  } else {
-    overviewImage.removeAttribute("src");
-    overviewImage.alt = "";
-  }
+  const images = variant?.image
+    ? [{ image: variant.image, alt: variant.alt }]
+    : tactic.overviewImages?.length
+      ? tactic.overviewImages
+      : tactic.overviewImage
+        ? [{ image: tactic.overviewImage, alt: tactic.overviewAlt }]
+        : [];
+  overview.hidden = images.length === 0;
+  overviewImages.classList.toggle("tactic-overview__images--multiple", images.length > 1);
+  overviewImages.replaceChildren(...images.map((item, index) => {
+    const image = document.createElement("img");
+    image.src = item.image;
+    image.alt = item.alt || `Visão geral ${index + 1} da tática ${tactic.name}`;
+    image.loading = "eager";
+    image.decoding = "async";
+    return image;
+  }));
 }
 
 function renderTacticLineup(tactic) {
@@ -1100,6 +1269,7 @@ function renderTacticLineup(tactic) {
     operatorGrid.style.setProperty("--portrait-size", (sheet.width / 110 * 100) + "% " + (sheet.height / 184 * 100) + "%");
   }
   const displayedOperators = getDisplayedTacticOperators(tactic);
+  operatorGrid.classList.toggle("tactic-operator-grid--briefings", tactic.roleFormat === "operator-briefings");
   operatorGrid.replaceChildren(...displayedOperators.map((operator, index) => {
     const videoOptions = tactic.operatorVideos?.[operator.name];
     const firstVideo = Array.isArray(videoOptions) ? videoOptions[0] : videoOptions;
@@ -1107,6 +1277,7 @@ function renderTacticLineup(tactic) {
     const card = document.createElement("button");
     card.type = "button";
     card.className = "tactic-operator";
+    card.classList.toggle("tactic-operator--briefing", tactic.roleFormat === "operator-briefings");
     card.classList.toggle("is-replacement", Boolean(operator.replacementFor));
     card.classList.toggle("has-video", Boolean(video));
     card.dataset.banEnabled = String(state.banMode);
@@ -1367,6 +1538,116 @@ function clearSearch() {
   elements.search.focus();
 }
 
+const pendingSetupVideoSeeks = new WeakMap();
+const setupVideoObjectUrls = new WeakMap();
+
+function setupVideoCanSeekTo(video, targetTime) {
+  for (let index = 0; index < video.seekable.length; index += 1) {
+    if (targetTime >= video.seekable.start(index) && targetTime <= video.seekable.end(index)) return true;
+  }
+  return false;
+}
+
+function releaseSetupVideoObjectUrl(video) {
+  const objectUrl = setupVideoObjectUrls.get(video);
+  if (!objectUrl) return;
+  URL.revokeObjectURL(objectUrl);
+  setupVideoObjectUrls.delete(video);
+}
+
+async function makeSetupVideoSeekable(video, targetTime, direction) {
+  const previous = pendingSetupVideoSeeks.get(video);
+  const pending = previous || { targetTime, direction, loading: false };
+  pending.targetTime = targetTime;
+  pending.direction = direction;
+  pendingSetupVideoSeeks.set(video, pending);
+  if (pending.loading) return;
+
+  pending.loading = true;
+  const source = video.currentSrc || video.src;
+  const shouldResume = !video.paused;
+  const playbackRate = video.playbackRate;
+
+  try {
+    const response = await fetch(source);
+    if (!response.ok) throw new Error(`Não foi possível carregar o vídeo (${response.status}).`);
+    const objectUrl = URL.createObjectURL(await response.blob());
+
+    if (!video.isConnected) {
+      URL.revokeObjectURL(objectUrl);
+      pendingSetupVideoSeeks.delete(video);
+      return;
+    }
+
+    releaseSetupVideoObjectUrl(video);
+    setupVideoObjectUrls.set(video, objectUrl);
+    video.src = objectUrl;
+    video.load();
+    await new Promise((resolve, reject) => {
+      video.addEventListener("loadedmetadata", resolve, { once: true });
+      video.addEventListener("error", reject, { once: true });
+    });
+
+    const queued = pendingSetupVideoSeeks.get(video);
+    const safeEnd = Math.max(0, video.duration - 0.05);
+    const safeTarget = Math.min(safeEnd, Math.max(0, queued?.targetTime || 0));
+    video.currentTime = safeTarget;
+    video.playbackRate = playbackRate;
+    pendingSetupVideoSeeks.delete(video);
+    if (shouldResume) video.play().catch(() => {});
+  } catch (error) {
+    pendingSetupVideoSeeks.delete(video);
+    console.warn("Não foi possível preparar o vídeo para navegação.", error);
+  }
+}
+
+function applySetupVideoSeek(video, offset) {
+  const queuedTarget = pendingSetupVideoSeeks.get(video)?.targetTime;
+  const currentTime = Number.isFinite(queuedTarget)
+    ? queuedTarget
+    : (Number.isFinite(video.currentTime) ? video.currentTime : 0);
+  const duration = Number.isFinite(video.duration) && video.duration > 0
+    ? video.duration
+    : null;
+
+  if (video.readyState < HTMLMediaElement.HAVE_METADATA || duration === null) {
+    video.addEventListener("loadedmetadata", () => applySetupVideoSeek(video, offset), { once: true });
+    return;
+  }
+
+  const endTime = Math.max(0, duration - 0.05);
+  const targetTime = Math.min(endTime, Math.max(0, currentTime + offset));
+
+  if (offset > 0 && targetTime <= currentTime) return;
+  if (offset < 0 && targetTime >= currentTime) return;
+
+  if (!setupVideoCanSeekTo(video, targetTime)) {
+    makeSetupVideoSeekable(video, targetTime, Math.sign(offset));
+    return;
+  }
+
+  try {
+    video.currentTime = targetTime;
+  } catch (error) {
+    if (error.name !== "InvalidStateError") throw error;
+  }
+}
+
+function handleSetupVideoSeek(event) {
+  const targetIsField = event.target.matches("input, textarea, select, [contenteditable='true']");
+  const isArrowShortcut = event.key === "ArrowLeft" || event.key === "ArrowRight";
+  const hasModifier = event.altKey || event.ctrlKey || event.metaKey || event.shiftKey;
+  const videoStage = document.querySelector("#setup-video-stage");
+  const video = elements.setupVideos.querySelector("video");
+
+  if (targetIsField || !isArrowShortcut || hasModifier || videoStage.hidden || !video) return;
+
+  event.preventDefault();
+  event.stopPropagation();
+  const offset = event.key === "ArrowRight" ? 10 : -10;
+  applySetupVideoSeek(video, offset);
+}
+
 function bindEvents() {
   document.querySelector("#open-setups").addEventListener("click", openSetups);
   document.querySelector("#open-broken-angle").addEventListener("click", openBrokenAnglePlaylist);
@@ -1374,7 +1655,7 @@ function bindEvents() {
   document.querySelector("#back-from-setups").addEventListener("click", showMapSelection);
   document.querySelector("#back-to-setup-maps").addEventListener("click", showSetupMaps);
   document.querySelector("#back-to-setup-bombs").addEventListener("click", showSetupBombSites);
-  document.querySelector("#back-to-setup-operators").addEventListener("click", showSetupOperators);
+  document.querySelector("#back-to-setup-operators").addEventListener("click", returnFromSetupVideo);
   document.querySelector("#back-to-bombs").addEventListener("click", backToBombSites);
   document.querySelector("#back-to-bomb-sites").addEventListener("click", backToBombSites);
   document.querySelector("#back-to-tactics").addEventListener("click", showTacticSelection);
@@ -1398,6 +1679,8 @@ function bindEvents() {
     option.addEventListener("click", () => selectSide(option.dataset.side));
   });
 
+  document.addEventListener("keydown", handleSetupVideoSeek, true);
+
   document.addEventListener("keydown", (event) => {
     const targetIsField = event.target.matches("input, textarea, select, [contenteditable='true']");
 
@@ -1412,6 +1695,7 @@ function bindEvents() {
 
     if (event.key === "Escape" && !elements.setupsSection.hidden) {
       if (!document.querySelector("#setup-broken-angle-stage").hidden) closeBrokenAnglePlaylist();
+      else if (!document.querySelector("#setup-video-stage").hidden && state.setupVideoOrigin === "tactic") returnFromSetupVideo();
       else if (!document.querySelector("#setup-video-stage").hidden && state.setupVideo) showSetupVideoOptions();
       else if (!document.querySelector("#setup-video-stage").hidden) showSetupOperators();
       else if (!document.querySelector("#setup-operator-stage").hidden) showSetupBombSites();
@@ -1448,7 +1732,7 @@ function bindEvents() {
 
 async function loadBombSiteFlows() {
   try {
-    const response = await fetch("./data/bomb-sites.json?v=selection-28", { cache: "no-store" });
+    const response = await fetch("./data/bomb-sites.json?v=clubhouse-game-selection-2", { cache: "no-store" });
     if (!response.ok) {
       throw new Error(`Falha ao carregar bomb sites: ${response.status}`);
     }
@@ -1494,7 +1778,7 @@ async function loadOperators() {
 
 async function loadTactics() {
   try {
-    const response = await fetch("./data/tactics.json?v=selection-29", { cache: "no-store" });
+    const response = await fetch("./data/tactics.json?v=vigilancia-two-plants-1", { cache: "no-store" });
     if (!response.ok) throw new Error("Falha ao carregar táticas: " + response.status);
     state.tactics = await response.json();
   } catch (error) {

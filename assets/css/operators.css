@@ -7,7 +7,12 @@
 .operator-card[aria-pressed="true"] { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent), 0 8px 24px #0006; }
 .operator-card[aria-pressed="true"] .operator-name { background: var(--accent); color: var(--background); }
 .operator-card[aria-pressed="true"]::after { content: "✓"; position: absolute; top: 8px; right: 8px; display: grid; place-items: center; width: 23px; height: 23px; background: var(--accent); color: var(--background); border-radius: 50%; font-weight: 900; }
-.operator-card:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+.operator-card:focus-visible,
+.operators-toolbar input:focus-visible,
+.operators-toolbar select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
 @media (max-width: 400px) { .operator-grid { justify-content: center; } }
 .operator-card[aria-disabled="true"] { opacity: .48; }
 .operator-card[aria-disabled="true"]:hover { transform: none; }
@@ -19,9 +24,6 @@
 .lineup-summary { margin-top: 24px; padding: 24px; border: 1px solid var(--accent); background: #d7ff3509; }
 .lineup-summary strong { color: var(--accent); text-transform: uppercase; font-size: .8rem; letter-spacing: .1em; }
 .lineup-summary p { margin-bottom: 0; line-height: 1.6; }
-.site-overview { position: relative; height: 150px; overflow: hidden; margin-top: 32px; border: 1px solid var(--line); border-radius: var(--radius); }
-.site-overview img { width: 100%; height: 100%; object-fit: cover; opacity: .55; }
-.site-overview span { position: absolute; bottom: 16px; left: 20px; background: var(--background); padding: 8px 12px; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; }
 .site-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 24px; }
 .site-card { position: relative; display: flex; flex-direction: column; align-items: start; min-height: 230px; padding: 24px; border: 1px solid var(--line-strong); background: linear-gradient(135deg, #d7ff3507, transparent 60%), var(--surface); color: var(--text); text-align: left; border-radius: var(--radius); cursor: pointer; transition: border-color 160ms ease, transform 160ms ease; }
 .site-card:hover, .site-card[aria-pressed="true"] { border-color: var(--accent); transform: translateY(-3px); }
@@ -39,7 +41,32 @@
 .site-image-credit { display: inline-block; margin-top: 18px; color: var(--muted); font-size: .7rem; text-decoration: underline; text-underline-offset: 3px; }
 .site-image-credit:hover { color: var(--text); }
 .site-image-credit a + a { margin-left: 18px; }
-@media (max-width: 640px) { .site-options { grid-template-columns: 1fr; } .site-overview { height: 120px; } }
+@media (max-width: 640px) { .site-options { grid-template-columns: 1fr; } }
+
+.site-options--game-screen { display: block; }
+.game-bomb-picker { margin-inline: auto; width: min(100%, 1280px); }
+.game-bomb-picker__stage { position: relative; overflow: hidden; aspect-ratio: 16 / 9; border: 1px solid var(--line-strong); border-radius: 6px; background: #090b0d; box-shadow: 0 24px 70px #0008; }
+.game-bomb-picker__image { position: absolute; z-index: 0; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: translateZ(0); backface-visibility: hidden; }
+.game-bomb-picker__image.is-active { z-index: 1; opacity: 1; }
+.game-bomb-picker__hotspots { position: absolute; inset: 0; }
+.game-bomb-picker__hotspots { z-index: 2; }
+.game-bomb-picker__hotspot { --row-top: calc(35.55% + var(--site-row) * 5.42%); position: absolute; top: var(--row-top); left: 12.35%; width: 20.2%; height: 5.45%; padding: 0; border: 1px solid transparent; border-radius: 2px; background: transparent; cursor: pointer; }
+.game-bomb-picker__hotspot:disabled { cursor: wait; }
+.game-bomb-picker__hotspot:hover { border-color: transparent; outline: none; box-shadow: none; }
+.game-bomb-picker__hotspot:focus-visible { border-color: transparent; outline: 2px solid rgba(255,91,82,.78); outline-offset: 2px; box-shadow: none; }
+.game-bomb-picker__mobile-options { display: none; }
+
+@media (max-width: 760px) {
+  .game-bomb-picker__stage { border-radius: 4px; }
+  .game-bomb-picker__hotspots { display: none; }
+  .game-bomb-picker__mobile-options { display: grid; gap: 8px; margin-top: 12px; }
+  .game-bomb-picker__mobile-option { display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: center; min-height: 54px; padding: 10px 14px; border: 1px solid var(--line-strong); border-radius: 4px; background: var(--surface); color: var(--text); text-align: left; cursor: pointer; }
+  .game-bomb-picker__mobile-option:hover,
+  .game-bomb-picker__mobile-option:focus-visible { border-color: #ff5b52; outline: none; box-shadow: inset 3px 0 #ff5b52; }
+  .game-bomb-picker__mobile-option span { color: var(--accent); font: 800 .68rem ui-monospace, "Cascadia Code", monospace; }
+  .game-bomb-picker__mobile-option strong { font-size: .82rem; }
+  .game-bomb-picker__mobile-option:disabled { opacity: .5; cursor: wait; }
+}
 
 .tactics-site { margin-top: 28px; color: var(--muted); font: 700 .7rem ui-monospace, "Cascadia Code", monospace; letter-spacing: .1em; text-transform: uppercase; }
 .tactics-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 24px; }
@@ -98,9 +125,22 @@
 .tactic-operator__body { padding: 10px 8px; }
 .tactic-operator__body strong { display: block; overflow: hidden; font-family: var(--font-display); font-size: .92rem; letter-spacing: -.02em; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
 .tactic-operator__body span { display: block; margin-top: 6px; color: var(--muted); font-size: .58rem; line-height: 1.35; }
+.tactic-operator-grid--briefings { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; overflow: visible; }
+.tactic-operator--briefing { display: grid; grid-template-columns: 92px minmax(0, 1fr); width: 100%; min-height: 154px; align-items: stretch; }
+.tactic-operator--briefing .tactic-operator__visual { border-right: 1px solid var(--line); border-bottom: 0; }
+.tactic-operator--briefing .tactic-operator__visual .operator-portrait { width: 92px; height: 154px; background-size: var(--portrait-size); }
+.tactic-operator--briefing .tactic-operator__slot { top: 8px; left: 8px; }
+.tactic-operator--briefing .tactic-operator__body { display: flex; flex-direction: column; padding: 20px; justify-content: center; }
+.tactic-operator--briefing .tactic-operator__body strong { font-size: 1.35rem; color: var(--accent); }
+.tactic-operator--briefing .tactic-operator__body span { margin-top: 10px; color: #c8cbd1; font-size: .78rem; line-height: 1.65; }
 .tactic-overview { margin-top: 48px; padding-top: 34px; border-top: 1px solid var(--line-strong); }
 .tactic-overview__heading span { color: var(--accent); font: 800 .65rem ui-monospace, "Cascadia Code", monospace; letter-spacing: .12em; text-transform: uppercase; }
 .tactic-overview__heading h3 { margin: 7px 0 0; font-family: var(--font-display); font-size: clamp(1.6rem, 4vw, 2.4rem); text-transform: uppercase; }
 .tactic-overview__heading p { margin: 9px 0 0; color: var(--muted); line-height: 1.6; }
-.tactic-overview img { display: block; width: 100%; height: auto; margin-top: 22px; border: 1px solid var(--line-strong); border-radius: var(--radius); background: #edf2f5; }
+.tactic-overview__images { display: grid; gap: 16px; margin-top: 22px; }
+.tactic-overview__images--multiple { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+.tactic-overview img { display: block; width: 100%; height: auto; border: 1px solid var(--line-strong); border-radius: var(--radius); background: #edf2f5; }
+@media (max-width: 760px) { .tactic-operator-grid--briefings { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .tactic-overview__images--multiple { grid-template-columns: 1fr; } }
 @media (max-width: 640px) { .tactics-list { grid-template-columns: 1fr; } .tactic-card { min-height: 370px; } .tactic-lineup-heading { display: block; } .tactic-lineup-heading p { margin-top: 10px; text-align: left; } }
+@media (max-width: 420px) { .tactic-operator--briefing { grid-template-columns: 78px minmax(0, 1fr); min-height: 132px; } .tactic-operator--briefing .tactic-operator__visual .operator-portrait { width: 78px; height: 132px; } .tactic-operator--briefing .tactic-operator__body { padding: 14px; } }

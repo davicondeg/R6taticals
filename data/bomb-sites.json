@@ -168,11 +168,14 @@
     "imageCredit": "R6 Trainer — capturas de 2020"
   },
   "clubhouse": {
+    "selectionMode": "game-screen",
+    "selectionImage": "assets/images/bomb-sites/clubhouse/selection/neutral-no-timer.png",
     "imageSource": "https://www.r6trainer.com/callout-trainer/",
     "imageCredit": "R6 Trainer — capturas de 2020",
     "sites": [
       {
         "id": "academia-quarto",
+        "selectionImage": "assets/images/bomb-sites/clubhouse/selection/academia-quarto-no-timer.png",
         "image": "assets/images/bomb-sites/clubhouse/bedroom.jpg",
         "imageRoom": "Quarto / Bedroom",
         "imageAlt": "Quarto do Clubhouse, com cama ao fundo, poltronas e papel de parede verde. Captura de 2020.",
@@ -182,6 +185,7 @@
       },
       {
         "id": "sala-vigilancia-sala-cofre",
+        "selectionImage": "assets/images/bomb-sites/clubhouse/selection/vigilancia-cofre-no-timer.png",
         "image": "assets/images/bomb-sites/clubhouse/cash-room.jpg",
         "imageRoom": "Sala do Cofre / Cash",
         "imageAlt": "Sala do Cofre do Clubhouse, com pilhas de dinheiro nas mesas e passagem para CCTV. Captura de 2020.",
@@ -191,6 +195,7 @@
       },
       {
         "id": "bar-sala-reunioes",
+        "selectionImage": "assets/images/bomb-sites/clubhouse/selection/bar-reunioes-no-timer.png",
         "image": "assets/images/bomb-sites/clubhouse/bar.jpg",
         "imageRoom": "Bar",
         "imageAlt": "Bar do Clubhouse, com balcão de madeira, garrafas e iluminação vermelha. Captura de 2020.",
@@ -200,6 +205,7 @@
       },
       {
         "id": "capela-sala-armas",
+        "selectionImage": "assets/images/bomb-sites/clubhouse/selection/capela-arsenal-no-timer.png",
         "image": "assets/images/bomb-sites/clubhouse/church.jpg",
         "imageRoom": "Capela / Church",
         "imageAlt": "Capela no subsolo do Clubhouse, com mesa comprida, cadeiras e geladeira de bebidas. Captura de 2020.",
@@ -544,5 +550,89 @@
     ],
     "imageSource": "https://www.r6trainer.com/callout-trainer/",
     "imageCredit": "R6 Trainer — capturas de 2020"
+  },
+  "fortaleza": {
+    "sites": [
+      {
+        "id": "hammam-sala-de-estar",
+        "name": "Hammam / Sala de Estar",
+        "floor": "1F",
+        "callout": "Hammam/Sitting Room"
+      },
+      {
+        "id": "sala-de-espera-cafeteria",
+        "name": "Sala de Espera / Cafeteria",
+        "floor": "1F",
+        "callout": "Waiting Room/Cafeteria"
+      },
+      {
+        "id": "banheiro-escritorio-do-comandante",
+        "name": "Banheiro / Escritório do Comandante",
+        "floor": "2F",
+        "callout": "Bathroom/Commander's Office"
+      },
+      {
+        "id": "dormitorio-sala-de-jogos",
+        "name": "Dormitório / Sala de Jogos",
+        "floor": "2F",
+        "callout": "Dormitory/Games Room"
+      }
+    ]
+  },
+  "covil": {
+    "sites": [
+      {
+        "id": "escritorio-principal-sala-r6",
+        "name": "Escritório Principal / Sala R6",
+        "floor": "2F",
+        "callout": "Master Office/R6 Room"
+      },
+      {
+        "id": "beliches-sala-de-briefing",
+        "name": "Beliches / Sala de Briefing",
+        "floor": "1F",
+        "callout": "Bunks/Briefing"
+      },
+      {
+        "id": "arsenal-manutencao-de-armas",
+        "name": "Arsenal / Manutenção de Armas",
+        "floor": "1F",
+        "callout": "Armory/Weapon Maintenance"
+      },
+      {
+        "id": "laboratorio-suporte-do-laboratorio",
+        "name": "Laboratório / Suporte do Laboratório",
+        "floor": "B",
+        "callout": "Lab/Lab Support"
+      }
+    ]
+  },
+  "outback": {
+    "sites": [
+      {
+        "id": "lavanderia-sala-de-jogos",
+        "name": "Lavanderia / Sala de Jogos",
+        "floor": "2F",
+        "callout": "Laundry/Games Room"
+      },
+      {
+        "id": "sala-de-festas-escritorio",
+        "name": "Sala de Festas / Escritório",
+        "floor": "2F",
+        "callout": "Party Room/Office"
+      },
+      {
+        "id": "sala-da-natureza-sala-bushranger",
+        "name": "Sala da Natureza / Sala Bushranger",
+        "floor": "1F",
+        "callout": "Nature Room/Bushranger Room"
+      },
+      {
+        "id": "sala-do-compressor-deposito-de-equipamentos",
+        "name": "Sala do Compressor / Depósito de Equipamentos",
+        "floor": "1F",
+        "callout": "Compressor Room/Gear Store"
+      }
+    ]
   }
 }
